@@ -1,0 +1,85 @@
+﻿@model QLKTX.Models.Phong
+
+@{
+    Layout = null;
+    Layout = "~/Views/Admin/LayoutAdmin.cshtml";
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>XemThongTinPhong</title>
+    <link rel="stylesheet" href="~/assets/css/hopThoai.css" />
+</head>
+<body>
+    <div>
+        <center><b>Thông tin phòng @Model.Ten</b></center>
+        <center>
+            <span>Mã Phòng: @Model.Ma</span>
+            <span>Tên Phòng: @Model.Ten</span>
+            <span>Tầng Phòng: @Model.Tang.Ten</span>
+            <span>Số lượng đang ở: @(10-Model.SoLuongTrong)</span><br />
+            <span>Trạng thái: @(Model.DangSuaChua ? "Đang sửa chửa":"Đang hoạt động")</span>       
+            <span>Trưởng phòng: @Model.TruongPhong</span>
+        </center>
+    </div>
+    <center><p>Danh sách thành viên</p></center>
+    <table class="table">
+        <tr>
+            <th></th>
+            <th>Mã sinh viên</th>
+            <th>Họ và tên</th>
+            <th>Lớp</th>
+            <th>Số điện thoại</th>
+            <th>Email</th>
+            <th>Trạng thái</th>
+            <th></th>
+        </tr>
+        @foreach (var item in Model.SinhViens)
+        {
+            <tr>
+                <td><img src="@item.AnhDaiDien" style="width:100px; height:100px;" /></td>
+                <td>@item.MaSV</td>
+                <td>@item.Ho @item.Ten</td>
+                <td>@item.Lop</td>
+                <td>@item.SoDienThoai</td>
+                <td>item.Email</td>
+                <td>@item.TrangThai</td>
+                @if (Model.TruongPhong == item.MaSV)
+                {
+                    <td><b>Trưởng phòng</b></td>
+                }
+                else
+                {
+                    <td><button value="@item.MaSV" class="btn btn-primary btn_xacnhan open_btn">Đổi trưởng phòng</button></td>
+                }
+            </tr>
+        }
+    </table>
+    <div class="modall an">
+        @using (Html.BeginForm("DoiTruongPhong", "Admin", new {maPhong = Model.Ma, url = Request.Url.ToString() }))
+        {
+            <div class="modal__innerr">
+                <div class="modal__headerr">
+                    <p>Thay đổi trưởng phòng cho sinh viên "<span id="idValue"></span>"?</p>
+                    <i class="fas fa-times"></i>
+                </div>
+                <div class="modal__bodyy">
+                    <span>Bạn có chắc chắn muốn thay đổi khổng?</span>
+                </div>
+                <div class="modal__footerr">
+                    <a class="close btn btn-warning">Hủy bỏ</a>
+                    <button type="submit" name="maSV" id="subvalue" class="btn btn-danger">Xác nhận</button>
+                </div>
+            </div>
+        }
+    </div>
+    <script src="~/assets/js/HopThoai.js"></script>
+    <script src="~/assets/js/hopXacNhan.js"></script>
+    <script>
+
+    </script>
+</body>
+</html>

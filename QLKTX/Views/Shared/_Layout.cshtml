@@ -1,0 +1,494 @@
+﻿@using QLKTX.Models;
+@{
+    SinhVien SV = QLKTX.Controllers.SessionLoginUser.GetSession;
+}
+    <!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" href="https://sinhvien.hufi.edu.vn/Content/AConfig/images/favicon.png">
+    <link rel="stylesheet" href="https://site-assets.fontawesome.com/releases/v6.1.2/css/all.css?fbclid=IwAR2Lefv1ZTLJsKEsnl4HGMf5XRZuPqx5yOFnFaOFbVgCiCeU87S0up6ptKU">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-GLhlTQ8iRABdZLl6O3oVMWSktQOp6b7In1Zl3/Jr59b6EGGoI1aFkw7cmDA6j6gD" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js" integrity="sha384-w76AqPfDkMBDXo30jS1Sgez6pr3x5MlQ1ZAGC+nuZB+EYdgRZgiwxhTBTkF7CXvN" crossorigin="anonymous"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Lora:wght@500&display=swap" rel="stylesheet">
+    <link rel="stylesheet" type="text/css" href="~/assets/lib/slick-1.8.1/slick/slick.css" />
+    <link rel="stylesheet" type="text/css" href="~/assets/lib/slick-1.8.1/slick/slick-theme.css" />
+    <link rel="stylesheet" href="~/assets/css/reset.css">
+    <link rel="stylesheet" href="~/assets/css/root.css">
+    <link rel="stylesheet" href="~/assets/css/main.css">
+    <link rel="stylesheet" href="~/assets/css/responsive.css">
+    <title>Home</title>
+</head>
+<body>
+    <input type="checkbox" id="menu-model" hidden class="menu-model-check">
+    <label for="menu-model" class="model-over-play"></label>
+    <div class="header-intro_school">
+        <a href="https://hufi.edu.vn/" class="header-intro_school-link">
+            <p class="header-intro_school-title">hufi.edu.vn</p>
+        </a>
+    </div>
+    <header id="header-info">
+        <div class="container-lg">
+            <div class="header-top">
+                <div class="row">
+                    <div class="col-lg-4 col-md-4 col-6">
+                        <div class="header-top-left hide-on-tablet-and-mobile">
+                            <div class="header-top-left_logo hide-on-tablet-and-mobile">
+                                <a href="#" class="header-top-left_logo-link">
+                                    <img src="https://ttktx.hufi.edu.vn/app_web/ttktxsv/images/logo/logo-40-nam-thanh-lap-hufi-xanh-01.png" alt="logo hufi 40 năm" class="header-top-left_logo-img">
+                                </a>
+                            </div>
+                            <div class="header-top-left_categories">
+                                <span style="cursor:pointer" href="" class="header-top-left_categories-icon-link">
+                                    <i class="fa-duotone fa-bars"></i>
+                                    <span class="hide-on-pc-md">Danh sách</span>
+                                </span>
+                                <ul class="header-top-left_categories-list">
+                                    <li class="header-top-left_categories-item">
+                                        <a href="" class="header-top-left_categories-item-link"><i class="fa-duotone fa-house header-top-left_categories-item-link-icon"></i>Trang chủ</a>
+                                    </li>
+                                    <li class="header-top-left_categories-item">
+                                        <a href="" class="header-top-left_categories-item-link">Giới thiệu</a>
+                                    </li>
+                                    <li class="header-top-left_categories-item">
+                                        <a href="" class="header-top-left_categories-item-link">Thông báo</a>
+                                    </li>
+                                    <li class="header-top-left_categories-item">
+                                        <a href="" class="header-top-left_categories-item-link">sức khỏe</a>
+                                    </li>
+                                    <li class="header-top-left_categories-item">
+                                        <a href="" class="header-top-left_categories-item-link">Câu lạc bộ / nhóm</a>
+                                    </li>
+                                    <li class="header-top-left_categories-item">
+                                        <a href="" class="header-top-left_categories-item-link">Biểu mẫu </a>
+                                    </li>
+                                    <li class="header-top-left_categories-item">
+                                        <a href="" class="header-top-left_categories-item-link">Liên hệ</a>
+                                    </li>
+                                </ul>
+                            </div>
+
+                        </div>
+                        <div class="header-top-left-tablet-mobile-bar">
+                            <label for="menu-model" class="header-top-left-tablet-mobile-icon hide-on-pc">
+                                <i class="fa-duotone fa-bars"></i>
+                            </label>
+                        </div>
+                    </div>
+                    <div class="col-lg-5 col-md-4 col-6">
+                        <div class="header-top-right">
+                            <div class="header-top-left_input-search hide-on-mobile ">
+                                <input type="text" class="header-top-left_input-search-input" placeholder="Nhập từ khóa cần tìm...">
+                                <i class="fa-duotone fa-magnifying-glass header-top-left_input-search-icon"></i>
+                            </div>
+                            <div class="header-top-right_sitemap hide-on-tablet-and-mobile">
+                                <a href="#" class="header-top-right_sitemap-icon-link ">
+                                    Thông tin thêm
+                                    <i class="fa-regular fa-angle-down header-top-right_sitemap-icon"></i>
+                                </a>
+                                <table class="header-top-right_sitemap-table ">
+                                    <tbody class="header-top-right_sitemap-table-list">
+
+                                        <tr class="header-top-right_sitemap-table-row">
+                                            <td class="header-top-right_sitemap-table-row-item">
+                                                <a href="" class="header-top-right_sitemap-table-row-item-link">HUFI</a>
+                                            </td>
+                                            <td class="header-top-right_sitemap-table-row-item">
+                                                <a href="" class="header-top-right_sitemap-table-row-item-link">Lãnh đạo</a>
+                                            </td>
+                                            <td class="header-top-right_sitemap-table-row-item">
+                                                <a href="" class="header-top-right_sitemap-table-row-item-link">Khoa - Viện</a>
+                                            </td>
+                                            <td class="header-top-right_sitemap-table-row-item">
+                                                <a href="" class="header-top-right_sitemap-table-row-item-link">Phòng ban</a>
+                                            </td>
+                                        </tr>
+                                        <tr class="header-top-right_sitemap-table-row">
+                                            <td class="header-top-right_sitemap-table-row-item">
+                                                <a href="" class="header-top-right_sitemap-table-row-item-link">Trung tâm</a>
+                                            </td>
+                                            <td class="header-top-right_sitemap-table-row-item">
+                                                <a href="" class="header-top-right_sitemap-table-row-item-link">Các chuyên trang</a>
+                                            </td>
+                                            <td class="header-top-right_sitemap-table-row-item">
+                                                <a href="" class="header-top-right_sitemap-table-row-item-link">Doanh nghiệp</a>
+                                            </td>
+                                            <td class="header-top-right_sitemap-table-row-item">
+                                                <a href="" class="header-top-right_sitemap-table-row-item-link">Đoàn thể</a>
+                                            </td>
+                                        </tr>
+                                        <tr class="header-top-right_sitemap-table-row">
+                                            <td class="header-top-right_sitemap-table-row-item">
+                                                <a href="#" class="header-top-right_sitemap-table-row-item-link">
+                                                    Văn bản quy định
+                                                </a>
+                                            </td>
+                                            <td class="header-top-right_sitemap-table-row-item">
+                                                <a href="#" class="header-top-right_sitemap-table-row-item-link">
+                                                    Hỏi đáp
+                                                </a>
+                                            </td>
+                                            <td class="header-top-right_sitemap-table-row-item">
+                                                <a href="#" class="header-top-right_sitemap-table-row-item-link">
+                                                    Sitemap
+                                                </a>
+                                            </td>
+                                            <td class="header-top-right_sitemap-table-row-item">
+                                                <a href="#" class="header-top-right_sitemap-table-row-item-link">
+                                                    Liên hệ
+                                                </a>
+                                            </td>
+                                        </tr>
+                                        <tr class="header-top-right_sitemap-table-row">
+                                            <td class="header-top-right_sitemap-table-row-item">
+                                                <a href="" class="header-top-right_sitemap-table-row-item-link">Hội đồng</a>
+                                            </td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                            <div class="header-top-right_language hide-on-tablet-and-mobile ">
+                                <div class="header-top-right_language-select">
+                                    <i class="fa-duotone fa-earth-americas hide-on-tablet"></i>
+                                    Ngôn ngữ
+                                    <i class="fa-regular fa-angle-down "></i>
+                                </div>
+                                <ul class="header-top-right_language-list">
+                                    <li class="header-top-right_language-item">
+                                        <a href="" class="header-top-right_language-item-link"><img src="~/assets/img/VietNam_flag-icon.png" alt=""> Việt Nam</a>
+                                    </li>
+                                    <li class="header-top-right_language-item">
+                                        <a href="" class="header-top-right_language-item-link"><img src="~/assets/img/English_flag-icon.png" alt="">EngLish</a>
+                                    </li>
+                                </ul>
+                            </div>
+                            <div class="header-top-left_input-search-mobile hide-on-tablet hide-on-pc">
+                                <label for="" class="header-top-left_title-input">Tìm kiếm</label>
+                                <i class="fa-duotone fa-magnifying-glass header-top-left_input-search-icon-mobile"></i>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-3 col-md-4">
+                        <!-- Khi chưa đăng nhập -->
+                        @if (SV == null)
+                        {
+                        <div class="header-top-right_register_login hide-on-mobile">
+                            <a href="@Url.Action("DangKy","Home",new {ReturnUrl = Request.Url.ToString() })" class="btn_page btn-Register">Đăng ký</a>
+                            <a href="@Url.Action("DangNhap","Home",new {ReturnUrl = Request.Url.ToString() })" class="btn_page btn-login">Đăng nhập</a>
+                        </div>
+
+                        }
+                        else //Khi đã đăng nhập
+                        {
+                         <div class="header-top-right_has_login">
+                            <div class="header-top-right_has_login-name " >@(SV.Ho+" "+SV.Ten) </div>
+                            <div class="header-top-right_has_login-img element-tooltip" data-tooltip="Tài khoản">
+                                <img src="~/assets/img/User.png" alt="Ảnh người dùng">
+                                <div class="header-top-right_has_login-img-menu ">
+                                    <a href="/User/TaiKhoanCaNhan" class="has_login-img-menu-info">
+                                        <div class="has_login-img-menu-info-img">
+                                            <img src="~/assets/img/User.png" alt="Ảnh người dùng">
+                                        </div>
+                                        <div class="has_login-img-menu-info-name">@(SV.Ho+" "+SV.Ten)</div>
+                                    </a>
+                                    <div class="has_login-img-menu-setting ">
+                                        <div class="has_login-img-menu-setting-list">
+                                            <a href="/Home/DangXuat" class="has_login-img-menu-setting-list-link">
+                                                <span class="has_login-img-menu-setting-list-logo">
+                                                    <i class="fa-duotone fa-right-from-bracket"></i>
+                                                </span>
+                                                <div class="has_login-img-menu-setting-list-name">Đăng xuất </div>
+                                            </a>
+                                        </div>
+                                        <div class="has_login-img-menu-setting-list">
+                                            <a href="#" class="has_login-img-menu-setting-list-link">
+                                                <span class="has_login-img-menu-setting-list-logo">
+                                                    <i class="fa-duotone fa-bars-progress"></i>
+                                                </span>
+                                                <div class="has_login-img-menu-setting-list-name">Quản lý Phòng </div>
+                                            </a>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div> 
+                        }
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="header-search-mobile hide-on-tablet hide-on-pc">
+            <input type="text" class="header-search-mobile-input" placeholder="Nhập nội dung cần tìm">
+            <div class="header-search-mobile-close">
+                <i class="fa-duotone fa-magnifying-glass header-search-mobile-close-icon"></i>
+            </div>
+        </div>
+    </header>
+    <div class="header-top-left-tablet-mobile hide-on-pc hide-on-tablet">
+        <label for="menu-model" class="header-top-left-tablet-mobile-close">
+            <i class="fa-duotone fa-xmark header-top-left-tablet-mobile-close-icon"></i>
+        </label>
+        <div class="model-main-menu">
+            <h2 class="model-main-menu-name">Thông tin chung</h2>
+            <span class="model-main-menu-name-line"></span>
+            <ul class="model-main-menu-list">
+                <li class="model-main-menu-item">
+                    <div class="model-main-menu-item-title">
+                        <a href="#" class="model-main-menu-item-link">
+                            <i class="fa-duotone fa-circle-dot model-main-menu-item-link-icon"></i>
+                            Danh sách
+                        </a>
+                        <span class="model-main-menu-item-icon">
+                            <i class="fa-duotone fa-caret-down "></i>
+                        </span>
+                    </div>
+                    <ul class="model-main-submenu-list ">
+                        <li class="model-main-submenu-item">
+                            <a href="#" class="model-main-submenu-item-link">
+                                <i class="fa-duotone fa-turn-down-right model-main-submenu-item-link-icon"></i>
+                                Trang chủ
+                            </a>
+                        </li>
+                        <li class="model-main-submenu-item">
+                            <a href="#" class="model-main-submenu-item-link">
+                                <i class="fa-duotone fa-turn-down-right model-main-submenu-item-link-icon"></i>
+                                Trang chủ
+                            </a>
+                        </li>
+                    </ul>
+                </li>
+                <li class="model-main-menu-item">
+                    <div class="model-main-menu-item-title">
+                        <a href="#" class="model-main-menu-item-link">
+                            <i class="fa-duotone fa-circle-dot model-main-menu-item-link-icon"></i>
+                            Danh sách
+                        </a>
+                        <span class="model-main-menu-item-icon">
+                            <i class="fa-duotone fa-caret-down "></i>
+                        </span>
+                    </div>
+                    <ul class="model-main-submenu-list">
+                        <li class="model-main-submenu-item">
+                            <a href="#" class="model-main-submenu-item-link">
+                                <i class="fa-duotone fa-turn-down-right model-main-submenu-item-link-icon"></i>
+                                Trang chủ
+                            </a>
+                        </li>
+                        <li class="model-main-submenu-item">
+                            <a href="#" class="model-main-submenu-item-link">
+                                <i class="fa-duotone fa-turn-down-right model-main-submenu-item-link-icon"></i>
+                                Trang chủ
+                            </a>
+                        </li>
+                    </ul>
+                </li>
+            </ul>
+            <h2 class="model-main-menu-name">Giới thiệu</h2>
+            <span class="model-main-menu-name-line"></span>
+            <div class="model-main-menu-item-title">
+                <a href="#" class="model-main-menu-item-link">
+                    <i class="fa-duotone fa-graduation-cap model-main-menu-item-link-icon"></i>
+                    Tuyển sinh
+                </a>
+            </div>
+            <div class="model-main-menu-item-title">
+                <a href="#" class="model-main-menu-item-link">
+                    <i class="fa-duotone fa-house-laptop model-main-menu-item-link-icon"></i>
+                    Việc làm
+                </a>
+            </div>
+            <div class="model-main-menu-item-title">
+                <a href="#" class="model-main-menu-item-link">
+                    <i class="fa-duotone fa-globe model-main-menu-item-link-icon"></i>
+                    Dạy học trực tuyến
+                </a>
+            </div>
+            <ul class="model-main-menu-list">
+                <li class="model-main-menu-item">
+                    <div class="model-main-menu-item-title">
+                        <a href="#" class="model-main-menu-item-link">
+                            <i class="fa-duotone fa-circle-dot model-main-menu-item-link-icon"></i>
+                            Ngôn ngữ
+                        </a>
+                        <span class="model-main-menu-item-icon">
+                            <i class="fa-duotone fa-caret-down "></i>
+                        </span>
+                    </div>
+                    <ul class="model-main-submenu-list ">
+                        <li class="model-main-submenu-item">
+                            <a href="#" class="model-main-submenu-item-link">
+                                <i class="fa-duotone fa-turn-down-right model-main-submenu-item-link-icon"></i>
+                                Tiếng việt
+                            </a>
+                        </li>
+                        <li class="model-main-submenu-item">
+                            <a href="#" class="model-main-submenu-item-link">
+                                <i class="fa-duotone fa-turn-down-right model-main-submenu-item-link-icon"></i>
+                                EngLish
+                            </a>
+                        </li>
+                    </ul>
+                </li>
+            </ul>
+            <h2 class="model-main-menu-name hide-on-tablet">Tài khoản</h2>
+            <span class="model-main-menu-name-line hide-on-tablet"></span>
+            <!-- Nếu chưa đăng nhập -->
+            <div class="model-main-menu-btn hide-on-tablet">
+                <a href="DangNhap" class="btn btn-login-mobile">Đăng nhập</a>
+                <a href="@Url.Action("DangKy","Home",new { url = Request.Url.ToString() })" class="btn btn-register-mobile">Đăng ký</a>
+            </div>
+
+            <!-- Nếu đăng nhập rồi -->
+            <!-- <div class="model-main-menu-btn">
+                <button class="btn btn-manager-mobile"><i class="fa-duotone fa-bars-progress"></i>Quản lý phòng</button>
+            </div> -->
+        </div>
+        <div class="header-top-left-tablet-mobile-logo">
+            <img src="https://ttktx.hufi.edu.vn/app_web/ttktxsv/images/logo/logo-40-nam-thanh-lap-hufi-xanh-01.png" alt="Ảnh logo" class="header-top-left-tablet-mobile-logo-img">
+        </div>
+        <div class="header-top-left-tablet-mobile-location hide-on-tablet hide-on-pc">
+            <table>
+                <tr class="header-top-left-tablet-mobile-location-row">
+                    <td class="header-top-left-tablet-mobile-location-title">
+                        <i class="fa-duotone fa-house"></i>
+                        Đơn vị
+                    </td>
+                    <td class="header-top-left-tablet-mobile-location-des">Trung tâm Ký túc xá Sinh viên</td>
+                </tr>
+                <tr class="header-top-left-tablet-mobile-location-row">
+                    <td class="header-top-left-tablet-mobile-location-title">
+                        <i class="fa-duotone fa-location-dot"></i>
+                        Địa chỉ
+                    </td>
+                    <td class="header-top-left-tablet-mobile-location-des">102-104-106 Nguyễn Quý Anh, P. Tân Sơn Nhì, Q. Tân Phú, TP. HCM</td>
+                </tr>
+                <tr class="header-top-left-tablet-mobile-location-row">
+                    <td class="header-top-left-tablet-mobile-location-title">
+                        <i class="fa-duotone fa-phone"></i>
+                        Điện thoại
+                    </td>
+                    <td class="header-top-left-tablet-mobile-location-des">
+                        0123456789 - 0987654321
+                    </td>
+                </tr>
+                <tr class="header-top-left-tablet-mobile-location-row">
+                    <td class="header-top-left-tablet-mobile-location-title">
+                        <i class="fa-duotone fa-envelope"></i>
+                        Email
+                    </td>
+                    <td class="header-top-left-tablet-mobile-location-des">
+                        infor@hufi.edu.vn
+                    </td>
+                </tr>
+            </table>
+        </div>
+    </div>
+    @RenderBody()
+    <footer id="footer">
+        <div class="container-lg">
+            <div class="row">
+                <div class="footer-categories">
+                    <div class="row">
+                        <div class="col-lg-3 col-md-2 hide-on-tablet-and-mobile">
+                            <div class="footer-categoires-menu">
+                                <h2 class="footer-categoires-list-title">Hỗ trợ</h2>
+                                <ul class="footer-categoires-list">
+                                    <li class="footer-categoires-item">
+                                        <a href="#" class="footer-categoires-item-link">Sitemap</a>
+                                    </li>
+                                    <li class="footer-categoires-item">
+                                        <a href="#" class="footer-categoires-item-link">Liên hệ</a>
+                                    </li>
+                                    <li class="footer-categoires-item">
+                                        <a href="#" class="footer-categoires-item-link">Hỏi đáp</a>
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+                        <div class="col-lg-6 col-md-7 hide-on-mobile">
+                            <div class="footer-categoires-menu">
+                                <ul class="footer-categoires-list">
+                                    <li class="footer-categoires-item">
+                                        <span class="footer-categoires-item-logo">
+                                            <i class="fa-duotone fa-house"></i> Đơn vị
+                                        </span>
+                                        <h4 class="footer-categoires-item-detail">
+                                            Trung tâm Ký túc xá Sinh viên
+                                        </h4>
+                                    </li>
+                                    <li class="footer-categoires-item">
+                                        <span class="footer-categoires-item-logo">
+                                            <i class="fa-duotone fa-location-dot"></i> Địa chỉ
+                                        </span>
+                                        <h4 class="footer-categoires-item-detail">
+                                            102-104-106 Nguyễn Quý Anh, P. Tân Sơn Nhì, Q. Tân Phú, TP. HCM
+                                        </h4>
+                                    </li>
+                                    <li class="footer-categoires-item">
+                                        <span class="footer-categoires-item-logo">
+                                            <i class="fa-duotone fa-phone"></i> Điện thoại
+                                        </span>
+                                        <h4 class="footer-categoires-item-detail">
+                                            0123456789 - 0987654321
+                                        </h4>
+                                    </li>
+                                    <li class="footer-categoires-item">
+                                        <span class="footer-categoires-item-logo">
+                                            <i class="fa-duotone fa-envelope"></i> Email
+                                        </span>
+                                        <h4 class="footer-categoires-item-detail">
+                                            infor@hufi.edu.vn
+                                        </h4>
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+                        <div class="col-lg-3 col-md-4">
+                            <div class="footer-categoires-menu">
+                                <a href="#" class="footer-categoires-logo">
+                                    <img src="https://ttktx.hufi.edu.vn/app_web/ttktxsv/images/logo/logo-40-nam-thanh-lap-hufi-xanh-01.png" alt="" class="footer-categoires-logo-img">
+                                </a>
+                                <ul class="footer-categoires-socials-list">
+                                    <li class="footer-categoires-socials-item">
+                                        <a href="#" class="footer-categoires-socials-item-link"><i class="fa-brands fa-facebook"></i></a>
+                                    </li>
+                                    <li class="footer-categoires-socials-item">
+                                        <a href="#" class="footer-categoires-socials-item-link"><i class="fa-brands fa-instagram"></i></a>
+                                    </li>
+                                    <li class="footer-categoires-socials-item">
+                                        <a href="#" class="footer-categoires-socials-item-link"><i class="fa-brands fa-tiktok"></i></a>
+                                    </li>
+                                    <li class="footer-categoires-socials-item">
+                                        <a href="#" class="footer-categoires-socials-item-link"><i class="fa-brands fa-youtube"></i></a>
+                                    </li>
+                                </ul>
+                                <p class="footer-categoires-socials-coppyright">
+                                    &copyCoppy right 2023 Hufi.edu.vn All Rights Reserved
+                                </p>
+                                <div class="footer-categoires-socials-teams">
+                                    <a href="#" class="footer-categoires-socials-teams-link">Terms Of Use</a>
+                                    <a href="#" class="footer-categoires-socials-teams-link">Privacy Policy</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </footer>
+    <div class="scroll_up hide-on-mobile">
+        <a href="#" class="scroll_up-logo">
+            <i class="fa-duotone fa-angles-up"></i>
+        </a>
+    </div>
+    <!-- Tạo một Slider -->
+    <script src="~/assets/lib/OwlCarousel2-2.3.4/docs_src/assets/vendors/jquery.min.js"></script>
+    <script src="~/assets/lib/OwlCarousel2-2.3.4/dist/owl.carousel.min.js"></script>
+    <script type="text/javascript" src="~/assets/lib/slick-1.8.1/slick/slick.min.js"></script>
+    <script src="~/assets/js/main.js"></script>
+</body>
+</html>

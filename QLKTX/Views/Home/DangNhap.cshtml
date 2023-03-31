@@ -1,0 +1,87 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" href="https://sinhvien.hufi.edu.vn/Content/AConfig/images/favicon.png">
+    <link rel="stylesheet" href="https://site-assets.fontawesome.com/releases/v6.1.2/css/all.css?fbclid=IwAR2Lefv1ZTLJsKEsnl4HGMf5XRZuPqx5yOFnFaOFbVgCiCeU87S0up6ptKU">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-GLhlTQ8iRABdZLl6O3oVMWSktQOp6b7In1Zl3/Jr59b6EGGoI1aFkw7cmDA6j6gD" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js" integrity="sha384-w76AqPfDkMBDXo30jS1Sgez6pr3x5MlQ1ZAGC+nuZB+EYdgRZgiwxhTBTkF7CXvN" crossorigin="anonymous"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Lora:wght@500&display=swap" rel="stylesheet">
+    <!--  -->
+    <link rel="stylesheet" type="text/css" href="~/assets/lib/slick-1.8.1/slick/slick.css" />
+    <link rel="stylesheet" type="text/css" href="~/assets/lib/slick-1.8.1/slick/slick-theme.css" />
+
+    <link rel="stylesheet" type="text/css" href="~/slick/slick-theme.css" />
+    <link rel="stylesheet" href="~/assets/css/reset.css">
+    <link rel="stylesheet" href="~/assets/css/root.css">
+    <link rel="stylesheet" href="~/assets/css/main.css">
+    <link rel="stylesheet" href="~/assets/css/responsive.css">
+    <title>Đăng nhập</title>
+    <style>
+        body {
+            position: relative;
+            height: 100vh;
+            width: 100vw;
+        }
+    </style>
+</head>
+<body>
+    <div class="baner-login-page" style="background-image: url(/assets/img/banner-logn-res.jpg)">
+    </div>
+    <div class="baner-contact-login-regis-page" >
+        <div class="container-lg">
+            <div class="row">
+                <form action="" class="baner-contact-form" method="post">
+                    <div class="row">
+                        <h2 class="baner-contact-form-title">Đăng nhập</h2>
+                    </div>
+                    <div class="row">
+                        <div class="baner-contact-form-text-field">
+                            <label for="username" class="baner-contact-form-label">Mã sinh viên</label>
+                            <input autocomplete="off" type="text" name="maSV" id="username"  required="required" placeholder="Nhập mã sinh viên" class="baner-contact-form-input" />
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="baner-contact-form-text-field">
+                            <label for="password" class="baner-contact-form-label">Mật khẩu </label>
+                            <input autocomplete="off" type="password"  required="required" name="matKhau" id="password" placeholder="Nhập mật khẩu" class="baner-contact-form-input" />
+                        </div>
+                    </div>
+                    <div class="row">
+                        <span style="margin-top:3px; font-size:13px;color:crimson">@ViewBag.loiDN</span>
+                    </div>
+                    <div class="row">
+                        <div class="baner-contact-form-checkbox">
+                            <input autocomplete="off" type="checkbox" name="renemberme" id="renemberme" />
+                            <label for="renemberme">Ghi nhớ cho lần đăng nhập sau </label>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="baner-contact-form-small-title">
+                            <a href="#" class="baner-contact-form-small-title-link">Quên mật khẩu ?</a>
+                        </div>
+                    </div>
+                    <span class="baner-contact-form-line"></span>
+                    <div class="row">
+                        <div class="baner-contact-form-button">
+                            <button class="baner-contact-form-button-submit btn_page" type="submit">
+                                Đăng nhập
+                            </button>
+                            <a href="index" class="baner-contact-form-button-cancel btn_page">Quay lại</a>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="baner-contact-form-small-title">
+                            Bạn chưa có tài khoản <a href="./register.html" class="baner-contact-form-small-title-link">Đăng ký ngay</a>
+                        </div>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

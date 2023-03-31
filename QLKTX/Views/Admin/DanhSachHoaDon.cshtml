@@ -1,0 +1,93 @@
+﻿@model IEnumerable<QLKTX.Models.HoaDon>
+
+@{
+    ViewBag.Title = "DanhSachHoaDon";
+    Layout = "~/Views/Admin/LayoutAdmin.cshtml";
+}
+
+<link rel="stylesheet" href="~/assets/css/hopThoai.css" />
+<div>
+    <input type="checkbox" checked id="showAllHD" />
+    <label for="showAllHD">Tất cả</label>
+    <div id="showloc" hidden>
+        <div>
+            <span>Chọn khu:</span>
+            <select name="khu" id="khu">
+            </select>
+            <span>Chọn tầng:</span>
+            <select name="tang" id="tang">
+                <option value=""> Chọn </option>
+            </select>
+            <span>Chọn phòng:</span>
+            <select name="phong" id="phong">
+                <option value=""> Chọn </option>
+            </select>
+        </div>
+        <div>
+            <input id="thangHienTai" type="checkbox" checked name="thangHienTai" />
+            <label for="thangHienTai">Tháng hiện tại</label>
+            <select disabled name="nam" id="nam">
+                @for (int nam = DateTime.Now.Year; nam >= 2020; nam--)
+                {
+                    <option value="@nam">@nam</option>
+                }
+            </select>
+            <select disabled name="thang" id="thang">
+                <option selected value="0">Chọn</option>
+            </select>            
+            <b>Trạng thái: </b>
+            <input type="checkbox" checked class="loctt" id="daThanhToan" name="daThanhToan" />
+            <label for="daThanhToan">Đã thanh toán</label>
+            <input type="checkbox" checked class="loctt" id="chuaThanhToan" name="chuaThanhToan" />
+            <label for="chuaThanhToan">Chưa thanh toán</label>            
+        </div>
+    </div>
+    <button id="btn_loc">Lộc</button>
+</div>
+<table class="table">
+    <tr>
+        <th>
+            Mã hóa đơn
+        </th>
+        <th>
+            Mã phòng
+        </th>
+        <th>
+            Ngày tạo
+        </th>
+        <th>
+            Thành tiền
+        </th>
+        <th>
+            Người tạo
+        </th>
+        <th>
+            Trạng thái
+        </th>
+        <th></th>
+    </tr>
+    <tbody id="showHoaDon">
+    </tbody>
+
+</table>
+<div class="modall an">
+    @using (Html.BeginForm("ThanhToanHoaDon", "Admin", new { url = Request.Url.ToString() }))
+    {
+        <div class="modal__innerr">
+            <div class="modal__headerr">
+                <p>Bạn muốn thanh toán hóa đơn</p>
+                <i class="fas fa-times"></i>
+            </div>
+            <div class="modal__bodyy">
+                <p>Xác nhận thanh toán hóa đơn "<span id="idValue"></span>"?</p>
+            </div>
+            <div class="modal__footerr">
+                <a class="close btn btn-warning">Hủy bỏ</a>
+                <button type="submit" name="maHoaDon" id="subvalue" class="btn btn-danger">Xác nhận</button>
+            </div>
+        </div>
+    }
+</div>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js" integrity="sha512-894YE6QWD5I59HgZOGReFYm4dnWc1Qt5NtvYSaNcOP+u1T9qYdvdihz0PPSiiqn/+/3e7Jo4EaG7TubfWGUrMQ==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/axios/0.26.1/axios.min.js" integrity="sha512-bPh3uwgU5qEMipS/VOmRqynnMXGGSRv+72H/N260MQeXZIK4PG48401Bsby9Nq5P5fz7hy5UGNmC/W1Z51h2GQ==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+<script src="~/assets/js/XuLyLocHoaDon.js"></script>

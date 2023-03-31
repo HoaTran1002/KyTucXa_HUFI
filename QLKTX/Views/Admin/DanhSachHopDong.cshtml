@@ -1,0 +1,110 @@
+﻿@model IEnumerable<QLKTX.Models.HopDong>
+
+@{
+    ViewBag.Title = "Danh sách hợp đồng";
+    Layout = "~/Views/Admin/LayoutAdmin.cshtml";
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>DanhSachHopDong</title>
+    <link rel="stylesheet" href="~/assets/css/hopThoai.css" />
+</head>
+<body>
+    <div>
+        <span>Lọc</span>
+        <form method="post">
+            <input type="checkbox" name="showAll" id="loc0" class="showAll" value="All" /> <label for="loc0">Tất cả </label>
+            <input type="checkbox" name="loc" id="loc1" class="loc" value="Chưa hiệu lực"/> <label for="loc1">Chưa hiệu lực </label>
+            <input type="checkbox" name="loc" id="loc2" class="loc" value="Có hiệu lực" /> <label for="loc2">Có hiệu lực </label>
+            <input type="checkbox" name="loc" id="loc3" class="loc" value="Xin gia hạn" /> <label for="loc3">Xin gia hạn </label>
+            <input type="checkbox" name="loc" id="loc4" class="loc" value="Hết hiệu lực" /> <label for="loc4">Hết hiệu lực </label>
+            <button type="submit">Lộc</button>
+        </form>
+    </div>
+    <table class="table">
+        <tr>
+            <th>
+                Mã hợp đồng
+            </th>
+            <th>
+                Mã sinh viên
+            </th>
+            <th>
+                Người tạo
+            </th>
+            <th>
+                Ngày tạo
+            </th>
+            <th>
+                Ngày bắt đầu
+            </th>
+            <th>
+                Ngày kết thúc
+            </th>
+            <th>
+                Trạng thái
+            </th>
+            <th></th>
+        </tr>
+
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td>
+                    @Html.DisplayFor(modelItem => item.MaHopDong)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.MaSV)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.NguoiTao)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.NgayTao)
+                </td>
+                <td>
+                    @item.NgayBatDau.ToString("dd/MM/yyyy")
+                </td>
+                <td>
+                    @item.NgayKetThuc.ToString("dd/MM/yyyy")
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.TrangThai)
+                </td>
+                <td>
+                    <a href="@Url.Action("ChiTietHopDong", new {maHD = item.MaHopDong})">Chi tiết</a>
+                    @if (item.TrangThai == "Chưa hiệu lực" || item.TrangThai == "Xin gia hạn")
+                    {
+                    <button value="@item.MaHopDong" class="open_btn btn_xacnhan">Xác nhận</button>
+                    }
+                </td>
+            </tr>
+        }
+    </table>
+    <div class="modall an">
+        @using (Html.BeginForm("ThanhToanHopDong","Admin",new {url = Request.Url.ToString() }))
+        {
+        <div class="modal__innerr">
+            <div class="modal__headerr">
+                <p>Xác nhận thanh toán hợp đồng "<span id="idValue"></span>"?</p>
+                <i class="fas fa-times"></i>
+            </div>
+                <div class="modal__bodyy">                    
+                    <span>Khi bạn xác nhận đồng nghĩa với việc hợp đồng này sẽ có hiệu lực</span>
+                </div>
+                <div class="modal__footerr">
+                    <a class="close btn btn-warning">Hủy bỏ</a>
+                    <button type="submit" name="maDH" id="subvalue" class="btn btn-danger">Xác nhận</button>
+                </div>            
+        </div>
+        }
+    </div>
+</body>
+</html>
+<script src="~/assets/js/HopThoai.js"></script>
+<script src="~/assets/js/hopXacNhan.js"></script>
+<script src="~/assets/js/loc.js"></script>

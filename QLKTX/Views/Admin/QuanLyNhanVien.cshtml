@@ -1,0 +1,53 @@
+﻿@model IEnumerable<QLKTX.Models.NhanVien>
+
+@{
+    ViewBag.Title = "QuanLyNhanVien";
+    Layout = "~/Views/Admin/LayoutAdmin.cshtml";
+}
+<center><h4>Danh sách các tài khoản</h4></center>
+<table class="table">
+    <tr>
+        <th>
+            Tên đăng nhập
+        </th>
+        <th>
+            Họ
+        </th>
+        <th>
+            Tên
+        </th>
+        <th>
+            Số điện thoại
+        </th>
+        <th>
+            Chức vụ
+        </th>
+        <th>Mật khẩu</th>
+        <th></th>
+    </tr>
+@foreach (var item in Model) {
+<tr>
+    <td>
+        @Html.DisplayFor(modelItem => item.TenDangNhap)
+    </td>
+    <td>
+        @Html.DisplayFor(modelItem => item.Ho)
+    </td>
+    <td>
+        @Html.DisplayFor(modelItem => item.Ten)
+    </td>
+    <td>
+        @Html.DisplayFor(modelItem => item.SoDienThoai)
+    </td>
+    <td>
+        @Html.DisplayFor(modelItem => item.ChucVu)
+    </td>
+    <td>
+        @Html.DisplayFor(modelItem => item.MatKhau)
+    </td>
+    <td>
+        <a href="@Url.Action("DatLaiMatKhauMatDinh")" class="btn btn-primary">Reset</a>
+    </td>
+</tr>
+}
+</table>

@@ -1,0 +1,248 @@
+﻿
+@{
+    ViewBag.Title = "TrangChu";
+    Layout = "~/Views/Shared/LayoutUser.cshtml";
+}
+
+<div class="container-fluid">
+    <div class="row">
+        <div class="col-lg-6 col-md-12 col-12">
+            <div class="room-info">
+                <a href="" class="room-info-content-none-room">
+                    <i class="fa-regular fa-plus"></i>
+                    <p>Đăng ký phòng</p>
+                </a>
+                <!-- <a href="" class="room-info-content-have-room"></a> -->
+                <div class="room-info-content-room-detail">
+                    <ul class="info-room-list">
+                        <li class="info-room-item">
+                            <span class="info-room-item-title">Lầu</span> : <span class="info-room-item-name">Chưa đăng ký</span>
+                        </li>
+                        <li class="info-room-item">
+                            <span class="info-room-item-title">Phòng</span> : <span class="info-room-item-name">Chưa đăng ký</span>
+                        </li>
+                        <li class="info-room-item">
+                            <span class="info-room-item-title">Số sinh viên</span> : <span class="info-room-item-name">Chưa đăng ký</span>
+                        </li>
+                        <li class="info-room-item">
+                            <span class="info-room-item-title">Loại</span> : <span class="info-room-item-name">Chưa đăng ký</span>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+        <div class="col-lg-3 col-md-6 col-6">
+            <div class="service-info">
+                <h2 class="service-info-name">
+                    <i class="fa-regular fa-seedling"></i>
+                    Dịch vụ
+                </h2>
+                <div id="service-signin-contact">
+                    <div class="service-item">
+                        <i class="fa-regular fa-bicycle"></i>
+                        <h2 class="service-item-name">Giữ xe</h2>
+                    </div>
+                    <div class="service-item">
+                        <i class="fa-solid fa-shield-halved"></i>
+                        <h2 class="service-item-name">Bảo quản vật tư</h2>
+                    </div>
+                    <div class="service-item">
+                        <i class="fa-solid fa-hand-sparkles"></i>
+                        <h2 class="service-item-name">Vệ sinh phòng</h2>
+                    </div>
+                </div>
+                <a href="#" class="service-info-link">Xem thêm <i class="fa-regular fa-arrow-right"></i></a>
+            </div>
+        </div>
+        <div class="col-lg-3 col-md-6 col-6">
+            <div class="service-info">
+                <h2 class="service-info-name">
+                    <i class="fa-sharp fa-solid fa-pen"></i>
+                    Đăng ký
+                </h2>
+                <div id="service-singup-service">
+                    <div class="service-item">
+                        <i class="fa-solid fa-building"></i>
+                        <h2 class="service-item-name">Phòng</h2>
+                    </div>
+                    <div class="service-item">
+                        <i class="fa-solid fa-ticket"></i>
+                        <h2 class="service-item-name">Phí gửi xe</h2>
+                    </div>
+                    <div class="service-item">
+                        <i class="fa-solid fa-id-card"></i>
+                        <h2 class="service-item-name">Thẻ thành viên</h2>
+                    </div>
+                </div>
+                <a href="#" class="service-info-link">Xem thêm <i class="fa-regular fa-arrow-right"></i></a>
+            </div>
+        </div>
+    </div>
+    <div class="main-contract">
+        <div class="row">
+            <div class="col-lg-4 col-md-12">
+                <div class="main-contract-item">
+                    <div class="main-contract-item-icon">
+                        <i class="fa-thin fa-envelopes"></i>
+                    </div>
+                    <h1 class="main-contract-item-title">Hộp thư sinh viên</h1>
+                    <p class="main-contract-item-des">
+                        Phản hồi ý kiến của riêng bạn về ban quản lý ký túc xá
+                    </p>
+                    <a href="#" class="main-contract-item-link">Đi đến hộp thư <i class="fa-light fa-chevrons-right"></i></a>
+                </div>
+            </div>
+            <div class="col-lg-4 col-md-12">
+                <div class="main-contract-item">
+                    <div class="main-contract-item-icon">
+                        <i class="fa-thin fa-money-bill"></i>
+                    </div>
+                    <h1 class="main-contract-item-title">Hóa đơn sử dụng</h1>
+                    <p class="main-contract-item-des">
+                        Lịch sử hóa đơn, đơn hàng bạn đã mua
+                    </p>
+                    <a href="#" class="main-contract-item-link">Đi đến lịch sử hóa đơn <i class="fa-light fa-chevrons-right"></i></a>
+                </div>
+            </div>
+            <div class="col-lg-4 col-md-12">
+                <div class="main-contract-item">
+                    <div class="main-contract-item-icon">
+                        <i class="fa-thin fa-mug-saucer"></i>
+                    </div>
+                    <h1 class="main-contract-item-title">Thông báo hư hỏng vật tư</h1>
+                    <p class="main-contract-item-des">
+                        Thông báo cho ban quản lý vật tư phòng bị hỏng, hoặc mất
+                    </p>
+                    <a href="#" class="main-contract-item-link">Đi đến trang thông báo <i class="fa-light fa-chevrons-right"></i></a>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-lg-9 col-md-12 hide-in-mobile">
+            <div class="main-info-users">
+                <h1 class="main-info-users-title">Danh sách sinh viên phòng <span class="name-room">405</span></h1>
+                <table class="main-info-users-table">
+                    <thead>
+                    <td>STT</td>
+                    <td>Tên sinh viên</td>
+                    <td>Mã sinh viên</td>
+                    <td>Lớp</td>
+                    <td>tình trạng</td>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>1</td>
+                            <td>Huỳnh Đăng khoa</td>
+                            <td>2001207266</td>
+                            <td>11DHTH11</td>
+                            <td>Đang ở</td>
+                        </tr>
+                        <tr>
+                            <td>1</td>
+                            <td>Huỳnh Đăng khoa</td>
+                            <td>2001207266</td>
+                            <td>11DHTH11</td>
+                            <td>Đang ở</td>
+                        </tr>
+                        <tr>
+                            <td>1</td>
+                            <td>Huỳnh Đăng khoa</td>
+                            <td>2001207266</td>
+                            <td>11DHTH11</td>
+                            <td>Đang ở</td>
+                        </tr>
+                        <tr>
+                            <td>1</td>
+                            <td>Huỳnh Đăng khoa</td>
+                            <td>2001207266</td>
+                            <td>11DHTH11</td>
+                            <td>Đang ở</td>
+                        </tr>
+                        <tr>
+                            <td>1</td>
+                            <td>Huỳnh Đăng khoa</td>
+                            <td>2001207266</td>
+                            <td>11DHTH11</td>
+                            <td>Đang ở</td>
+                        </tr>
+                        <tr>
+                            <td>1</td>
+                            <td>Huỳnh Đăng khoa</td>
+                            <td>2001207266</td>
+                            <td>11DHTH11</td>
+                            <td>Đang ở</td>
+                        </tr>
+                        <tr>
+                            <td>1</td>
+                            <td>Huỳnh Đăng khoa</td>
+                            <td>2001207266</td>
+                            <td>11DHTH11</td>
+                            <td>Đang ở</td>
+                        </tr>
+                        <tr>
+                            <td>1</td>
+                            <td>Huỳnh Đăng khoa</td>
+                            <td>2001207266</td>
+                            <td>11DHTH11</td>
+                            <td>Đang ở</td>
+                        </tr>
+                        <tr>
+                            <td>1</td>
+                            <td>Huỳnh Đăng khoa</td>
+                            <td>2001207266</td>
+                            <td>11DHTH11</td>
+                            <td>Đang ở</td>
+                        </tr>
+                        <tr>
+                            <td>1</td>
+                            <td>Huỳnh Đăng khoa</td>
+                            <td>2001207266</td>
+                            <td>11DHTH11</td>
+                            <td>Đang ở</td>
+                        </tr>
+                    </tbody>
+                    <tfoot>
+                    <td>STT</td>
+                    <td>Tên sinh viên</td>
+                    <td>Mã sinh viên</td>
+                    <td>Lớp</td>
+                    <td>tình trạng</td>
+                    </tfoot>
+                </table>
+            </div>
+        </div>
+        <div class="col-lg-3 col-md-12">
+            <div class="row">
+                <div class="col-lg-12 col-md-6">
+                    <div class="main-info-violate">
+                        <div class="main-info-violate-box">
+                            <div class="main-info-violate-box-icon">
+                                <i class="fa-solid fa-circle-minus"></i>
+                            </div>
+                            <h3 class="main-info-violate-box-title">Lỗi vi phạm</h3>
+                        </div>
+                        <div class="main-info-violate-quantity">
+                            0
+                        </div>
+                        <h3 class="main-info-violate-des">Vi phạm</h3>
+                    </div>
+                </div>
+                <div class="col-lg-12 col-md-6">
+                    <div class="main-info-warning">
+                        <div class="main-info-warning-box">
+                            <div class="main-info-warning-box-icon">
+                                <i class="fa-solid fa-triangle-exclamation"></i>
+                            </div>
+                            <h3 class="main-info-warning-box-title">Lỗi cảnh cáo</h3>
+                        </div>
+                        <div class="main-info-warning-quantity">
+                            2
+                        </div>
+                        <h3 class="main-info-warning-des">cảnh cáo</h3>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

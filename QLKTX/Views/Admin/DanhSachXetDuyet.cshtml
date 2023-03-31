@@ -1,0 +1,51 @@
+﻿@model IEnumerable<QLKTX.Models.DangKyNoiTru>
+
+@{
+    ViewBag.Title = "TrangChu";
+    Layout = "~/Views/Admin/LayoutAdmin.cshtml";
+}
+<!DOCTYPE html>
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>DanhSachXetDuyet</title>
+</head>
+<body>
+    <button>Xét duyệt hàng loạt</button>
+    <table class="table">
+        <tr>
+            <td></td>
+            <th>
+                Mã sinh viên
+            </th>
+            <th>
+                Ngày gửi
+            </th>
+            <th>                
+            </th>
+            <th></th>
+        </tr>    
+    @foreach (var item in Model) {
+        <tr>
+            <td>
+                <input type="checkbox" name="@("chk"+item.MaSV)" />
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.MaSV)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.NgayGui)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.GhiChu)
+            </td>
+            <td>
+                <a class="btn btn-info" href="@Url.Action("XemThongTinXetDuyet",new {maSV = item.MaSV})">Chi tiết</a> 
+                <a class="btn btn-primary" href="@Url.Action("PhanHoiXetDuyet",new {maSV = item.MaSV, trangThai = "Đã xét duyệt"})">Duyệt</a> 
+                <button class="btn btn-warning"  id="huyBo" value="@item.MaSV">Hủy bỏ</button>
+            </td>
+        </tr>
+    }   
+    </table>
+</body>
+</html>

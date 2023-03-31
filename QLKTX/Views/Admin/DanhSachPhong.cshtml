@@ -1,0 +1,43 @@
+﻿@model IEnumerable<QLKTX.Models.Phong>
+@{
+    Layout = null;
+    Layout = "~/Views/Admin/LayoutAdmin.cshtml";
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>Danh sách phòng</title>
+</head>
+<body>
+    <div>
+        <table class="table" style="text-align:center">
+            <tr>
+                <th>Khu</th>
+                <th>Tầng</th>
+                <th>Mã Phòng</th>
+                <th>Tên phòng</th>
+                <th>Số lượng đang ở</th>
+                <th>Trưởng phòng</th>
+                <th>Đang sửa chửa</th>
+                <th></th>
+            </tr>
+            @foreach (var item in Model)
+            {
+        <tr>
+            <td>@item.Tang.Khu.Ten</td>
+            <td>@item.Tang.Ten</td>
+            <td>@item.Ma</td>
+            <td>@item.Ten</td>
+            <td>@(10 - item.SoLuongTrong)</td>
+            <td>@item.TruongPhong</td>
+            <td>@Html.DisplayFor(modelItem => item.DangSuaChua)</td>           
+            <td><a href="@Url.Action("XemThongTinPhong",new {maPhong = item.Ma})">Chi tiết</a></td>
+        </tr>
+            }
+        </table>
+    </div>
+</body>
+</html>

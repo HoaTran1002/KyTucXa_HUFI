@@ -1,0 +1,113 @@
+﻿@model QLKTX.Models.SinhVien
+
+@{
+    ViewBag.Title = "XemThongTin";
+    Layout = "~/Views/Admin/LayoutAdmin.cshtml";
+}
+
+<h2>XemThongTin</h2>
+<link rel="stylesheet" href="~/assets/css/hopThoai.css" />
+<body>
+    <div>
+        <h4>Thông tin sinh viên</h4>
+        <p>Ngày gửi: @Model.DangKyNoiTru.NgayGui</p>
+        <hr />
+        <img src="#" alt="ảnh" />
+        <dl class="dl-horizontal">
+            <dt>
+                Mã sinh viên
+            </dt>
+
+            <dd>
+                @Html.DisplayFor(model => model.MaSV)
+            </dd>
+
+            <dt>
+                Họ vè tên
+            </dt>
+
+            <dd>
+                @(Model.Ho+ " " +Model.Ten)
+            </dd>
+
+            <dt>
+                Giới tính:
+            </dt>
+
+            <dd>
+                @Model.GioiTinh
+            </dd>
+
+            <dt>
+                Ngày sinh
+            </dt>
+
+            <dd>
+                @Html.DisplayFor(model => model.NgaySinh)
+            </dd>
+
+            <dt>
+                Quê quán
+            </dt>
+
+            <dd>
+                @Html.DisplayFor(model => model.QueQuan)
+            </dd>
+
+            <dt>
+                CCCD/CMND
+            </dt>
+
+            <dd>
+                @Html.DisplayFor(model => model.SoCanCuoc)
+            </dd>
+
+            <dt>
+                Số điện thoại
+            </dt>
+
+            <dd>
+                @Html.DisplayFor(model => model.SoDienThoai)
+            </dd>
+
+            <dt>
+                Đang học tại lớp
+            </dt>
+
+            <dd>
+                @Html.DisplayFor(model => model.Lop)
+            </dd>
+        </dl>
+    </div>
+    <a class="btn btn-primary" href="@Url.Action("PhanHoiXetDuyet",new {maSV = Model.MaSV, trangThai = "Đã xét duyệt"})">Phê duyệt</a>
+    <button class="open_btn btn btn-danger">Hủy bỏ</button>
+    <div class="modall an">
+        <div class="modal__innerr">
+            <div class="modal__headerr">
+                <p>Bạn muốn hủy bó xét duyệt này? </p>
+                <i class="fas fa-times"></i>
+            </div>
+            @using (Html.BeginForm("PhanHoiXetDuyet", "Admin", new {maSV = Model.MaSV, trangThai = "Bị hủy" }))
+            {
+        <div class="modal__bodyy">
+            <span>Lý do hủy:</span><br />
+            <input type="radio" name="ghiChu" class="rdo_lydo" value="Đã hết chổ trống" id="mau1" checked />
+            <label for="mau1">Phòng này đã hết chổ trống, hãy chọn phòng khác</label><br />
+            <input type="radio" name="ghiChu" class="rdo_lydo" value="Thông tin cá nhân không hợp lệ" id="mau2" />
+            <label for="mau2">Thông tin cá nhân không hợp lệ</label><br />
+            <input type="radio" name="ghiChu" class="rdo_lydo" value="Ký túc xá đã hết chổ trống" id="mau3" />
+            <label for="mau3">Ký túc xá đã hết chổ trống</label><br />
+            <input type="radio" name="ghiChu" value="-1" id="khac" />
+            <label for="khac">Khác</label>
+            <textarea id="lyDoKhac" disabled placeholder="Nhập lý do khác"></textarea>
+        </div>
+            <div class="modal__footerr">
+                <a class="close btn btn-warning">Hủy bỏ</a>
+                <button type="submit" class="btn btn-danger">Xác nhận hủy</button>
+            </div>
+            }
+        </div>
+    </div>
+</body>
+<script src="~/assets/js/HopThoai.js"></script>
+<script src="~/assets/js/HopThoaiCheck.js"></script>

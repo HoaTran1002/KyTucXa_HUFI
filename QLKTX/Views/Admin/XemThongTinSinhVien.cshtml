@@ -1,0 +1,87 @@
+﻿@model QLKTX.Models.SinhVien
+
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>XemThongTin</title>
+</head>
+<body>
+    <div>
+        <h4>SinhVien</h4>
+        <hr />
+        <dl class="dl-horizontal">
+            <dt>
+                Mã số sinh viên:
+            </dt>    
+            <dd>
+                @Html.DisplayFor(model => model.MaSV)
+            </dd>
+    
+            <dt>
+               Họ và tên: @Model.Ho @Model.Ten
+            </dt>        
+            <dt>
+                @Html.DisplayNameFor(model => model.AnhDaiDien)
+            </dt>
+    
+            <dd>
+                @Html.DisplayFor(model => model.AnhDaiDien)
+            </dd>
+    
+            <dt>
+                Phòng: @Model.Phong.Ten
+            </dt>
+            <dt>
+                Giới tính: @Model.GioiTinh
+            </dt>
+    
+            <dt>
+                Ngày sinh: @Model.NgaySinh
+            </dt>    
+    
+            <dt>
+                Quê quán: @Model.QueQuan
+            </dt>    
+            <dt>
+                @Html.DisplayNameFor(model => model.SoCanCuoc)
+            </dt>
+    
+            <dd>
+                @Html.DisplayFor(model => model.SoCanCuoc)
+            </dd>
+    
+            <dt>
+                @Html.DisplayNameFor(model => model.SoDienThoai)
+            </dt>
+    
+            <dd>
+                @Html.DisplayFor(model => model.SoDienThoai)
+            </dd>
+    
+            <dt>
+                @Html.DisplayNameFor(model => model.Lop)
+            </dt>    
+            <dd>
+                @Html.DisplayFor(model => model.Lop)
+            </dd>   
+            <dt>
+                @Html.DisplayNameFor(model => model.TrangThai)
+            </dt>
+    
+            <dd>
+                @Html.DisplayFor(model => model.TrangThai)
+            </dd>
+        </dl>
+    </div>
+    <p>
+        @Html.ActionLink("Edit", "Edit", new { /* id = Model.PrimaryKey */ }) |
+        @Html.ActionLink("Back to List", "Index")
+    </p>
+</body>
+</html>

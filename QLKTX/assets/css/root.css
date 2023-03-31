@@ -1,0 +1,73 @@
+:root{
+    --white-color: #fff;
+    --black-color:#000;
+    --gray-color:#F5F5F5;
+    --font-color-primary:#04549F;
+    --font-color-primary-bland:#2b67a0;
+    --font-color-gray:rgb(144, 144, 144);
+    --font-blur-color:#e7f7ff;
+    --header-height: 55px;
+    --font-color-yellow:#ffdd59;
+    --font-color-red:#d63031;
+}
+html{ 
+    font-size: 62.5%;
+    box-sizing: border-box;
+}
+.btn_page{
+    display: inline-block;
+    height: 40px;
+    display: flex;
+    align-items: center;
+    font-weight: bold;
+    margin: 0 5px;
+    border: 2px solid transparent;
+    padding: 0 15px;
+    border-radius: 4px;
+}
+@keyframes animation{
+    0%, 20%, 50%, 70%,90%, 100% {
+       transform: translateY(0);
+     }
+     40% {
+       transform: translateY(-10px);
+     }
+     60% {
+       transform: translateY(-5px);
+     }
+     80%{
+      transform: translateY(-3px);
+     }
+ }
+ @keyframes animation_short{
+  0%, 20%, 50%, 70%,90%, 100% {
+     transform: translateY(0);
+   }
+   40% {
+     transform: translateY(-5px);
+   }
+   60% {
+     transform: translateY(-3px);
+   }
+   80%{
+    transform: translateY(-2px);
+   }
+}
+
+@keyframes fadein{
+  from{
+      transform: translateX(-100px);
+  }
+  to{
+      transform: translateX(0);
+  }
+}
+@keyframes fadeinto{
+  from{
+      opacity: 0;
+  }
+  to{
+      opacity: 1;
+  }
+}
+/* modal */

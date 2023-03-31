@@ -1,0 +1,178 @@
+
+@media screen and (min-width:1025px) {
+    .hide-on-pc{
+        display: none;
+    }
+} 
+
+
+@media screen and (min-width:600px) and (max-width: 1024px ) {
+    .hide-on-tablet{
+        display: none;
+    }
+    
+    .banner{
+        background-color: var(--white-color);
+        padding: 30px 0 70px;
+        margin: 0;
+    }
+    .banner-tablet-mobile{
+        display: block;
+        padding-top: 400px;
+    }
+ }
+
+ @media screen and (max-width: 1024px ) {
+    .hide-on-tablet-and-mobile{
+        display: none;
+    }
+    .body_categories-item-link{
+        font-size: 1.4rem;
+    }
+    .body_categories-item-icon{
+        font-size: 1.6rem;
+        padding: 0 5;
+    }
+    .body_categories-notification{
+        padding-bottom: 40px;
+    }
+    .body_categoies-common{
+        margin-bottom: 40px;
+    }
+    .body_categories-item-link{
+        padding:9px 5px;
+    }
+ }
+
+@media screen and (max-width:599px) {
+    .hide-on-mobile{
+        display: none;
+    }
+    .header-top-left-tablet-mobile{
+        display: none;
+    }
+    .banner-logo{
+        height: 120px;
+    }
+    .banner-logo-img{
+        animation: none ;
+    }
+    .banner-name-title,
+    .banner-name{
+        font-size: 2rem;
+        line-height: 2.9rem;
+    }
+    .banner{
+        padding: 30px 0 0 0;
+        background-color: var(--white-color);
+        margin: 0;
+    }
+    .banner-tablet-mobile{
+        display: block;
+        padding-top: 350px;
+    }
+    .body_categories-title{
+        font-size: 1.7rem;
+    }
+    .body_categories-item-link{
+        display: flex;
+        align-items: center;  
+        flex-direction: column;
+    }
+    .categories-notification-item-img{
+        padding-top: 100px;
+    }
+    .categories-notification-item-titletem-title{
+        font-size: 1.4rem;
+        line-height: 2rem;
+    }
+    .categories-notification-item_post{
+        font-size: 1.2rem;
+    }
+    .categories-notification-item_post .User-post{
+        font-size: 1.3rem;
+    }
+    .categories-notification-item-published{
+        font-size: 1.2rem;
+    }
+    .body_categories-title-more-link{
+        right: 5px;
+        top: auto;
+        bottom: 5px;
+    }
+    .body_categories-focus-item-link{
+        padding: 10px;
+        font-size: 1.6rem;
+    }
+    .body_categoies-common{
+        position: relative;
+    }
+    .body_categoies-common .body_categories-title-more-link{
+        bottom: -40px;
+    }
+    
+    .header-top-left-tablet-mobile-location-title{
+        font-size: 1.5rem;
+        width: 100px;
+        color: var(--font-color-gray);
+    }
+    .header-top-left-tablet-mobile-location-des{
+        font-size: 1.6rem;
+        line-height: 2rem;
+        color: var(--font-color-gray);
+        padding-bottom: 10px;
+    }
+    .header-top-left_input-search-mobile{
+        background-color: var(--font-color-primary);
+        display: block;
+        padding: 9px 15px;
+        font-size: 1.6rem;
+        border-radius: 10px;
+        
+    }
+    .header-top-left_title-input{
+        color: var(--white-color);
+        padding-left: 5px;
+    }
+    .header-top-left_input-search-icon-mobile{
+        color: var(--white-color);
+    }
+    .header-search-mobile{
+        --h :50px;
+        position: absolute;
+        bottom: 0;
+        background-color: var(--gray-color);
+        left: 0;
+        right: 0;
+        height: var(--h);
+        bottom: calc(-1 + var(--h));
+        display: none;
+        align-items: center;  
+    }
+    .header-search-mobile-input{
+        height: 45px;
+        margin-left: 5px;
+        font-size: 1.6rem;
+        display: inline-block;
+        width: 100%;
+        margin-right: 10px;
+        border: none;
+        padding-left: 10px;
+    }
+    .header-search-mobile-close{
+        height: 45px;
+        width: 45px;
+        background-color: var(--font-color-primary);
+        border-radius: 10px;
+        display: flex;
+        align-items: center;  
+        justify-content: center;
+    }
+    .header-search-mobile-close-icon{
+        font-size: 2rem;
+        color: var(--white-color);
+    }   
+    .header-search-mobile.active{
+        display: flex;
+    }
+ }

@@ -1,0 +1,96 @@
+﻿@model QLKTX.Models.HoaDon
+
+@{
+    ViewBag.Title = "XemChiTietHoaDon";
+    Layout = "~/Views/Admin/LayoutAdmin.cshtml";
+}
+
+<h2>XemChiTietHoaDon</h2>
+<div>
+    <h4>HoaDon</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.MaHoaDon)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.MaHoaDon)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.MaPhong)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.MaPhong)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.NgayTao)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.NgayTao)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.ThanhTien)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.ThanhTien)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.NguoiTao)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.NguoiTao)
+        </dd>
+
+    </dl>
+</div>
+<center><h4>Chi tiết các khoản dịch vụ</h4></center>
+<table class="table">
+    <tr>
+        <th>Mã dịch vụ</th>
+        <th>Tên dịch vụ</th>
+        <th>Giá</th>
+        <th>Số lượng</th>
+        <th>Tổng tiền</th>
+    </tr>
+    @foreach (var item in Model.ChiTietHoaDons)
+    {
+        <tr>
+            <td>@item.MaDichVu</td>
+            <td>@item.DichVu.TenDichVu</td>
+            <td>@item.DonGia</td>
+            <td>@item.SoLuong</td>
+            <td>@(item.DonGia * item.SoLuong)</td>
+        </tr>
+    }
+</table>
+@if (!Model.DaThanhToan)
+{
+    <link rel="stylesheet" href="~/assets/css/hopThoai.css" />
+    <button class="btn_thanhtoan open_btn " >Xác Nhận</button>
+    <div class="modall an">
+        @using (Html.BeginForm("ThanhToanHoaDon", "Admin", new {url = Request.Url.ToString() }))
+        {
+            <div class="modal__innerr">
+                <div class="modal__headerr">
+                    <p>Bạn muốn thanh toán hóa đơn</p>
+                    <i class="fas fa-times"></i>
+                </div>
+                <div class="modal__bodyy">
+                    <p>Xác nhận thanh toán hóa đơn "<span>@Model.MaHoaDon</span>"?</p>
+                </div>
+                <div class="modal__footerr">
+                    <a class="close btn btn-warning">Hủy bỏ</a>
+                    <button type="submit" name="maHoaDon" value="@Model.MaHoaDon" class="btn btn-danger">Xác nhận</button>
+                </div>
+            </div>
+        }
+    </div>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js" integrity="sha512-894YE6QWD5I59HgZOGReFYm4dnWc1Qt5NtvYSaNcOP+u1T9qYdvdihz0PPSiiqn/+/3e7Jo4EaG7TubfWGUrMQ==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/axios/0.26.1/axios.min.js" integrity="sha512-bPh3uwgU5qEMipS/VOmRqynnMXGGSRv+72H/N260MQeXZIK4PG48401Bsby9Nq5P5fz7hy5UGNmC/W1Z51h2GQ==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <script src="~/assets/js/HopThoai.js"></script>
+}

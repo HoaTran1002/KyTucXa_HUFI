@@ -1,0 +1,105 @@
+﻿@model IEnumerable<QLKTX.Models.DichVu>
+@{
+    Layout = null;
+    Layout = "~/Views/Admin/LayoutAdmin.cshtml";
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <link rel="stylesheet" href="~/assets/css/hopThoai.css" />
+    <meta name="viewport" content="width=device-width" />
+    <title>TaoHoaDon</title>
+    <style>
+        .loi {
+            color: crimson;
+            font-size: 12px;
+        }
+
+        .soluong {
+            border: none;
+            color: black;
+            background-color: white;
+            width: 100px;
+            text-align: left;
+            margin: 0;
+            padding: 0;
+            cursor: auto;
+        }
+    </style>
+</head>
+<body>
+    @using (Html.BeginForm())
+    {
+        <div>
+            <span>Chọn khu:</span>
+            <select name="khu" id="khu">
+            </select>
+            <span>Chọn tầng:</span>
+            <select name="tang" id="tang">
+                <option value=""> Chọn </option>
+            </select>
+            <span>Chọn phòng:</span>
+            <select name="phong" id="phong">
+                <option value=""> Chọn </option>
+            </select>
+        </div>        
+        <p>Nhập thông tin dịch vụ</p>
+        foreach (var item in Model)
+        {
+            <b class="tenDV">@item.TenDichVu</b>
+            <span> | Giá hiện tại: <b class="gia"> @item.GiaHienTai</b>đ</span>
+            if (item.TinhTheoChiSo)
+            {
+                <span>Chỉ số cũ: <b id="@("csc" + item.MaDichVu)"> </b></span> <br />
+                <input style="width:300px;" required type="number" min="" max="999999999" maxlength="10" id="@item.MaDichVu" value="" name="@item.MaDichVu" class="dvPhong" disabled placeholder="Nhập chỉ số mới" /> <br />
+            }
+            else
+            {
+                <br /><input style="width:300px;" required type="number" min="0" max="999999999" maxlength="10" value="" name="@item.MaDichVu" class="dvPhong" disabled placeholder="Nhập số lượng" /> <br />
+            }
+            <span class="loi" hidden>Sai dữ liệu đầu vào</span>
+            <br />
+        }
+        <center><h3>Chi tiết hóa đơn</h3></center>
+        <table class="table" align="center">
+            <tr>
+                <th>Tên dịch vụ</th>
+                <th>Giá</th>
+                <th>Số lượng</th>
+                <th>Tổng tiền</th>
+            </tr>
+            <tbody id="dvPhongTable">
+                @for (var i = 0; i < Model.Count(); i++)
+                {
+                    <tr class="ttdichvu"></tr>
+                }
+            </tbody>
+            <tbody id="dvDon">
+            </tbody>
+        </table>
+        <p>Thành tiền: <span style="color:crimson" id="thanhtien"></span></p>
+        <a class="open_btn btn btn-primary">Tạo hóa đơn</a>
+        <div class="modall an">            
+                <div class="modal__innerr">
+                    <div class="modal__headerr">
+                        <p>Bạn đang tạo hóa đơn</p>
+                        <i class="fas fa-times"></i>
+                    </div>
+                    <div class="modal__bodyy">
+                        <p>Xác nhận tạo hóa đơn cho phòng"<span id="idValue"></span>"?</p>
+                    </div>
+                    <div class="modal__footerr">
+                        <a class="close btn btn-warning">Hủy bỏ</a>
+                        <button type="submit" class="btn btn-danger">Xác nhận</button>
+                    </div>
+                </div>            
+        </div>
+    }
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js" integrity="sha512-894YE6QWD5I59HgZOGReFYm4dnWc1Qt5NtvYSaNcOP+u1T9qYdvdihz0PPSiiqn/+/3e7Jo4EaG7TubfWGUrMQ==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/axios/0.26.1/axios.min.js" integrity="sha512-bPh3uwgU5qEMipS/VOmRqynnMXGGSRv+72H/N260MQeXZIK4PG48401Bsby9Nq5P5fz7hy5UGNmC/W1Z51h2GQ==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <script src="~/assets/js/GetDataPhongApi.js"></script>
+    <script src="~/assets/js/HopThoai.js"></script>
+</body>
+</html>

@@ -1,0 +1,318 @@
+﻿@model QLKTX.Models.SinhVien
+<title>Thông tin sinh viên</title>
+<link rel="stylesheet" type="text/css" href="~/assets/css/date.css">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/flatpickr/dist/flatpickr.min.css">
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-GLhlTQ8iRABdZLl6O3oVMWSktQOp6b7In1Zl3/Jr59b6EGGoI1aFkw7cmDA6j6gD" crossorigin="anonymous">
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js" integrity="sha384-w76AqPfDkMBDXo30jS1Sgez6pr3x5MlQ1ZAGC+nuZB+EYdgRZgiwxhTBTkF7CXvN" crossorigin="anonymous"></script>
+<link href='https://unpkg.com/boxicons@2.0.7/css/boxicons.min.css' rel='stylesheet'>
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.1/font/bootstrap-icons.css">
+
+
+
+<h1 class="profile-contain-heading">Thông tin sinh viên</h1>
+<div class="profile-contain-main">
+    <form action="" class="profile-contain-main-form ">
+        <div class="container-fluid">
+            <div class="row">
+                <div class="col-lg-9">
+                    <div class="profile--form__text-field">
+                        <label for="username3">Tên sinh Viên</label>
+                        <input autocomplete="off" type="text" id="username3" placeholder="" />
+                    </div>
+                    <div class="row">
+                        <div class="col-lg-6">
+                            <div class="profile--form__text-field">
+                                <label for="username3">Mã số sinh viên</label>
+                                <input autocomplete="off" type="text" id="username3" placeholder="" />
+                            </div>
+                        </div>
+                        <div class="col-lg-6">
+                            <div class="profile--form__text-field">
+                                <label for="username3">Giới tính</label>
+                                <input autocomplete="off" type="text" id="username3" placeholder="" />
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-lg-6">
+                            <div class="profile--form__text-field">
+                                <label for="username3">Lớp</label>
+                                <input autocomplete="off" type="text" id="username3" placeholder="" />
+                            </div>
+                        </div>
+                        <div class="col-lg-6">
+                            <div class="profile--form__text-field">
+                                <label for="username3">Khoa</label>
+                                <input autocomplete="off" type="text" id="username3" placeholder="" />
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-lg-6">
+                            <div class="profile--form__text-field">
+                                <label for="username3">Trạng thái</label>
+                                <input autocomplete="off" type="text" id="username3" placeholder="" />
+                            </div>
+                        </div>
+                        <div class="col-lg-6">
+                            <div class="profile--form__text-field">
+                                <label for="username3">Chuyên ngành</label>
+                                <input autocomplete="off" type="text" id="username3" placeholder="" />
+                            </div>
+                        </div>
+                    </div>
+                    <div class="profile--form__text-field">
+                        <label for="username3">Địa chỉ</label>
+                        <input autocomplete="off" type="text" id="username3" placeholder="" />
+                    </div>
+                </div>
+                <div class="col-lg-3">
+                    <div class="profile--form__img">
+                        <img id="previewImage" src="@Model.AnhDaiDien" alt="ảnh thông tin sinh viên">
+                        <div class="profile--form__img-edit">
+                            <i class="fa-solid fa-pen"></i>
+                            <input type="file" accept="image/" capture="camera" id="imageInput">
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="profile--form__submit">
+                    <button type="submit" class="profile--form__submit-btn">Lưu</button>
+                    <span class="profile--form__unsubmit-btn">Sửa</span>
+                </div>
+            </div>
+        </div>
+    </form>
+</div>
+
+@using (Html.BeginForm())
+{
+    @Html.AntiForgeryToken()
+    <div class="col-3">
+        <div style="border: 4px solid #c2e1ff; border-radius: 50%; width: 110px; padding-left:1px;padding-top:1px; position:inherit; height: 110px; z-index: 1;">
+            <div class="dropdown">
+                <!-- Nút load anh -->
+                <div title="Nhấn vào đây để cập nhật ảnh sinh viên" style=" width:100px; height:100px; border-radius:50%" class="btn taianh" data-bs-toggle="modal" data-bs-target="#staticBackdrop">
+                    <img id="avt" onerror="" class="w-100 h-100" style=" position:absolute; left:0;top:0; border-radius: 50%;" src="@Model.AnhDaiDien" />
+                    Cập nhật
+                </div>
+                <input type="text" hidden id="AnhMoi" value="" name="AnhDaiDien" />
+                <!-- Modal -->
+                <div class="modal fade" id="staticBackdrop" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
+                    <div class="modal-dialog modal-lg">
+                        <div class="modal-content">
+                            <div class="modal-header">
+                                <h1 class="modal-title fs-5" id="staticBackdropLabel">Cập nhật ảnh sinh viên</h1>
+                                <button style="color:black;" type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                            </div>
+                            <div class="modal-body" style=" min-height:600px;">
+                                <div class="container">
+                                    <div class="drag-area justify-content-center mx-auto text-center border-2 border-info w-100 h-100 flex align-content-center" style="border-radius:20px; padding:15px; border:dashed">
+                                        <div class="thaotac_load" style="margin-top:210px; height:300px; ">
+                                            <h1 style="font-size:20px; font-family:Arial;" class="keotha">Kéo và thả để tải ảnh lên</h1>
+                                            <p>hoặc</p>
+                                            <a class="chonfile btn btn-outline-info w-25">Chọn ảnh</a>
+                                            <input class="ip" type="file" hidden />
+                                        </div>
+                                        <img class="w-100 h-100 anh_load" src="#" style="display:none">
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="modal-footer">
+                                <div class="huyluu" style="display:none;">
+                                    <button type="button" class="btn btn-outline-danger" onclick="resett()" data-bs-dismiss="modal">Hủy Lưu</button>
+                                </div>
+                                <div class="luu">
+
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div style="position:relative;">
+            <span onclick="XoaAnh()" title="Nhấn vào đây để xóa ảnh này" style="width:0px; height:0px; border:none; margin-top:-20px; margin-left:10px; cursor:pointer; position:absolute; z-index:2; background-color:white;">
+                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-x-circle-fill" viewBox="0 0 16 16">
+                    <path d="M16 8A8 8 0 1 1 0 8a8 8 0 0 1 16 0zM5.354 4.646a.5.5 0 1 0-.708.708L7.293 8l-2.647 2.646a.5.5 0 0 0 .708.708L8 8.707l2.646 2.647a.5.5 0 0 0 .708-.708L8.707 8l2.647-2.646a.5.5 0 0 0-.708-.708L8 7.293 5.354 4.646z" />
+                </svg>
+            </span>
+        </div>
+    </div>
+    <div class="form-horizontal">
+        <h4>SinhVien</h4>
+        <hr />
+        @Html.ValidationSummary(true, "", new { @class = "text-danger" })
+        <div class="form-group">
+            <span>Mã số sinh viên</span>
+            <input type="text" disabled name="MaSV" readonly value="@Model.MaSV" />
+            @Html.HiddenFor(model => model.MaSV)
+        </div>
+        <div class="form-group">
+            <span>Họ</span>
+            <input type="text" name="Ho" readonly disabled value="@Model.Ho" />
+            @Html.HiddenFor(model => model.Ho)
+        </div>
+
+        <div class="form-group">
+            <span>Tên</span>
+            <input type="text" name="Ten" disabled value="@Model.Ten" />
+            @Html.HiddenFor(model => model.Ten)
+        </div>
+        <div class="form-group">
+            <span>Giới tính</span>
+            <div class="col-md-10">
+                <input type="radio" name="GioiTinh" id="nam" value="Nam" /><label for="nam">Nam </label>
+                <input type="radio" name="GioiTinh" id="nu" value="Nữ" /><label for="nu">Nữ</label>
+                @Html.ValidationMessageFor(model => model.GioiTinh, "", new { @class = "text-danger" })
+            </div>
+        </div>
+        <div class="form-group">
+            <span>Lớp</span>
+            <div class="col-md-10">
+                @Html.EditorFor(model => model.Lop, new { htmlAttributes = new { @class = "form-control" } })
+                @Html.ValidationMessageFor(model => model.Lop, "", new { @class = "text-danger" })
+            </div>
+        </div>
+        <div class="form-group">
+            <span>Ngày Sinh</span>
+            <div class="col-md-10">
+                @Html.EditorFor(model => model.NgaySinh, new { htmlAttributes = new { @class = "date" } })
+                @Html.ValidationMessageFor(model => model.NgaySinh, "", new { @class = "text-danger" })
+            </div>
+        </div>
+        <div class="form-group">
+            <span>Quê quán</span>
+            <div class="col-md-10">
+                @if (Model.QueQuan != null)
+                {
+                    string[] s = Model.QueQuan.Split(',');
+                    <input hidden id="xa" value="@s[0].Trim()" />
+                    <input hidden id="quan" value="@s[1].Trim()" />
+                    <input hidden id="tinh" value="@s[2].Trim()" />
+                }
+                <div>
+                    <span>Tỉnh/thành phố:</span>
+                    <select name="tinh" id="province">
+                    </select>
+                    <span>Quận/huyện:</span>
+                    <select name="quan" id="district">
+                        <option value=""> Chọn </option>
+                    </select>
+                    <span>Xã/phường:</span>
+                    <select name="xa" id="ward">
+                        <option value=""> Chọn </option>
+                    </select>
+                </div>
+                <input id="result" value="@Model.QueQuan" name="QueQuan" hidden />
+                @Html.ValidationMessageFor(model => model.QueQuan, "", new { @class = "text-danger" })
+            </div>
+        </div>
+
+        <div class="form-group">
+            <span>Số căn cước</span>
+            <div class="col-md-10">
+                <input type="text" class="phone form-control" maxlength="12" name="SoCanCuoc" value="@Model.SoCanCuoc" />
+                @Html.ValidationMessageFor(model => model.SoCanCuoc, "", new { @class = "text-danger" })
+            </div>
+        </div>
+
+        <div class="form-group">
+            <span>Số điện thoại</span>
+            <div class="col-md-10">
+                <input type="text" class="phone form-control" maxlength="10" name="SoDienThoai" value="@Model.SoDienThoai" />
+                @Html.ValidationMessageFor(model => model.SoDienThoai, "", new { @class = "text-danger" })
+            </div>
+        </div>
+        <div class="form-group">
+            <span>
+                Phòng ở hiện tại:
+            </span>
+            @if (Model.MaPhong == null)
+            {
+                if (Model.DangKyNoiTru == null)
+                {
+                    <span>Bạn chưa đăng ký nội trú! Đăng ký <a href="DangKyNoiTru">tại đây</a></span>
+                }
+                else if (Model.DangKyNoiTru.TrangThai == "Bị hủy")
+                {
+                    <span> Bị hủy, đăng ký lại <a href="DangKyNoiTru"> tại đây</a></span>
+                }
+                else
+                {
+                    <span> @Model.DangKyNoiTru.TrangThai (@Model.DangKyNoiTru.Phong.Ten)</span><br />
+                    <span> Để hủy yêu cầu <a class="open_btn btn btn-danger">Tại đây</a></span>
+                }
+            }
+            else
+            {
+                <span>@Model.Phong.Ten</span>
+            }
+            @Html.HiddenFor(model => model.MaPhong)
+        </div>
+        @Html.HiddenFor(model => model.MatKhau)
+        @Html.Hidden("TrangThai")
+        <div class="form-group">
+            <div class="col-md-offset-2 col-md-10">
+                <input type="submit" value="Cập nhật thông" class="btn btn-primary" />
+            </div>
+        </div>
+    </div>
+}
+@if (Model.DangKyNoiTru != null && Model.DangKyNoiTru.TrangThai != "Bị hủy")
+{
+    <link rel="stylesheet" href="~/assets/css/hopThoai.css" />
+    <div class="modall an">
+        <div class="modal__innerr">
+            <div class="modal__headerr">
+                <p>Bạn muốn hủy bó xét duyệt này? </p>
+                <i class="fas fa-times"></i>
+            </div>
+            @using (Html.BeginForm("HuyDangKyNoiTru", "User", new { url = Request.Url.ToString() }, method: FormMethod.Post))
+            {
+                <div class="modal__bodyy">
+                    <span>Lý do hủy:</span><br />
+                    <input type="radio" name="ghiChu" class="rdo_lydo" value="Tôi muốn chọn phòng khác" id="mau1" checked />
+                    <label for="mau1">Tôi muốn chọn phòng khác</label><br />
+                    <input type="radio" name="ghiChu" class="rdo_lydo" value="Tôi muốn cập nhật lại thông tin sinh viên của mình" id="mau2" />
+                    <label for="mau2">Tôi muốn cập nhật lại thông tin sinh viên của mình</label><br />
+                    <input type="radio" name="ghiChu" class="rdo_lydo" value="Tôi không muốn đăng ký nữa" id="mau3" />
+                    <label for="mau3">Tôi không muốn đăng ký nữa</label><br />
+                    <input type="radio" name="ghiChu" value="-1" id="khac" />
+                    <label for="khac">Khác</label>
+                    <textarea id="lyDoKhac" disabled placeholder="Nhập lý do khác"></textarea>
+                </div>
+                <div class="modal__footerr">
+                    <a class="close btn btn-warning">Hủy bỏ</a>
+                    <button type="submit" class="btn btn-danger">Xác nhận hủy</button>
+                </div>
+            }
+        </div>
+    </div>
+    <script src="~/assets/js/HopThoai.js"></script>
+    <script src="~/assets/js/HopThoaiCheck.js"></script>
+}
+
+@if (Model.GioiTinh != null)
+{
+    if (Model.GioiTinh == "Nam")
+    {
+        <script>
+            document.getElementById('nam').checked = true;
+        </script>
+    }
+    else
+    {
+        <script>
+            document.getElementById('nu').checked = true;
+        </script>
+    }
+}
+<script src="https://cdn.jsdelivr.net/npm/flatpickr"></script>
+<script type="text/javascript" src="~/assets/js/date.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js" integrity="sha512-894YE6QWD5I59HgZOGReFYm4dnWc1Qt5NtvYSaNcOP+u1T9qYdvdihz0PPSiiqn/+/3e7Jo4EaG7TubfWGUrMQ==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/axios/0.26.1/axios.min.js" integrity="sha512-bPh3uwgU5qEMipS/VOmRqynnMXGGSRv+72H/N260MQeXZIK4PG48401Bsby9Nq5P5fz7hy5UGNmC/W1Z51h2GQ==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+<script src="~/assets/js/GetAddressApi.js"></script>
+<script src="~/assets/js/TaiAnh.js"></script>
+<script src="~/assets/js/kiemTraChuoiSo.js"></script>

@@ -1,0 +1,264 @@
+E:\KyTucXa\QLKTX\QLKTX\bin\QLKTX.dll.config
+E:\KyTucXa\QLKTX\QLKTX\bin\QLKTX.dll
+E:\KyTucXa\QLKTX\QLKTX\bin\QLKTX.pdb
+E:\KyTucXa\QLKTX\QLKTX\bin\roslyn\csc.exe
+E:\KyTucXa\QLKTX\QLKTX\bin\roslyn\csc.exe.config
+E:\KyTucXa\QLKTX\QLKTX\bin\roslyn\csc.rsp
+E:\KyTucXa\QLKTX\QLKTX\bin\roslyn\csi.exe
+E:\KyTucXa\QLKTX\QLKTX\bin\roslyn\csi.exe.config
+E:\KyTucXa\QLKTX\QLKTX\bin\roslyn\csi.rsp
+E:\KyTucXa\QLKTX\QLKTX\bin\roslyn\Microsoft.Build.Tasks.CodeAnalysis.dll
+E:\KyTucXa\QLKTX\QLKTX\bin\roslyn\Microsoft.CodeAnalysis.CSharp.dll
+E:\KyTucXa\QLKTX\QLKTX\bin\roslyn\Microsoft.CodeAnalysis.CSharp.Scripting.dll
+E:\KyTucXa\QLKTX\QLKTX\bin\roslyn\Microsoft.CodeAnalysis.dll
+E:\KyTucXa\QLKTX\QLKTX\bin\roslyn\Microsoft.CodeAnalysis.Scripting.dll
+E:\KyTucXa\QLKTX\QLKTX\bin\roslyn\Microsoft.CodeAnalysis.VisualBasic.dll
+E:\KyTucXa\QLKTX\QLKTX\bin\roslyn\Microsoft.CSharp.Core.targets
+E:\KyTucXa\QLKTX\QLKTX\bin\roslyn\Microsoft.DiaSymReader.Native.amd64.dll
+E:\KyTucXa\QLKTX\QLKTX\bin\roslyn\Microsoft.DiaSymReader.Native.x86.dll
+E:\KyTucXa\QLKTX\QLKTX\bin\roslyn\Microsoft.Managed.Core.targets
+E:\KyTucXa\QLKTX\QLKTX\bin\roslyn\Microsoft.VisualBasic.Core.targets
+E:\KyTucXa\QLKTX\QLKTX\bin\roslyn\Microsoft.Win32.Primitives.dll
+E:\KyTucXa\QLKTX\QLKTX\bin\roslyn\System.AppContext.dll
+E:\KyTucXa\QLKTX\QLKTX\bin\roslyn\System.Collections.Immutable.dll
+E:\KyTucXa\QLKTX\QLKTX\bin\roslyn\System.Console.dll
+E:\KyTucXa\QLKTX\QLKTX\bin\roslyn\System.Diagnostics.DiagnosticSource.dll
+E:\KyTucXa\QLKTX\QLKTX\bin\roslyn\System.Diagnostics.FileVersionInfo.dll
+E:\KyTucXa\QLKTX\QLKTX\bin\roslyn\System.Diagnostics.StackTrace.dll
+E:\KyTucXa\QLKTX\QLKTX\bin\roslyn\System.Globalization.Calendars.dll
+E:\KyTucXa\QLKTX\QLKTX\bin\roslyn\System.IO.Compression.dll
+E:\KyTucXa\QLKTX\QLKTX\bin\roslyn\System.IO.Compression.ZipFile.dll
+E:\KyTucXa\QLKTX\QLKTX\bin\roslyn\System.IO.FileSystem.dll
+E:\KyTucXa\QLKTX\QLKTX\bin\roslyn\System.IO.FileSystem.Primitives.dll
+E:\KyTucXa\QLKTX\QLKTX\bin\roslyn\System.Net.Http.dll
+E:\KyTucXa\QLKTX\QLKTX\bin\roslyn\System.Net.Sockets.dll
+E:\KyTucXa\QLKTX\QLKTX\bin\roslyn\System.Reflection.Metadata.dll
+E:\KyTucXa\QLKTX\QLKTX\bin\roslyn\System.Runtime.InteropServices.RuntimeInformation.dll
+E:\KyTucXa\QLKTX\QLKTX\bin\roslyn\System.Security.Cryptography.Algorithms.dll
+E:\KyTucXa\QLKTX\QLKTX\bin\roslyn\System.Security.Cryptography.Encoding.dll
+E:\KyTucXa\QLKTX\QLKTX\bin\roslyn\System.Security.Cryptography.Primitives.dll
+E:\KyTucXa\QLKTX\QLKTX\bin\roslyn\System.Security.Cryptography.X509Certificates.dll
+E:\KyTucXa\QLKTX\QLKTX\bin\roslyn\System.Text.Encoding.CodePages.dll
+E:\KyTucXa\QLKTX\QLKTX\bin\roslyn\System.Threading.Tasks.Extensions.dll
+E:\KyTucXa\QLKTX\QLKTX\bin\roslyn\System.ValueTuple.dll
+E:\KyTucXa\QLKTX\QLKTX\bin\roslyn\System.Xml.ReaderWriter.dll
+E:\KyTucXa\QLKTX\QLKTX\bin\roslyn\System.Xml.XmlDocument.dll
+E:\KyTucXa\QLKTX\QLKTX\bin\roslyn\System.Xml.XPath.dll
+E:\KyTucXa\QLKTX\QLKTX\bin\roslyn\System.Xml.XPath.XDocument.dll
+E:\KyTucXa\QLKTX\QLKTX\bin\roslyn\vbc.exe
+E:\KyTucXa\QLKTX\QLKTX\bin\roslyn\vbc.exe.config
+E:\KyTucXa\QLKTX\QLKTX\bin\roslyn\vbc.rsp
+E:\KyTucXa\QLKTX\QLKTX\bin\roslyn\VBCSCompiler.exe
+E:\KyTucXa\QLKTX\QLKTX\bin\roslyn\VBCSCompiler.exe.config
+E:\KyTucXa\QLKTX\QLKTX\bin\Antlr3.Runtime.dll
+E:\KyTucXa\QLKTX\QLKTX\bin\EntityFramework.dll
+E:\KyTucXa\QLKTX\QLKTX\bin\EntityFramework.SqlServer.dll
+E:\KyTucXa\QLKTX\QLKTX\bin\Microsoft.AspNet.Identity.Core.dll
+E:\KyTucXa\QLKTX\QLKTX\bin\Microsoft.AspNet.Identity.EntityFramework.dll
+E:\KyTucXa\QLKTX\QLKTX\bin\Microsoft.AspNet.Identity.Owin.dll
+E:\KyTucXa\QLKTX\QLKTX\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.dll
+E:\KyTucXa\QLKTX\QLKTX\bin\Microsoft.Owin.dll
+E:\KyTucXa\QLKTX\QLKTX\bin\Microsoft.Owin.Security.Cookies.dll
+E:\KyTucXa\QLKTX\QLKTX\bin\Microsoft.Owin.Security.dll
+E:\KyTucXa\QLKTX\QLKTX\bin\Microsoft.Owin.Security.OAuth.dll
+E:\KyTucXa\QLKTX\QLKTX\bin\Microsoft.Web.Infrastructure.dll
+E:\KyTucXa\QLKTX\QLKTX\bin\Newtonsoft.Json.dll
+E:\KyTucXa\QLKTX\QLKTX\bin\Owin.dll
+E:\KyTucXa\QLKTX\QLKTX\bin\System.Net.Http.Formatting.dll
+E:\KyTucXa\QLKTX\QLKTX\bin\System.Web.Helpers.dll
+E:\KyTucXa\QLKTX\QLKTX\bin\System.Web.Http.dll
+E:\KyTucXa\QLKTX\QLKTX\bin\System.Web.Http.WebHost.dll
+E:\KyTucXa\QLKTX\QLKTX\bin\System.Web.Mvc.dll
+E:\KyTucXa\QLKTX\QLKTX\bin\System.Web.Optimization.dll
+E:\KyTucXa\QLKTX\QLKTX\bin\System.Web.Razor.dll
+E:\KyTucXa\QLKTX\QLKTX\bin\System.Web.WebPages.Deployment.dll
+E:\KyTucXa\QLKTX\QLKTX\bin\System.Web.WebPages.dll
+E:\KyTucXa\QLKTX\QLKTX\bin\System.Web.WebPages.Razor.dll
+E:\KyTucXa\QLKTX\QLKTX\bin\WebGrease.dll
+E:\KyTucXa\QLKTX\QLKTX\bin\EntityFramework.xml
+E:\KyTucXa\QLKTX\QLKTX\bin\EntityFramework.SqlServer.xml
+E:\KyTucXa\QLKTX\QLKTX\bin\Microsoft.AspNet.Identity.Core.xml
+E:\KyTucXa\QLKTX\QLKTX\bin\Microsoft.AspNet.Identity.EntityFramework.xml
+E:\KyTucXa\QLKTX\QLKTX\bin\Microsoft.AspNet.Identity.Owin.xml
+E:\KyTucXa\QLKTX\QLKTX\bin\Microsoft.Owin.xml
+E:\KyTucXa\QLKTX\QLKTX\bin\Microsoft.Owin.Security.xml
+E:\KyTucXa\QLKTX\QLKTX\bin\Microsoft.Owin.Security.Cookies.xml
+E:\KyTucXa\QLKTX\QLKTX\bin\Microsoft.Owin.Security.OAuth.xml
+E:\KyTucXa\QLKTX\QLKTX\bin\Newtonsoft.Json.xml
+E:\KyTucXa\QLKTX\QLKTX\bin\System.Net.Http.Formatting.xml
+E:\KyTucXa\QLKTX\QLKTX\bin\System.Web.Helpers.xml
+E:\KyTucXa\QLKTX\QLKTX\bin\System.Web.Http.xml
+E:\KyTucXa\QLKTX\QLKTX\bin\System.Web.Http.WebHost.xml
+E:\KyTucXa\QLKTX\QLKTX\bin\System.Web.Mvc.xml
+E:\KyTucXa\QLKTX\QLKTX\bin\System.Web.Optimization.xml
+E:\KyTucXa\QLKTX\QLKTX\bin\System.Web.Razor.xml
+E:\KyTucXa\QLKTX\QLKTX\bin\System.Web.WebPages.xml
+E:\KyTucXa\QLKTX\QLKTX\bin\System.Web.WebPages.Deployment.xml
+E:\KyTucXa\QLKTX\QLKTX\bin\System.Web.WebPages.Razor.xml
+E:\KyTucXa\QLKTX\QLKTX\bin\Antlr3.Runtime.pdb
+E:\KyTucXa\QLKTX\QLKTX\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.xml
+E:\KyTucXa\QLKTX\QLKTX\obj\Debug\QLKTX.csproj.CoreCompileInputs.cache
+E:\KyTucXa\QLKTX\QLKTX\obj\Debug\QLKTX.csproj.CopyComplete
+E:\KyTucXa\QLKTX\QLKTX\obj\Debug\QLKTX.dll
+E:\KyTucXa\QLKTX\QLKTX\obj\Debug\QLKTX.pdb
+E:\KyTucXa\QLKTX\QLKTX\bin\Microsoft.Bcl.AsyncInterfaces.dll
+E:\KyTucXa\QLKTX\QLKTX\bin\Microsoft.IdentityModel.Abstractions.dll
+E:\KyTucXa\QLKTX\QLKTX\bin\Microsoft.IdentityModel.JsonWebTokens.dll
+E:\KyTucXa\QLKTX\QLKTX\bin\Microsoft.IdentityModel.Logging.dll
+E:\KyTucXa\QLKTX\QLKTX\bin\Microsoft.IdentityModel.Tokens.dll
+E:\KyTucXa\QLKTX\QLKTX\bin\System.Buffers.dll
+E:\KyTucXa\QLKTX\QLKTX\bin\System.IdentityModel.Tokens.Jwt.dll
+E:\KyTucXa\QLKTX\QLKTX\bin\System.Memory.dll
+E:\KyTucXa\QLKTX\QLKTX\bin\System.Numerics.Vectors.dll
+E:\KyTucXa\QLKTX\QLKTX\bin\System.Runtime.CompilerServices.Unsafe.dll
+E:\KyTucXa\QLKTX\QLKTX\bin\System.Text.Encodings.Web.dll
+E:\KyTucXa\QLKTX\QLKTX\bin\System.Text.Json.dll
+E:\KyTucXa\QLKTX\QLKTX\bin\System.Threading.Tasks.Extensions.dll
+E:\KyTucXa\QLKTX\QLKTX\bin\System.ValueTuple.dll
+E:\KyTucXa\QLKTX\QLKTX\bin\Microsoft.Bcl.AsyncInterfaces.xml
+E:\KyTucXa\QLKTX\QLKTX\bin\Microsoft.IdentityModel.Abstractions.xml
+E:\KyTucXa\QLKTX\QLKTX\bin\Microsoft.IdentityModel.JsonWebTokens.xml
+E:\KyTucXa\QLKTX\QLKTX\bin\Microsoft.IdentityModel.Logging.xml
+E:\KyTucXa\QLKTX\QLKTX\bin\Microsoft.IdentityModel.Tokens.xml
+E:\KyTucXa\QLKTX\QLKTX\bin\System.Buffers.xml
+E:\KyTucXa\QLKTX\QLKTX\bin\System.IdentityModel.Tokens.Jwt.xml
+E:\KyTucXa\QLKTX\QLKTX\bin\System.Memory.xml
+E:\KyTucXa\QLKTX\QLKTX\bin\System.Numerics.Vectors.xml
+E:\KyTucXa\QLKTX\QLKTX\bin\System.Runtime.CompilerServices.Unsafe.xml
+E:\KyTucXa\QLKTX\QLKTX\bin\System.Text.Encodings.Web.xml
+E:\KyTucXa\QLKTX\QLKTX\bin\System.Text.Json.xml
+E:\KyTucXa\QLKTX\QLKTX\bin\System.Threading.Tasks.Extensions.xml
+E:\KyTucXa\QLKTX\QLKTX\bin\System.ValueTuple.xml
+E:\KyTucXa\QLKTX\QLKTX\obj\Debug\QLKTX.csproj.AssemblyReference.cache
+C:\WorkSpace\KyTucXa\QLKTX - Copy\QLKTX\bin\QLKTX.dll.config
+C:\WorkSpace\KyTucXa\QLKTX - Copy\QLKTX\bin\QLKTX.dll
+C:\WorkSpace\KyTucXa\QLKTX - Copy\QLKTX\bin\QLKTX.pdb
+C:\WorkSpace\KyTucXa\QLKTX - Copy\QLKTX\bin\roslyn\csc.exe
+C:\WorkSpace\KyTucXa\QLKTX - Copy\QLKTX\bin\roslyn\csc.exe.config
+C:\WorkSpace\KyTucXa\QLKTX - Copy\QLKTX\bin\roslyn\csc.rsp
+C:\WorkSpace\KyTucXa\QLKTX - Copy\QLKTX\bin\roslyn\csi.exe
+C:\WorkSpace\KyTucXa\QLKTX - Copy\QLKTX\bin\roslyn\csi.exe.config
+C:\WorkSpace\KyTucXa\QLKTX - Copy\QLKTX\bin\roslyn\csi.rsp
+C:\WorkSpace\KyTucXa\QLKTX - Copy\QLKTX\bin\roslyn\Microsoft.Build.Tasks.CodeAnalysis.dll
+C:\WorkSpace\KyTucXa\QLKTX - Copy\QLKTX\bin\roslyn\Microsoft.CodeAnalysis.CSharp.dll
+C:\WorkSpace\KyTucXa\QLKTX - Copy\QLKTX\bin\roslyn\Microsoft.CodeAnalysis.CSharp.Scripting.dll
+C:\WorkSpace\KyTucXa\QLKTX - Copy\QLKTX\bin\roslyn\Microsoft.CodeAnalysis.dll
+C:\WorkSpace\KyTucXa\QLKTX - Copy\QLKTX\bin\roslyn\Microsoft.CodeAnalysis.Scripting.dll
+C:\WorkSpace\KyTucXa\QLKTX - Copy\QLKTX\bin\roslyn\Microsoft.CodeAnalysis.VisualBasic.dll
+C:\WorkSpace\KyTucXa\QLKTX - Copy\QLKTX\bin\roslyn\Microsoft.CSharp.Core.targets
+C:\WorkSpace\KyTucXa\QLKTX - Copy\QLKTX\bin\roslyn\Microsoft.DiaSymReader.Native.amd64.dll
+C:\WorkSpace\KyTucXa\QLKTX - Copy\QLKTX\bin\roslyn\Microsoft.DiaSymReader.Native.x86.dll
+C:\WorkSpace\KyTucXa\QLKTX - Copy\QLKTX\bin\roslyn\Microsoft.Managed.Core.targets
+C:\WorkSpace\KyTucXa\QLKTX - Copy\QLKTX\bin\roslyn\Microsoft.VisualBasic.Core.targets
+C:\WorkSpace\KyTucXa\QLKTX - Copy\QLKTX\bin\roslyn\Microsoft.Win32.Primitives.dll
+C:\WorkSpace\KyTucXa\QLKTX - Copy\QLKTX\bin\roslyn\System.AppContext.dll
+C:\WorkSpace\KyTucXa\QLKTX - Copy\QLKTX\bin\roslyn\System.Collections.Immutable.dll
+C:\WorkSpace\KyTucXa\QLKTX - Copy\QLKTX\bin\roslyn\System.Console.dll
+C:\WorkSpace\KyTucXa\QLKTX - Copy\QLKTX\bin\roslyn\System.Diagnostics.DiagnosticSource.dll
+C:\WorkSpace\KyTucXa\QLKTX - Copy\QLKTX\bin\roslyn\System.Diagnostics.FileVersionInfo.dll
+C:\WorkSpace\KyTucXa\QLKTX - Copy\QLKTX\bin\roslyn\System.Diagnostics.StackTrace.dll
+C:\WorkSpace\KyTucXa\QLKTX - Copy\QLKTX\bin\roslyn\System.Globalization.Calendars.dll
+C:\WorkSpace\KyTucXa\QLKTX - Copy\QLKTX\bin\roslyn\System.IO.Compression.dll
+C:\WorkSpace\KyTucXa\QLKTX - Copy\QLKTX\bin\roslyn\System.IO.Compression.ZipFile.dll
+C:\WorkSpace\KyTucXa\QLKTX - Copy\QLKTX\bin\roslyn\System.IO.FileSystem.dll
+C:\WorkSpace\KyTucXa\QLKTX - Copy\QLKTX\bin\roslyn\System.IO.FileSystem.Primitives.dll
+C:\WorkSpace\KyTucXa\QLKTX - Copy\QLKTX\bin\roslyn\System.Net.Http.dll
+C:\WorkSpace\KyTucXa\QLKTX - Copy\QLKTX\bin\roslyn\System.Net.Sockets.dll
+C:\WorkSpace\KyTucXa\QLKTX - Copy\QLKTX\bin\roslyn\System.Reflection.Metadata.dll
+C:\WorkSpace\KyTucXa\QLKTX - Copy\QLKTX\bin\roslyn\System.Runtime.InteropServices.RuntimeInformation.dll
+C:\WorkSpace\KyTucXa\QLKTX - Copy\QLKTX\bin\roslyn\System.Security.Cryptography.Algorithms.dll
+C:\WorkSpace\KyTucXa\QLKTX - Copy\QLKTX\bin\roslyn\System.Security.Cryptography.Encoding.dll
+C:\WorkSpace\KyTucXa\QLKTX - Copy\QLKTX\bin\roslyn\System.Security.Cryptography.Primitives.dll
+C:\WorkSpace\KyTucXa\QLKTX - Copy\QLKTX\bin\roslyn\System.Security.Cryptography.X509Certificates.dll
+C:\WorkSpace\KyTucXa\QLKTX - Copy\QLKTX\bin\roslyn\System.Text.Encoding.CodePages.dll
+C:\WorkSpace\KyTucXa\QLKTX - Copy\QLKTX\bin\roslyn\System.Threading.Tasks.Extensions.dll
+C:\WorkSpace\KyTucXa\QLKTX - Copy\QLKTX\bin\roslyn\System.ValueTuple.dll
+C:\WorkSpace\KyTucXa\QLKTX - Copy\QLKTX\bin\roslyn\System.Xml.ReaderWriter.dll
+C:\WorkSpace\KyTucXa\QLKTX - Copy\QLKTX\bin\roslyn\System.Xml.XmlDocument.dll
+C:\WorkSpace\KyTucXa\QLKTX - Copy\QLKTX\bin\roslyn\System.Xml.XPath.dll
+C:\WorkSpace\KyTucXa\QLKTX - Copy\QLKTX\bin\roslyn\System.Xml.XPath.XDocument.dll
+C:\WorkSpace\KyTucXa\QLKTX - Copy\QLKTX\bin\roslyn\vbc.exe
+C:\WorkSpace\KyTucXa\QLKTX - Copy\QLKTX\bin\roslyn\vbc.exe.config
+C:\WorkSpace\KyTucXa\QLKTX - Copy\QLKTX\bin\roslyn\vbc.rsp
+C:\WorkSpace\KyTucXa\QLKTX - Copy\QLKTX\bin\roslyn\VBCSCompiler.exe
+C:\WorkSpace\KyTucXa\QLKTX - Copy\QLKTX\bin\roslyn\VBCSCompiler.exe.config
+C:\WorkSpace\KyTucXa\QLKTX - Copy\QLKTX\bin\Antlr3.Runtime.dll
+C:\WorkSpace\KyTucXa\QLKTX - Copy\QLKTX\bin\EntityFramework.dll
+C:\WorkSpace\KyTucXa\QLKTX - Copy\QLKTX\bin\EntityFramework.SqlServer.dll
+C:\WorkSpace\KyTucXa\QLKTX - Copy\QLKTX\bin\Microsoft.AspNet.Identity.Core.dll
+C:\WorkSpace\KyTucXa\QLKTX - Copy\QLKTX\bin\Microsoft.AspNet.Identity.EntityFramework.dll
+C:\WorkSpace\KyTucXa\QLKTX - Copy\QLKTX\bin\Microsoft.AspNet.Identity.Owin.dll
+C:\WorkSpace\KyTucXa\QLKTX - Copy\QLKTX\bin\Microsoft.Bcl.AsyncInterfaces.dll
+C:\WorkSpace\KyTucXa\QLKTX - Copy\QLKTX\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.dll
+C:\WorkSpace\KyTucXa\QLKTX - Copy\QLKTX\bin\Microsoft.IdentityModel.Abstractions.dll
+C:\WorkSpace\KyTucXa\QLKTX - Copy\QLKTX\bin\Microsoft.IdentityModel.JsonWebTokens.dll
+C:\WorkSpace\KyTucXa\QLKTX - Copy\QLKTX\bin\Microsoft.IdentityModel.Logging.dll
+C:\WorkSpace\KyTucXa\QLKTX - Copy\QLKTX\bin\Microsoft.IdentityModel.Tokens.dll
+C:\WorkSpace\KyTucXa\QLKTX - Copy\QLKTX\bin\Microsoft.Owin.dll
+C:\WorkSpace\KyTucXa\QLKTX - Copy\QLKTX\bin\Microsoft.Owin.Security.Cookies.dll
+C:\WorkSpace\KyTucXa\QLKTX - Copy\QLKTX\bin\Microsoft.Owin.Security.dll
+C:\WorkSpace\KyTucXa\QLKTX - Copy\QLKTX\bin\Microsoft.Owin.Security.OAuth.dll
+C:\WorkSpace\KyTucXa\QLKTX - Copy\QLKTX\bin\Microsoft.Web.Infrastructure.dll
+C:\WorkSpace\KyTucXa\QLKTX - Copy\QLKTX\bin\Newtonsoft.Json.dll
+C:\WorkSpace\KyTucXa\QLKTX - Copy\QLKTX\bin\Owin.dll
+C:\WorkSpace\KyTucXa\QLKTX - Copy\QLKTX\bin\System.Buffers.dll
+C:\WorkSpace\KyTucXa\QLKTX - Copy\QLKTX\bin\System.IdentityModel.Tokens.Jwt.dll
+C:\WorkSpace\KyTucXa\QLKTX - Copy\QLKTX\bin\System.Memory.dll
+C:\WorkSpace\KyTucXa\QLKTX - Copy\QLKTX\bin\System.Net.Http.Formatting.dll
+C:\WorkSpace\KyTucXa\QLKTX - Copy\QLKTX\bin\System.Numerics.Vectors.dll
+C:\WorkSpace\KyTucXa\QLKTX - Copy\QLKTX\bin\System.Runtime.CompilerServices.Unsafe.dll
+C:\WorkSpace\KyTucXa\QLKTX - Copy\QLKTX\bin\System.Text.Encodings.Web.dll
+C:\WorkSpace\KyTucXa\QLKTX - Copy\QLKTX\bin\System.Text.Json.dll
+C:\WorkSpace\KyTucXa\QLKTX - Copy\QLKTX\bin\System.Threading.Tasks.Extensions.dll
+C:\WorkSpace\KyTucXa\QLKTX - Copy\QLKTX\bin\System.ValueTuple.dll
+C:\WorkSpace\KyTucXa\QLKTX - Copy\QLKTX\bin\System.Web.Helpers.dll
+C:\WorkSpace\KyTucXa\QLKTX - Copy\QLKTX\bin\System.Web.Http.dll
+C:\WorkSpace\KyTucXa\QLKTX - Copy\QLKTX\bin\System.Web.Http.WebHost.dll
+C:\WorkSpace\KyTucXa\QLKTX - Copy\QLKTX\bin\System.Web.Mvc.dll
+C:\WorkSpace\KyTucXa\QLKTX - Copy\QLKTX\bin\System.Web.Optimization.dll
+C:\WorkSpace\KyTucXa\QLKTX - Copy\QLKTX\bin\System.Web.Razor.dll
+C:\WorkSpace\KyTucXa\QLKTX - Copy\QLKTX\bin\System.Web.WebPages.Deployment.dll
+C:\WorkSpace\KyTucXa\QLKTX - Copy\QLKTX\bin\System.Web.WebPages.dll
+C:\WorkSpace\KyTucXa\QLKTX - Copy\QLKTX\bin\System.Web.WebPages.Razor.dll
+C:\WorkSpace\KyTucXa\QLKTX - Copy\QLKTX\bin\WebGrease.dll
+C:\WorkSpace\KyTucXa\QLKTX - Copy\QLKTX\bin\EntityFramework.xml
+C:\WorkSpace\KyTucXa\QLKTX - Copy\QLKTX\bin\EntityFramework.SqlServer.xml
+C:\WorkSpace\KyTucXa\QLKTX - Copy\QLKTX\bin\Microsoft.AspNet.Identity.Core.xml
+C:\WorkSpace\KyTucXa\QLKTX - Copy\QLKTX\bin\Microsoft.AspNet.Identity.EntityFramework.xml
+C:\WorkSpace\KyTucXa\QLKTX - Copy\QLKTX\bin\Microsoft.AspNet.Identity.Owin.xml
+C:\WorkSpace\KyTucXa\QLKTX - Copy\QLKTX\bin\Microsoft.Bcl.AsyncInterfaces.xml
+C:\WorkSpace\KyTucXa\QLKTX - Copy\QLKTX\bin\Microsoft.IdentityModel.Abstractions.xml
+C:\WorkSpace\KyTucXa\QLKTX - Copy\QLKTX\bin\Microsoft.IdentityModel.JsonWebTokens.xml
+C:\WorkSpace\KyTucXa\QLKTX - Copy\QLKTX\bin\Microsoft.IdentityModel.Logging.xml
+C:\WorkSpace\KyTucXa\QLKTX - Copy\QLKTX\bin\Microsoft.IdentityModel.Tokens.xml
+C:\WorkSpace\KyTucXa\QLKTX - Copy\QLKTX\bin\Microsoft.Owin.xml
+C:\WorkSpace\KyTucXa\QLKTX - Copy\QLKTX\bin\Microsoft.Owin.Security.xml
+C:\WorkSpace\KyTucXa\QLKTX - Copy\QLKTX\bin\Microsoft.Owin.Security.Cookies.xml
+C:\WorkSpace\KyTucXa\QLKTX - Copy\QLKTX\bin\Microsoft.Owin.Security.OAuth.xml
+C:\WorkSpace\KyTucXa\QLKTX - Copy\QLKTX\bin\System.Buffers.xml
+C:\WorkSpace\KyTucXa\QLKTX - Copy\QLKTX\bin\System.IdentityModel.Tokens.Jwt.xml
+C:\WorkSpace\KyTucXa\QLKTX - Copy\QLKTX\bin\System.Memory.xml
+C:\WorkSpace\KyTucXa\QLKTX - Copy\QLKTX\bin\System.Numerics.Vectors.xml
+C:\WorkSpace\KyTucXa\QLKTX - Copy\QLKTX\bin\System.Runtime.CompilerServices.Unsafe.xml
+C:\WorkSpace\KyTucXa\QLKTX - Copy\QLKTX\bin\System.Text.Encodings.Web.xml
+C:\WorkSpace\KyTucXa\QLKTX - Copy\QLKTX\bin\System.Text.Json.xml
+C:\WorkSpace\KyTucXa\QLKTX - Copy\QLKTX\bin\System.Threading.Tasks.Extensions.xml
+C:\WorkSpace\KyTucXa\QLKTX - Copy\QLKTX\bin\System.ValueTuple.xml
+C:\WorkSpace\KyTucXa\QLKTX - Copy\QLKTX\bin\Newtonsoft.Json.xml
+C:\WorkSpace\KyTucXa\QLKTX - Copy\QLKTX\bin\System.Net.Http.Formatting.xml
+C:\WorkSpace\KyTucXa\QLKTX - Copy\QLKTX\bin\System.Web.Helpers.xml
+C:\WorkSpace\KyTucXa\QLKTX - Copy\QLKTX\bin\System.Web.Http.xml
+C:\WorkSpace\KyTucXa\QLKTX - Copy\QLKTX\bin\System.Web.Http.WebHost.xml
+C:\WorkSpace\KyTucXa\QLKTX - Copy\QLKTX\bin\System.Web.Mvc.xml
+C:\WorkSpace\KyTucXa\QLKTX - Copy\QLKTX\bin\System.Web.Optimization.xml
+C:\WorkSpace\KyTucXa\QLKTX - Copy\QLKTX\bin\System.Web.Razor.xml
+C:\WorkSpace\KyTucXa\QLKTX - Copy\QLKTX\bin\System.Web.WebPages.xml
+C:\WorkSpace\KyTucXa\QLKTX - Copy\QLKTX\bin\System.Web.WebPages.Deployment.xml
+C:\WorkSpace\KyTucXa\QLKTX - Copy\QLKTX\bin\System.Web.WebPages.Razor.xml
+C:\WorkSpace\KyTucXa\QLKTX - Copy\QLKTX\bin\Antlr3.Runtime.pdb
+C:\WorkSpace\KyTucXa\QLKTX - Copy\QLKTX\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.xml
+C:\WorkSpace\KyTucXa\QLKTX - Copy\QLKTX\obj\Debug\QLKTX.csproj.AssemblyReference.cache
+C:\WorkSpace\KyTucXa\QLKTX - Copy\QLKTX\obj\Debug\QLKTX.csproj.CoreCompileInputs.cache
+C:\WorkSpace\KyTucXa\QLKTX - Copy\QLKTX\obj\Debug\QLKTX.csproj.CopyComplete
+C:\WorkSpace\KyTucXa\QLKTX - Copy\QLKTX\obj\Debug\QLKTX.dll
+C:\WorkSpace\KyTucXa\QLKTX - Copy\QLKTX\obj\Debug\QLKTX.pdb
