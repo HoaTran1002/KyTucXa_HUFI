@@ -318,6 +318,12 @@
     </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Startup.cs" />
+    <Compile Include="Controllers\AboutController.cs" />
+    <Compile Include="Controllers\Form.cs" />
+    <Compile Include="Controllers\Grouph.cs" />
+    <Compile Include="Controllers\NotifiCation.cs" />
+    <Compile Include="Controllers\Health.cs" />
+    <Compile Include="Controllers\Contact.cs" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="Areas\HelpPage\HelpPage.css" />
@@ -440,10 +446,22 @@
     <Content Include="Views\Admin\XemChiTietHoaDon.cshtml" />
     <Content Include="Views\Admin\QuanLyNhanVien.cshtml" />
     <Content Include="Views\User\TrangChu.cshtml" />
+    <Content Include="Views\About\Index.cshtml" />
+    <Content Include="Views\Contact\Index.cshtml" />
+    <Content Include="Views\Form\Index.cshtml" />
+    <Content Include="Views\Grouph\Index.cshtml" />
+    <Content Include="Views\Health\Index.cshtml" />
+    <Content Include="Views\Notification\Index.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
     <Folder Include="assets\lib\" />
+    <Folder Include="Views\About\" />
+    <Folder Include="Views\Notification\" />
+    <Folder Include="Views\Health\" />
+    <Folder Include="Views\Grouph\" />
+    <Folder Include="Views\Form\" />
+    <Folder Include="Views\Contact\" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="fonts\glyphicons-halflings-regular.woff2" />
@@ -504,6 +522,11 @@
         </WebProjectProperties>
       </FlavorProperties>
     </VisualStudio>
+    <MonoDevelop>
+      <Properties>
+        <XspParameters Port="8080" Address="127.0.0.1" SslMode="None" SslProtocol="Default" KeyType="None" CertFile="" KeyFile="" PasswordOptions="None" Password="" Verbose="True" />
+      </Properties>
+    </MonoDevelop>
   </ProjectExtensions>
   <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">
     <PropertyGroup>

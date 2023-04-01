@@ -26,20 +26,29 @@ namespace QLKTX.Controllers
         public ActionResult DangNhap(string maSV, string matKhau,string ReturnUrl = "Home/TrangChu")
         {
             //////ViewBag.Title = "Đăng Nhập";
-            SinhVien SV = db.SinhViens.FirstOrDefault(sv => sv.MaSV == maSV);
-            if (SV != null)
-            {
-                FormsAuthenticationTicket ticket = new FormsAuthenticationTicket(1,
-                                                       "TaiKhoanDangNhap",DateTime.Now,
-                                                       DateTime.Now.AddDays(30),false, SV.MaSV,
-                                                       FormsAuthentication.FormsCookiePath);
-                string encTicket = FormsAuthentication.Encrypt(ticket);
-                Response.Cookies.Add(new HttpCookie(FormsAuthentication.FormsCookieName, encTicket));
-                SessionLoginUser.Create(SV);
+            try {
+                var SV = db.SinhViens.FirstOrDefault(x => x.MaSV == maSV);
+                if (SV != null)
+                {
+                    FormsAuthenticationTicket ticket = new FormsAuthenticationTicket(1,
+                                                           "TaiKhoanDangNhap", DateTime.Now,
+                                                           DateTime.Now.AddDays(30), false, SV.MaSV,
+                                                           FormsAuthentication.FormsCookiePath);
+                    string encTicket = FormsAuthentication.Encrypt(ticket);
+                    Response.Cookies.Add(new HttpCookie(FormsAuthentication.FormsCookieName, encTicket));
+                    SessionLoginUser.Create(SV);
+                    return Redirect(ReturnUrl);
+                }
+                ViewBag.loiDN = "Mã sinh viên hoặc mặt khẩu không đúng!";
                 return Redirect(ReturnUrl);
+
+            } catch (Exception E){
+                return Json(new
+                {
+                    message = E.Message
+                }); 
             }
-            ViewBag.loiDN = "Mã sinh viên hoặc mặt khẩu không đúng!";
-            return Redirect(ReturnUrl);
+            
         }
 
         public ActionResult DangXuat()
