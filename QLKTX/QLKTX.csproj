@@ -452,16 +452,13 @@
     <Content Include="Views\Grouph\Index.cshtml" />
     <Content Include="Views\Health\Index.cshtml" />
     <Content Include="Views\Notification\Index.cshtml" />
+    <Content Include="Views\Admin\TrangChu.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
+    <Folder Include="assets\css\Dashboard\Admin\" />
+    <Folder Include="assets\css\Dashboard\User\" />
     <Folder Include="assets\lib\" />
-    <Folder Include="Views\About\" />
-    <Folder Include="Views\Notification\" />
-    <Folder Include="Views\Health\" />
-    <Folder Include="Views\Grouph\" />
-    <Folder Include="Views\Form\" />
-    <Folder Include="Views\Contact\" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="fonts\glyphicons-halflings-regular.woff2" />

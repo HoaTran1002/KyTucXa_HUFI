@@ -25,6 +25,10 @@ namespace QLKTX.Controllers
         ////    }
         ////    return View();
         ////}        
+        public ActionResult TrangChu()
+        {
+            return View();
+        }
         public ActionResult DanhSachXetDuyet()
         {
             List<DangKyNoiTru> lXetDuyet = db.DangKyNoiTrus.Where(l => l.TrangThai.Equals("Chờ xét duyệt")).ToList();
