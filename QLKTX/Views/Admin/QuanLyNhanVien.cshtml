@@ -4,50 +4,177 @@
     ViewBag.Title = "QuanLyNhanVien";
     Layout = "~/Views/Admin/LayoutAdmin.cshtml";
 }
-<center><h4>Danh sách các tài khoản</h4></center>
-<table class="table">
-    <tr>
-        <th>
-            Tên đăng nhập
-        </th>
-        <th>
-            Họ
-        </th>
-        <th>
-            Tên
-        </th>
-        <th>
-            Số điện thoại
-        </th>
-        <th>
-            Chức vụ
-        </th>
-        <th>Mật khẩu</th>
-        <th></th>
-    </tr>
-@foreach (var item in Model) {
-<tr>
-    <td>
-        @Html.DisplayFor(modelItem => item.TenDangNhap)
-    </td>
-    <td>
-        @Html.DisplayFor(modelItem => item.Ho)
-    </td>
-    <td>
-        @Html.DisplayFor(modelItem => item.Ten)
-    </td>
-    <td>
-        @Html.DisplayFor(modelItem => item.SoDienThoai)
-    </td>
-    <td>
-        @Html.DisplayFor(modelItem => item.ChucVu)
-    </td>
-    <td>
-        @Html.DisplayFor(modelItem => item.MatKhau)
-    </td>
-    <td>
-        <a href="@Url.Action("DatLaiMatKhauMatDinh")" class="btn btn-primary">Reset</a>
-    </td>
-</tr>
+@section sidebarLeft{
+    <ul class="sidebar-left-navbar-nav">
+        <li class="sidebar-left-navbar-nav-item ">
+            <a href="~/Admin/TrangChu" class="sidebar-left-navbar-nav-item-link">
+                <i class="fa-light fa-grid-2"></i>
+                Trang chủ
+            </a>
+        </li>
+        <li class="sidebar-left-navbar-nav-item ">
+            <a href="~/Admin/DanhSachPhong" class="sidebar-left-navbar-nav-item-link">
+                <i class="fa-light fa-user"></i>
+                Danh sách phòng
+            </a>
+        </li>
+        <li class="sidebar-left-navbar-nav-item ">
+            <a href="~/Admin/DanhSachSinhVien" class="sidebar-left-navbar-nav-item-link">
+                <i class="fa-light fa-leaf"></i>
+                Danh sách sinh viên
+            </a>
+        </li>
+        <li class="sidebar-left-navbar-nav-item active">
+            <a href="~/Admin/QuanLyNhanVien" class="sidebar-left-navbar-nav-item-link">
+                <i class="fa-light fa-circle-minus"></i>
+                Danh sách nhân viên
+            </a>
+        </li>
+        <li class="sidebar-left-navbar-nav-item">
+            <a href="#" class="sidebar-left-navbar-nav-item-link">
+                <i class="fa-light fa-file"></i>
+                Danh sách vi phạm
+            </a>
+        </li>
+        <li class="sidebar-left-navbar-nav-item">
+            <a href="#" class="sidebar-left-navbar-nav-item-link">
+                <i class="fa-light fa-memo"></i>
+                Danh sách hóa đơn
+            </a>
+        </li>
+        <li class="sidebar-left-navbar-nav-item">
+            <a href="~/listContact.html" class="sidebar-left-navbar-nav-item-link">
+                <i class="fa-light fa-money-bill"></i>
+                Danh sách hợp đồng
+            </a>
+        </li>
+        <li class="sidebar-left-navbar-nav-item">
+            <a href="#" class="sidebar-left-navbar-nav-item-link">
+                <i class="fa-light fa-flag"></i>
+                Xét duyệt - kiểm tra
+            </a>
+        </li>
+        <li class="sidebar-left-navbar-nav-item">
+            <a href="#" class="sidebar-left-navbar-nav-item-link">
+                <i class="fa-light fa-flag"></i>
+                Thông tin quản trị
+            </a>
+        </li>
+    </ul>
 }
-</table>
+<link rel="stylesheet" href="~/assets/css/Dashboard/Admin/QuanLyNhanVien.css">
+<div class="sidebar-right-content-heading">
+    <h2 class="sidebar-right-content-heading-name">Quản lý danh sách nhân viên</h2>
+    <a href="#" class="btn__primary--type">
+        <i class="fa-light fa-plus"></i>
+        Thêm nhân viên mới
+    </a>
+</div>
+<div class="container-fluid">
+    <div class="row">
+        <div class="sidebar-right-list-filter">
+
+            <div class="sidebar-right-list-filter-sort">
+                <select name="" id="">
+                    <option value="">-- Chọn cách lọc --</option>
+                    <option value="">Theo từ A - Z</option>
+                    <option value="">Theo từ Z - A</option>
+                    <option value="">Theo số thứ tự thấp - cao </option>
+                    <option value="">Theo số thứ tự cao - thấp</option>
+                </select>
+            </div>
+        </div>
+    </div>
+    <div class="row">
+        <!-- Tối đa 8 người trong 1 trang -->
+        <table class="main-info-users-table">
+            <thead>
+                <td>
+                    Tên đăng nhập
+                </td>
+                <td>
+                    Họ
+                </td>
+                <td>
+                    Tên
+                </td>
+                <td>
+                    Số điện thoại
+                </td>
+                <td>
+                    Chức vụ
+                </td>
+                <td>Mật khẩu</td>
+            </thead>
+            <tbody>
+                @foreach (var item in Model)
+                {
+                    <tr>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.TenDangNhap)
+                        </td>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.Ho)
+                        </td>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.Ten)
+                        </td>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.SoDienThoai)
+                        </td>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.ChucVu)
+                        </td>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.MatKhau)
+                        </td>
+                        <td>
+                            <span class="list-setting">
+                                <i class="fa-regular fa-ellipsis"></i>
+                                <div class="list-setting-box">
+                                    <a href="#" class="list-setting-box-detail">
+                                        Chi tiết
+                                    </a>
+                                    <a href="#" class="list-setting-delete">
+                                        Xóa
+                                    </a>
+                                </div>
+                            </span>
+                        </td>
+                    </tr>
+                }
+            </tbody>
+        </table>
+    </div>
+    <div class="row">
+        <div class="sidebar-right-content-pagination">
+            <ul class="pagination-list">
+                <li class="pagination-item">
+                    <a href="#" class="pagination-link">
+                        <i class="fa-regular fa-chevron-left"></i>
+                    </a>
+                </li>
+                <li class="pagination-item">
+                    <a href="#" class="pagination-link active">
+                        1
+                    </a>
+                </li>
+                <li class="pagination-item">
+                    <a href="#" class="pagination-link">
+                        2
+                    </a>
+                </li>
+                <li class="pagination-item">
+                    <a href="#" class="pagination-link">
+                        3
+                    </a>
+                </li>
+                <li class="pagination-item">
+                    <a href="#" class="pagination-link">
+                        <i class="fa-regular fa-chevron-right"></i>
+                    </a>
+                </li>
+            </ul>
+        </div>
+    </div>
+</div>

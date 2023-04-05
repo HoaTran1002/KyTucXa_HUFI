@@ -1,7 +1,9 @@
 ﻿const mainTabs = document.querySelectorAll('.sidebar-right-content-titles-items')
 const mainContent = document.querySelectorAll('.sidebar-right-content-tab')
 const itemsMailboxOption = document.querySelectorAll('.mailbox-stdudent-item-option')
-const itemsStudentOption = document.querySelectorAll('.list-student-setting')
+const itemsStudentOption = document.querySelectorAll('.list-setting')
+
+console.log(itemsStudentOption);
 
 itemsMailboxOption.forEach((e)=>{
     e.addEventListener('click',function(element){
@@ -14,7 +16,7 @@ itemsMailboxOption.forEach((e)=>{
 })
 itemsStudentOption.forEach((e)=>{
     e.addEventListener('click',function(element){
-        const itemsStudentOptionActive = document.querySelector('.list-student-setting.active')
+        const itemsStudentOptionActive = document.querySelector('.list-setting.active')
         if (itemsStudentOptionActive) {
             itemsStudentOptionActive.classList.remove('active')
         }

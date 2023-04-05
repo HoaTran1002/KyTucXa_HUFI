@@ -1,9 +1,4 @@
-﻿.sidebar-right-list-filter {
-    display: flex;
-    align-items: center;
-    gap: 20px;
-}
-
+﻿
 .sidebar-right-list-room-all {
     margin-top: 10px;
 }
@@ -144,39 +139,3 @@
         color: white;
     }
 
-.sidebar-right-list-filter-list {
-    display: inline-flex;
-    gap: 15px;
-    margin-top: 10px;
-    background-color: var(--bg-color-primary);
-    border-radius: 5px;
-    padding: 5px;
-}
-
-.sidebar-right-list-filter-item-link {
-    font-size: 1.7rem;
-    display: block;
-    width: 100%;
-    height: 100%;
-    padding: 4px 10px;
-    font-weight: bold;
-    color: white;
-    border-radius: 5px;
-}
-
-    .sidebar-right-list-filter-item-link.active {
-        background-color: var(--bg-white);
-        color: var(--font-color-primary);
-    }
-
-.sidebar-right-list-filter-sort {
-    margin-top: 10px;
-}
-
-    .sidebar-right-list-filter-sort select {
-        font-size: 1.7rem;
-        border: none;
-        height: 100%;
-        padding: 10px;
-        color: var(--font-color-primary);
-    }

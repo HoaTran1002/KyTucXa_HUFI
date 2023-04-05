@@ -3,6 +3,65 @@
     Layout = "~/Views/Admin/LayoutAdmin.cshtml";
 }
 
+@section sidebarLeft{
+    <ul class="sidebar-left-navbar-nav">
+        <li class="sidebar-left-navbar-nav-item ">
+            <a href="~/Admin/TrangChu" class="sidebar-left-navbar-nav-item-link">
+                <i class="fa-light fa-grid-2"></i>
+                Trang chủ
+            </a>
+        </li>
+        <li class="sidebar-left-navbar-nav-item active">
+            <a href="~/Admin/DanhSachPhong" class="sidebar-left-navbar-nav-item-link">
+                <i class="fa-light fa-user"></i>
+                Danh sách phòng
+            </a>
+        </li>
+        <li class="sidebar-left-navbar-nav-item">
+            <a href="~/Admin/DanhSachSinhVien" class="sidebar-left-navbar-nav-item-link">
+                <i class="fa-light fa-leaf"></i>
+                Danh sách sinh viên
+            </a>
+        </li>
+        <li class="sidebar-left-navbar-nav-item">
+            <a href="~/Admin/QuanLyNhanVien" class="sidebar-left-navbar-nav-item-link">
+                <i class="fa-light fa-circle-minus"></i>
+                Danh sách nhân viên
+            </a>
+        </li>
+        <li class="sidebar-left-navbar-nav-item">
+            <a href="#" class="sidebar-left-navbar-nav-item-link">
+                <i class="fa-light fa-file"></i>
+                Danh sách vi phạm
+            </a>
+        </li>
+        <li class="sidebar-left-navbar-nav-item">
+            <a href="#" class="sidebar-left-navbar-nav-item-link">
+                <i class="fa-light fa-memo"></i>
+                Danh sách hóa đơn
+            </a>
+        </li>
+        <li class="sidebar-left-navbar-nav-item">
+            <a href="~/listContact.html" class="sidebar-left-navbar-nav-item-link">
+                <i class="fa-light fa-money-bill"></i>
+                Danh sách hợp đồng
+            </a>
+        </li>
+        <li class="sidebar-left-navbar-nav-item">
+            <a href="#" class="sidebar-left-navbar-nav-item-link">
+                <i class="fa-light fa-flag"></i>
+                Xét duyệt - kiểm tra
+            </a>
+        </li>
+        <li class="sidebar-left-navbar-nav-item">
+            <a href="#" class="sidebar-left-navbar-nav-item-link">
+                <i class="fa-light fa-flag"></i>
+                Thông tin quản trị
+            </a>
+        </li>
+    </ul>    
+}
+
 <link rel="stylesheet" href="~/assets/css/Dashboard/Admin/DanhSachPhong.css">
 <div class="sidebar-right-content-heading">
     <h2 class="sidebar-right-content-heading-name">Quản lý phòng ký túc xá</h2>
@@ -19,13 +78,13 @@
                     <a href="#" class="sidebar-right-list-filter-item-link active">Tất cả</a>
                 </li>
                 <li class="sidebar-right-list-filter-item">
-                    <a href="#" class="sidebar-right-list-filter-item-link">Phòng thường</a>
+                    <a href="#" class="sidebar-right-list-filter-item-link">Chưa sử dụng</a>
                 </li>
                 <li class="sidebar-right-list-filter-item">
-                    <a href="#" class="sidebar-right-list-filter-item-link">Phòng vip</a>
+                    <a href="#" class="sidebar-right-list-filter-item-link">Đã sử dụng</a>
                 </li>
                 <li class="sidebar-right-list-filter-item">
-                    <a href="#" class="sidebar-right-list-filter-item-link">Phòng cao cấp</a>
+                    <a href="#" class="sidebar-right-list-filter-item-link">Đang sửa chữa</a>
                 </li>
             </ul>
             <div class="sidebar-right-list-filter-sort">
@@ -43,7 +102,7 @@
                 @foreach (var item in Model)
                 {
                     @*<tr>
-                        <td>@item.Tang.Khu.Ten</td>
+                        <td></td>
                         <td>@item.Tang.Ten</td>
                         <td>@item.Ma</td>
                         <td></td>
@@ -60,8 +119,8 @@
                                 </div>
                                 <div class="list-room-item-left-name">@item.Ten</div>
                                 <div class="list-room-item-left-type">
-                                    <h2>Loại phòng:</h2>
-                                    <p>Thường</p>
+                                    <h2>Khu:</h2>
+                                    <p>@item.Tang.Khu.Ten</p>
                                 </div>
                                 <div class="list-room-item-left-number_people">
                                     Số sinh viên
@@ -71,7 +130,7 @@
                             </div>
                             <div class="sidebar-right-list-room-item-right">
                                 <div class="list-room-item-right-floor">
-                                    <span>Tầng 1</span>
+                                    <span> @item.Tang.Ten</span>
                                     <i class="fa-light fa-escalator"></i>
                                 </div>
                                 <div class="list-room-item-right-img">
@@ -90,29 +149,3 @@
         </div>
     </div>
 </div>
-
-<!DOCTYPE html>
-
-<html>
-<head>
-    <meta name="viewport" content="width=device-width" />
-    <title>Danh sách phòng</title>
-</head>
-<body>
-    <div>
-        <table class="table" style="text-align:center">
-            <tr>
-                <th>Khu</th>
-                <th>Tầng</th>
-                <th>Mã Phòng</th>
-                <th>Tên phòng</th>
-                <th>Số lượng đang ở</th>
-                <th>Trưởng phòng</th>
-                <th>Đang sửa chửa</th>
-                <th></th>
-            </tr>
-            
-        </table>
-    </div>
-</body>
-</html>

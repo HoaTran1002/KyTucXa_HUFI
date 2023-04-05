@@ -328,6 +328,8 @@
   <ItemGroup>
     <Content Include="Areas\HelpPage\HelpPage.css" />
     <Content Include="assets\css\Dashboard\Admin\DanhSachPhong.css" />
+    <Content Include="assets\css\Dashboard\Admin\DanhSachSinhVien.css" />
+    <Content Include="assets\css\Dashboard\Admin\QuanLyNhanVien.css" />
     <Content Include="assets\css\Dashboard\Admin\style.css" />
     <Content Include="assets\css\Dashboard\base.css" />
     <Content Include="assets\css\Dashboard\reset.css" />
@@ -344,6 +346,7 @@
     <Content Include="assets\css\stylee.css" />
     <Content Include="assets\img\banner-logn-res.jpg" />
     <Content Include="assets\img\English_flag-icon.png" />
+    <Content Include="assets\img\list-house.png" />
     <Content Include="assets\img\logo.png" />
     <Content Include="assets\img\MuCuNhan.png" />
     <Content Include="assets\img\User.png" />
@@ -487,6 +490,7 @@
     <Content Include="Views\Health\Index.cshtml" />
     <Content Include="Views\Notification\Index.cshtml" />
     <Content Include="Views\Admin\TrangChu.cshtml" />
+    <Content Include="Views\Admin\DanhSachSinhVien.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

@@ -107,6 +107,10 @@ namespace QLKTX.Controllers
         {
             return View(db.Phongs);
         }
+        public ActionResult DanhSachSinhVien()
+        {
+            return View(db.SinhViens);
+        }
         public ActionResult XemThongTinPhong(string maPhong)
         {
             return View(db.Phongs.FirstOrDefault(p => p.Ma == maPhong));
