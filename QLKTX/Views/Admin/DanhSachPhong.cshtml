@@ -1,8 +1,95 @@
 ﻿@model IEnumerable<QLKTX.Models.Phong>
 @{
-    Layout = null;
     Layout = "~/Views/Admin/LayoutAdmin.cshtml";
 }
+
+<link rel="stylesheet" href="~/assets/css/Dashboard/Admin/DanhSachPhong.css">
+<div class="sidebar-right-content-heading">
+    <h2 class="sidebar-right-content-heading-name">Quản lý phòng ký túc xá</h2>
+    <a href="#" class="btn__primary--type">
+        <i class="fa-light fa-plus"></i>
+        Thêm phòng mới
+    </a>
+</div>
+<div class="container-fluid">
+    <div class="sidebar-right-list">
+        <div class="sidebar-right-list-filter">
+            <ul class="sidebar-right-list-filter-list">
+                <li class="sidebar-right-list-filter-item">
+                    <a href="#" class="sidebar-right-list-filter-item-link active">Tất cả</a>
+                </li>
+                <li class="sidebar-right-list-filter-item">
+                    <a href="#" class="sidebar-right-list-filter-item-link">Phòng thường</a>
+                </li>
+                <li class="sidebar-right-list-filter-item">
+                    <a href="#" class="sidebar-right-list-filter-item-link">Phòng vip</a>
+                </li>
+                <li class="sidebar-right-list-filter-item">
+                    <a href="#" class="sidebar-right-list-filter-item-link">Phòng cao cấp</a>
+                </li>
+            </ul>
+            <div class="sidebar-right-list-filter-sort">
+                <select name="" id="">
+                    <option value="">-- Chọn cách lọc --</option>
+                    <option value="">Theo từ A - Z</option>
+                    <option value="">Theo từ Z - A</option>
+                    <option value="">Theo số phòng thấp - cao </option>
+                    <option value="">Theo số phòng cao - thấp</option>
+                </select>
+            </div>
+        </div>
+        <div class="sidebar-right-list-room-all">
+            <div class="row">
+                @foreach (var item in Model)
+                {
+                    @*<tr>
+                        <td>@item.Tang.Khu.Ten</td>
+                        <td>@item.Tang.Ten</td>
+                        <td>@item.Ma</td>
+                        <td></td>
+                        <td></td>
+                        <td>@item.TruongPhong</td>
+                        <td>@Html.DisplayFor(modelItem => item.DangSuaChua)</td>
+                    </tr>*@
+                    <div class="col-lg-6">
+                        <div class="sidebar-right-list-room-item">
+                            <div class="sidebar-right-list-room-item-left">
+                                <div class="list-room-item-left-status">
+                                    <span class="dot-status" style="background-color: #00c000;"></span>
+                                    Đang sử dụng
+                                </div>
+                                <div class="list-room-item-left-name">@item.Ten</div>
+                                <div class="list-room-item-left-type">
+                                    <h2>Loại phòng:</h2>
+                                    <p>Thường</p>
+                                </div>
+                                <div class="list-room-item-left-number_people">
+                                    Số sinh viên
+                                    <i class="fa-light fa-user"></i>:
+                                    <span>@*4</span> / <span class="people_max">4*@ @(10 - item.SoLuongTrong)</span>
+                                </div>
+                            </div>
+                            <div class="sidebar-right-list-room-item-right">
+                                <div class="list-room-item-right-floor">
+                                    <span>Tầng 1</span>
+                                    <i class="fa-light fa-escalator"></i>
+                                </div>
+                                <div class="list-room-item-right-img">
+                                    <img src="~/assets/img/list-house.png" alt="">
+                                </div>
+                                <div class="list-room-item-right-option">
+                                    <a href="@Url.Action("XemThongTinPhong",new {maPhong = item.Ma})" class="list-room-item-right-detail">Xem chi tiết</a>
+                                    <a href="#" class="list-room-item-right-edit">Chỉnh sửa</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                }
+
+            </div>
+        </div>
+    </div>
+</div>
 
 <!DOCTYPE html>
 
@@ -24,19 +111,7 @@
                 <th>Đang sửa chửa</th>
                 <th></th>
             </tr>
-            @foreach (var item in Model)
-            {
-        <tr>
-            <td>@item.Tang.Khu.Ten</td>
-            <td>@item.Tang.Ten</td>
-            <td>@item.Ma</td>
-            <td>@item.Ten</td>
-            <td>@(10 - item.SoLuongTrong)</td>
-            <td>@item.TruongPhong</td>
-            <td>@Html.DisplayFor(modelItem => item.DangSuaChua)</td>           
-            <td><a href="@Url.Action("XemThongTinPhong",new {maPhong = item.Ma})">Chi tiết</a></td>
-        </tr>
-            }
+            
         </table>
     </div>
 </body>

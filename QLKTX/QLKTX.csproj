@@ -327,6 +327,13 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="Areas\HelpPage\HelpPage.css" />
+    <Content Include="assets\css\Dashboard\Admin\DanhSachPhong.css" />
+    <Content Include="assets\css\Dashboard\Admin\style.css" />
+    <Content Include="assets\css\Dashboard\base.css" />
+    <Content Include="assets\css\Dashboard\reset.css" />
+    <Content Include="assets\css\Dashboard\responsive.css" />
+    <Content Include="assets\css\Dashboard\root.css" />
+    <Content Include="assets\css\Dashboard\style.css" />
     <Content Include="assets\css\date.css" />
     <Content Include="assets\css\hopThoai.css" />
     <Content Include="assets\css\main.css" />
@@ -343,6 +350,8 @@
     <Content Include="assets\img\VietNam_flag-icon.png" />
     <Content Include="assets\js\CheckDieuKhoan.js" />
     <Content Include="assets\js\checkform.js" />
+    <Content Include="assets\js\Dashboard\Admin\main.js" />
+    <Content Include="assets\js\Dashboard\man.js" />
     <Content Include="assets\js\date.js" />
     <Content Include="assets\js\GetAddressApi.js" />
     <Content Include="assets\js\GetDataPhongApi.js" />
@@ -356,6 +365,14 @@
     <Content Include="assets\js\main_dasboard.js" />
     <Content Include="assets\js\TaiAnh.js" />
     <Content Include="assets\js\XuLyLocHoaDon.js" />
+    <Content Include="assets\lib\slick-1.8.1\.gitignore" />
+    <Content Include="assets\lib\slick-1.8.1\index.html" />
+    <Content Include="assets\lib\slick-1.8.1\slick\ajax-loader.gif" />
+    <Content Include="assets\lib\slick-1.8.1\slick\fonts\slick.svg" />
+    <Content Include="assets\lib\slick-1.8.1\slick\slick-theme.css" />
+    <Content Include="assets\lib\slick-1.8.1\slick\slick.css" />
+    <Content Include="assets\lib\slick-1.8.1\slick\slick.js" />
+    <Content Include="assets\lib\slick-1.8.1\slick\slick.min.js" />
     <Content Include="Content\bootstrap-theme.css" />
     <Content Include="Content\bootstrap-theme.min.css" />
     <Content Include="Content\bootstrap.css" />
@@ -405,6 +422,23 @@
     <Content Include="..\.editorconfig">
       <Link>.editorconfig</Link>
     </Content>
+    <Content Include="assets\lib\slick-1.8.1\bower.json" />
+    <Content Include="assets\lib\slick-1.8.1\component.json" />
+    <Content Include="assets\lib\slick-1.8.1\CONTRIBUTING.markdown" />
+    <Content Include="assets\lib\slick-1.8.1\ISSUE_TEMPLATE.md" />
+    <Content Include="assets\lib\slick-1.8.1\LICENSE" />
+    <Content Include="assets\lib\slick-1.8.1\Makefile" />
+    <Content Include="assets\lib\slick-1.8.1\package.json" />
+    <Content Include="assets\lib\slick-1.8.1\README.markdown" />
+    <Content Include="assets\lib\slick-1.8.1\slick.jquery.json" />
+    <Content Include="assets\lib\slick-1.8.1\slick\config.rb" />
+    <Content Include="assets\lib\slick-1.8.1\slick\fonts\slick.eot" />
+    <Content Include="assets\lib\slick-1.8.1\slick\fonts\slick.ttf" />
+    <Content Include="assets\lib\slick-1.8.1\slick\fonts\slick.woff" />
+    <Content Include="assets\lib\slick-1.8.1\slick\slick-theme.less" />
+    <Content Include="assets\lib\slick-1.8.1\slick\slick-theme.scss" />
+    <Content Include="assets\lib\slick-1.8.1\slick\slick.less" />
+    <Content Include="assets\lib\slick-1.8.1\slick\slick.scss" />
     <None Include="Scripts\jquery-3.4.1.intellisense.js" />
     <Content Include="Scripts\jquery-3.4.1.js" />
     <Content Include="Scripts\jquery-3.4.1.min.js" />
@@ -456,9 +490,8 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
-    <Folder Include="assets\css\Dashboard\Admin\" />
     <Folder Include="assets\css\Dashboard\User\" />
-    <Folder Include="assets\lib\" />
+    <Folder Include="assets\js\Dashboard\User\" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="fonts\glyphicons-halflings-regular.woff2" />
