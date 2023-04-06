@@ -23,7 +23,7 @@ namespace QLKTX.Controllers
             return View();
         }
         [HttpPost]
-        public ActionResult DangNhap(string maSV, string matKhau,string ReturnUrl = "Home/TrangChu")
+        public ActionResult DangNhap(string maSV, string matKhau,string ReturnUrl = "TrangChu")
         {
             //////ViewBag.Title = "Đăng Nhập";
             try {
