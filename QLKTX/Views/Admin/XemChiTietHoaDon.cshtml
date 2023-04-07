@@ -4,93 +4,168 @@
     ViewBag.Title = "XemChiTietHoaDon";
     Layout = "~/Views/Admin/LayoutAdmin.cshtml";
 }
-
-<h2>XemChiTietHoaDon</h2>
-<div>
-    <h4>HoaDon</h4>
-    <hr />
-    <dl class="dl-horizontal">
-        <dt>
-            @Html.DisplayNameFor(model => model.MaHoaDon)
-        </dt>
-
-        <dd>
-            @Html.DisplayFor(model => model.MaHoaDon)
-        </dd>
-        <dt>
-            @Html.DisplayNameFor(model => model.MaPhong)
-        </dt>
-
-        <dd>
-            @Html.DisplayFor(model => model.MaPhong)
-        </dd>
-
-        <dt>
-            @Html.DisplayNameFor(model => model.NgayTao)
-        </dt>
-
-        <dd>
-            @Html.DisplayFor(model => model.NgayTao)
-        </dd>
-        <dt>
-            @Html.DisplayNameFor(model => model.ThanhTien)
-        </dt>
-        <dd>
-            @Html.DisplayFor(model => model.ThanhTien)
-        </dd>
-        <dt>
-            @Html.DisplayNameFor(model => model.NguoiTao)
-        </dt>
-
-        <dd>
-            @Html.DisplayFor(model => model.NguoiTao)
-        </dd>
-
-    </dl>
+@section sidebarLeft{
+    <ul class="sidebar-left-navbar-nav">
+        <li class="sidebar-left-navbar-nav-item ">
+            <a href="~/Admin/TrangChu" class="sidebar-left-navbar-nav-item-link">
+                <i class="fa-light fa-grid-2"></i>
+                Trang chủ
+            </a>
+        </li>
+        <li class="sidebar-left-navbar-nav-item ">
+            <a href="~/Admin/DanhSachPhong" class="sidebar-left-navbar-nav-item-link">
+                <i class="fa-light fa-user"></i>
+                Danh sách phòng
+            </a>
+        </li>
+        <li class="sidebar-left-navbar-nav-item ">
+            <a href="~/Admin/DanhSachSinhVien" class="sidebar-left-navbar-nav-item-link">
+                <i class="fa-light fa-leaf"></i>
+                Danh sách sinh viên
+            </a>
+        </li>
+        <li class="sidebar-left-navbar-nav-item ">
+            <a href="~/Admin/QuanLyNhanVien" class="sidebar-left-navbar-nav-item-link">
+                <i class="fa-light fa-circle-minus"></i>
+                Danh sách nhân viên
+            </a>
+        </li>
+        <li class="sidebar-left-navbar-nav-item">
+            <a href="#" class="sidebar-left-navbar-nav-item-link">
+                <i class="fa-light fa-file"></i>
+                Danh sách vi phạm
+            </a>
+        </li>
+        <li class="sidebar-left-navbar-nav-item active">
+            <a href="~/Admin/DanhSachHoaDon" class="sidebar-left-navbar-nav-item-link">
+                <i class="fa-light fa-memo"></i>
+                Danh sách hóa đơn
+            </a>
+        </li>
+        <li class="sidebar-left-navbar-nav-item">
+            <a href="~/Admin/DanhSachHopDong" class="sidebar-left-navbar-nav-item-link">
+                <i class="fa-light fa-money-bill"></i>
+                Danh sách hợp đồng
+            </a>
+        </li>
+        <li class="sidebar-left-navbar-nav-item">
+            <a href="~/Admin/DanhSachXetDuyet" class="sidebar-left-navbar-nav-item-link">
+                <i class="fa-light fa-flag"></i>
+                Xét duyệt - kiểm tra
+            </a>
+        </li>
+        <li class="sidebar-left-navbar-nav-item">
+            <a href="#" class="sidebar-left-navbar-nav-item-link">
+                <i class="fa-light fa-flag"></i>
+                Thông tin quản trị
+            </a>
+        </li>
+    </ul>
+}
+<link rel="stylesheet" href="~/assets/css/Dashboard/Admin/XemChiTietHoaDon.css" />
+<div class="sidebar-right-content-heading">
+    <h2 class="sidebar-right-content-heading-name"> Chi tiết hóa đơn</h2>
 </div>
-<center><h4>Chi tiết các khoản dịch vụ</h4></center>
-<table class="table">
-    <tr>
-        <th>Mã dịch vụ</th>
-        <th>Tên dịch vụ</th>
-        <th>Giá</th>
-        <th>Số lượng</th>
-        <th>Tổng tiền</th>
-    </tr>
-    @foreach (var item in Model.ChiTietHoaDons)
-    {
-        <tr>
-            <td>@item.MaDichVu</td>
-            <td>@item.DichVu.TenDichVu</td>
-            <td>@item.DonGia</td>
-            <td>@item.SoLuong</td>
-            <td>@(item.DonGia * item.SoLuong)</td>
-        </tr>
-    }
-</table>
-@if (!Model.DaThanhToan)
-{
-    <link rel="stylesheet" href="~/assets/css/hopThoai.css" />
-    <button class="btn_thanhtoan open_btn " >Xác Nhận</button>
-    <div class="modall an">
-        @using (Html.BeginForm("ThanhToanHoaDon", "Admin", new {url = Request.Url.ToString() }))
-        {
-            <div class="modal__innerr">
-                <div class="modal__headerr">
-                    <p>Bạn muốn thanh toán hóa đơn</p>
-                    <i class="fas fa-times"></i>
-                </div>
-                <div class="modal__bodyy">
-                    <p>Xác nhận thanh toán hóa đơn "<span>@Model.MaHoaDon</span>"?</p>
-                </div>
-                <div class="modal__footerr">
-                    <a class="close btn btn-warning">Hủy bỏ</a>
-                    <button type="submit" name="maHoaDon" value="@Model.MaHoaDon" class="btn btn-danger">Xác nhận</button>
+<div class="container-fluid">
+    <div class="bg-white-content">
+        <div class="row">
+            <div class="col-lg-6">
+                <div class="detail-bill-heading">
+                    <h3 class="detail-bill-heading-title">Mã hóa đơn:</h3>
+                    <span class="detail-bill-heading-name">@Html.DisplayFor(model => model.MaHoaDon)</span>
                 </div>
             </div>
-        }
+            <div class="col-lg-6">
+                <div class="detail-bill-heading">
+                    <h3 class="detail-bill-heading-title">Mã phòng:</h3>
+                    <span class="detail-bill-heading-name">@Html.DisplayFor(model => model.MaPhong)</span>
+                </div>
+            </div>
+            <div class="col-lg-6">
+                <div class="detail-bill-heading">
+                    <h3 class="detail-bill-heading-title">Ngày tạo:</h3>
+                    <span class="detail-bill-heading-name">@Html.DisplayFor(model => model.NgayTao)</span>
+                </div>
+            </div>
+            <div class="col-lg-6">
+                <div class="detail-bill-heading">
+                    <h3 class="detail-bill-heading-title">Thành tiền:</h3>
+                    <span class="detail-bill-heading-name">@Html.DisplayFor(model => model.ThanhTien) VND</span>
+                </div>
+            </div>
+            <div class="col-lg-6">
+                <div class="detail-bill-heading">
+                    <h3 class="detail-bill-heading-title">Người tạo:</h3>
+                    <span class="detail-bill-heading-name">@Html.DisplayFor(model => model.NguoiTao)</span>
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <h4 class="heading-bill-title">Chi tiết các khoản dịch vụ</h4>
+        </div>
+        <div class="row">
+            <table class="table main-info-users-table">
+                <thead>
+                <td>Mã dịch vụ</td>
+                <td>Tên dịch vụ</td>
+                <td>Giá</td>
+                <td>Số lượng</td>
+                <td>Tổng tiền</td>
+                </thead>
+                @foreach (var item in Model.ChiTietHoaDons)
+                {
+                    <tr>
+                        <td>@item.MaDichVu</td>
+                        <td>@item.DichVu.TenDichVu</td>
+                        <td>@item.DonGia VND</td>
+                        <td>@item.SoLuong</td>
+                        <td>@(item.DonGia * item.SoLuong) VND</td>
+                    </tr>
+                }
+            </table>
+
+            @if (!Model.DaThanhToan)
+            {
+                <link rel="stylesheet" href="~/assets/css/hopThoai.css" />
+                <div class="form-add-bill">
+                    <button class="open_btn btn btn-primary">Xác nhận thanh toán</button>
+                    <a href="~/Admin/DanhSachHoaDon" class="btn__go-home">
+                        <i class="fa-regular fa-chevrons-left"></i>
+                        Trở về danh sách hóa đơn
+                    </a>
+                </div>
+                <div class="modall an">
+                    @using (Html.BeginForm("ThanhToanHoaDon", "Admin", new { url = Request.Url.ToString() }))
+                    {
+                        <div class="modal__innerr">
+                            <div class="modal__headerr">
+                                <p>Bạn muốn thanh toán hóa đơn</p>
+                                <i class="fas fa-times"></i>
+                            </div>
+                            <div class="modal__bodyy">
+                                <p>Xác nhận thanh toán hóa đơn "<span>@Model.MaHoaDon</span>"?</p>
+                            </div>
+                            <div class="modal__footerr">
+                                <a class="close btn btn-warning">Hủy bỏ</a>
+                                <button type="submit" name="maHoaDon" value="@Model.MaHoaDon" class="btn btn-danger">Xác nhận</button>
+                            </div>
+                        </div>
+                    }
+                </div>
+                <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js" integrity="sha512-894YE6QWD5I59HgZOGReFYm4dnWc1Qt5NtvYSaNcOP+u1T9qYdvdihz0PPSiiqn/+/3e7Jo4EaG7TubfWGUrMQ==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+                <script src="https://cdnjs.cloudflare.com/ajax/libs/axios/0.26.1/axios.min.js" integrity="sha512-bPh3uwgU5qEMipS/VOmRqynnMXGGSRv+72H/N260MQeXZIK4PG48401Bsby9Nq5P5fz7hy5UGNmC/W1Z51h2GQ==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+                <script src="~/assets/js/HopThoai.js"></script>
+            }
+            else
+            {
+                <div class="form-add-bill">
+                    <a href="~/Admin/DanhSachHoaDon" class="btn__go-home">
+                        <i class="fa-regular fa-chevrons-left"></i>
+                        Trở về danh sách hóa đơn
+                    </a>
+                </div>
+            }
+        </div>
     </div>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js" integrity="sha512-894YE6QWD5I59HgZOGReFYm4dnWc1Qt5NtvYSaNcOP+u1T9qYdvdihz0PPSiiqn/+/3e7Jo4EaG7TubfWGUrMQ==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/axios/0.26.1/axios.min.js" integrity="sha512-bPh3uwgU5qEMipS/VOmRqynnMXGGSRv+72H/N260MQeXZIK4PG48401Bsby9Nq5P5fz7hy5UGNmC/W1Z51h2GQ==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
-    <script src="~/assets/js/HopThoai.js"></script>
-}
+</div>
+

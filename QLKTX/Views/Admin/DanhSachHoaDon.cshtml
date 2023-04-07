@@ -65,64 +65,65 @@
 <link rel="stylesheet" href="~/assets/css/hopThoai.css" />
 <link rel="stylesheet" href="~/assets/css/Dashboard/Admin/DanhSachHoaDon.css" />
 <div class="sidebar-right-content-heading">
-    <h2 class="sidebar-right-content-heading-name">Quản lý danh sách sinh viên</h2>
+    <h2 class="sidebar-right-content-heading-name">Danh sách hóa đơn</h2>
     <a href="~/Admin/TaoHoaDon" class="btn__primary--type">
         <i class="fa-light fa-plus"></i>
         Tạo hóa đơn mới
     </a>
 </div>
-<div class="container-fluid">
-    <div class="row">
-        <input type="checkbox" checked id="showAllHD" hidden />
-        <label for="showAllHD" class="showAllHD-button">Tất cả</label>
-        <div id="showloc" hidden>
-            <div class="filter-list">
-                <div class="filter-box">
-                    <span class="filter-title">Chọn khu:</span>
-                    <select name="khu" id="khu" class="filter-select">
-                        <option value=""> --Chọn-- </option>
-                    </select>
-                </div>
-                <div class="filter-box">
-                    <span class="filter-title">Chọn tầng:</span>
-                    <select name="tang" id="tang" class="filter-select">
-                        <option value=""> --Chọn-- </option>
-                    </select>
-                </div>
-                <div class="filter-box">
-                    <span class="filter-title">Chọn phòng:</span>
-                    <select name="phong" id="phong" class="filter-select">
-                        <option value="">-- Chọn-- </option>
-                    </select>
-                </div>
+<div class="filter-list-bill">
+    <input type="checkbox" checked id="showAllHD" hidden />
+    <label for="showAllHD" class="showAllHD-button">Tất cả</label>
+    <div id="showloc" hidden>
+        <div class="filter-list">
+            <div class="filter-box">
+                <span class="filter-title">Chọn khu:</span>
+                <select name="khu" id="khu" class="filter-select">
+                    <option value=""> --Chọn-- </option>
+                </select>
             </div>
-            <div class="filter-list">
-                <div class="filter-box">
-                    <input id="thangHienTai" type="checkbox" checked name="thangHienTai" />
-                    <label for="thangHienTai" class="filter-title">Tháng hiện tại</label>
-                    <select disabled name="nam" id="nam" class="filter-select">
-                        @for (int nam = DateTime.Now.Year; nam >= 2020; nam--)
-                        {
-                            <option value="@nam">@nam</option>
-                        }
-                    </select>
-                    <select disabled name="thang" id="thang" class="filter-select">
-                        <option selected value="0">Chọn</option>
-                    </select>
-
-                </div>
-                <div class="filter-box">
-                    <b class="filter-title">Trạng thái: </b>
-                    <input type="checkbox" checked class="loctt" id="daThanhToan" name="daThanhToan" />
-                    <label for="daThanhToan" class="filter-title">Đã thanh toán</label>
-                    <input type="checkbox" checked class="loctt" id="chuaThanhToan" name="chuaThanhToan" />
-                    <label for="chuaThanhToan" class="filter-title">Chưa thanh toán</label>
-                </div>
-                    
+            <div class="filter-box">
+                <span class="filter-title">Chọn tầng:</span>
+                <select name="tang" id="tang" class="filter-select">
+                    <option value=""> --Chọn-- </option>
+                </select>
             </div>
-            <button id="btn_loc">Lọc</button>
+            <div class="filter-box">
+                <span class="filter-title">Chọn phòng:</span>
+                <select name="phong" id="phong" class="filter-select">
+                    <option value="">-- Chọn-- </option>
+                </select>
+            </div>
         </div>
+        <div class="filter-list">
+            <div class="filter-box">
+                <input id="thangHienTai" type="checkbox" checked name="thangHienTai" />
+                <label for="thangHienTai" class="filter-title">Tháng hiện tại</label>
+                <select disabled name="nam" id="nam" class="filter-select">
+                    @for (int nam = DateTime.Now.Year; nam >= 2020; nam--)
+                    {
+                        <option value="@nam">@nam</option>
+                    }
+                </select>
+                <select disabled name="thang" id="thang" class="filter-select">
+                    <option selected value="0">Chọn</option>
+                </select>
+
+            </div>
+            <div class="filter-box">
+                <b class="filter-title">Trạng thái: </b>
+                <input type="checkbox" checked class="loctt" id="daThanhToan" name="daThanhToan" />
+                <label for="daThanhToan" class="filter-title">Đã thanh toán</label>
+                <input type="checkbox" checked class="loctt" id="chuaThanhToan" name="chuaThanhToan" />
+                <label for="chuaThanhToan" class="filter-title">Chưa thanh toán</label>
+            </div>
+
+        </div>
+
     </div>
+    <button id="btn_loc">Lọc</button>
+</div>
+<div class="container-fluid">
     <div class="row">
         <table class="main-info-users-table">
             <thead>

@@ -1,87 +1,133 @@
 ﻿@model QLKTX.Models.HopDong
 
 @{
-    Layout = null;
+    ViewBag.Title = "Chi tiết hợp đồng";
+    Layout = "~/Views/Admin/LayoutAdmin.cshtml";
+}
+@section sidebarLeft{
+    <ul class="sidebar-left-navbar-nav">
+        <li class="sidebar-left-navbar-nav-item ">
+            <a href="~/Admin/TrangChu" class="sidebar-left-navbar-nav-item-link">
+                <i class="fa-light fa-grid-2"></i>
+                Trang chủ
+            </a>
+        </li>
+        <li class="sidebar-left-navbar-nav-item ">
+            <a href="~/Admin/DanhSachPhong" class="sidebar-left-navbar-nav-item-link">
+                <i class="fa-light fa-user"></i>
+                Danh sách phòng
+            </a>
+        </li>
+        <li class="sidebar-left-navbar-nav-item ">
+            <a href="~/Admin/DanhSachSinhVien" class="sidebar-left-navbar-nav-item-link">
+                <i class="fa-light fa-leaf"></i>
+                Danh sách sinh viên
+            </a>
+        </li>
+        <li class="sidebar-left-navbar-nav-item ">
+            <a href="~/Admin/QuanLyNhanVien" class="sidebar-left-navbar-nav-item-link">
+                <i class="fa-light fa-circle-minus"></i>
+                Danh sách nhân viên
+            </a>
+        </li>
+        <li class="sidebar-left-navbar-nav-item">
+            <a href="#" class="sidebar-left-navbar-nav-item-link">
+                <i class="fa-light fa-file"></i>
+                Danh sách vi phạm
+            </a>
+        </li>
+        <li class="sidebar-left-navbar-nav-item ">
+            <a href="~/Admin/DanhSachHoaDon" class="sidebar-left-navbar-nav-item-link">
+                <i class="fa-light fa-memo"></i>
+                Danh sách hóa đơn
+            </a>
+        </li>
+        <li class="sidebar-left-navbar-nav-item active">
+            <a href="~/Admin/DanhSachHopDong" class="sidebar-left-navbar-nav-item-link">
+                <i class="fa-light fa-money-bill"></i>
+                Danh sách hợp đồng
+            </a>
+        </li>
+        <li class="sidebar-left-navbar-nav-item">
+            <a href="~/Admin/DanhSachXetDuyet" class="sidebar-left-navbar-nav-item-link">
+                <i class="fa-light fa-flag"></i>
+                Xét duyệt - kiểm tra
+            </a>
+        </li>
+        <li class="sidebar-left-navbar-nav-item">
+            <a href="#" class="sidebar-left-navbar-nav-item-link">
+                <i class="fa-light fa-flag"></i>
+                Thông tin quản trị
+            </a>
+        </li>
+    </ul>
 }
 
-<!DOCTYPE html>
-
-<html>
-<head>
-    <meta name="viewport" content="width=device-width" />
-    <title>ChiTietHopDong</title>
-</head>
-<body>
-    <div>
-        <h4>HopDong</h4>
-        <hr />
-        <dl class="dl-horizontal">
-            <dt>
-                @Html.DisplayNameFor(model => model.MaHopDong)
-            </dt>
-
-            <dd>
-                @Html.DisplayFor(model => model.MaHopDong)
-            </dd>
-
-            <dt>
-                @Html.DisplayNameFor(model => model.MaSV)
-            </dt>
-
-            <dd>
-                @Html.DisplayFor(model => model.MaSV)
-                Xin chào tất cả mọi người
-            </dd>
-
-            <dt>
-                @Html.DisplayNameFor(model => model.NguoiTao)
-            </dt>
-
-            <dd>
-                @Html.DisplayFor(model => model.NguoiTao)
-            </dd>
-
-            <dt>
-                @Html.DisplayNameFor(model => model.NgayTao)
-            </dt>
-
-            <dd>
-                @Html.DisplayFor(model => model.NgayTao)
-            </dd>
-
-            <dt>
-                @Html.DisplayNameFor(model => model.NgayBatDau)
-            </dt>
-
-            <dd>
-                @Html.DisplayFor(model => model.NgayBatDau)
-            </dd>
-
-            <dt>
-                @Html.DisplayNameFor(model => model.NgayKetThuc)
-            </dt>
-
-            <dd>
-                @Html.DisplayFor(model => model.NgayKetThuc)
-            </dd>
-
-            <dt>
-                @Html.DisplayNameFor(model => model.TrangThai)
-            </dt>
-
-            <dd>
-                @Html.DisplayFor(model => model.TrangThai)
-            </dd>
-
-            <dt>
-                @Html.DisplayNameFor(model => model.DaThanhToan)
-            </dt>
-
-            <dd>
-                @Html.DisplayFor(model => model.DaThanhToan)
-            </dd>
-
-        </dl>
+<link rel="stylesheet" href="~/assets/css/hopThoai.css" />
+<link rel="stylesheet" href="~/assets/css/Dashboard/Admin/ChiTietHopDong.css" />
+<div class="sidebar-right-content-heading">
+    <h2 class="sidebar-right-content-heading-name">Chi tiết hợp dồng</h2>
+</div>
+<div class="container-fluid">
+    <div class="row">
+        <div class="bg-white-content">
+            <div class="row">
+                <div class="col-lg-6">
+                    <div class="detail-bill-heading">
+                        <h3 class="detail-bill-heading-title">Mã hợp dồng:</h3>
+                        <span class="detail-bill-heading-name">@Html.DisplayFor(model => model.MaHopDong)</span>
+                    </div>
+                </div>
+                <div class="col-lg-6">
+                    <div class="detail-bill-heading">
+                        <h3 class="detail-bill-heading-title">Mã sinh viên:</h3>
+                        <span class="detail-bill-heading-name">@Html.DisplayFor(model => model.MaSV)</span>
+                    </div>
+                </div>
+                <div class="col-lg-6">
+                    <div class="detail-bill-heading">
+                        <h3 class="detail-bill-heading-title">Người tạo:</h3>
+                        <span class="detail-bill-heading-name">@Html.DisplayFor(model => model.NguoiTao)</span>
+                    </div>
+                </div>
+                <div class="col-lg-6">
+                    <div class="detail-bill-heading">
+                        <h3 class="detail-bill-heading-title">Ngày tạo:</h3>
+                        <span class="detail-bill-heading-name">@Html.DisplayFor(model => model.NgayTao)</span>
+                    </div>
+                </div>
+                <div class="col-lg-6">
+                    <div class="detail-bill-heading">
+                        <h3 class="detail-bill-heading-title">Ngày bắt đầu:</h3>
+                        <span class="detail-bill-heading-name">@Html.DisplayFor(model => model.NgayBatDau)</span>
+                    </div>
+                </div>
+                <div class="col-lg-6">
+                    <div class="detail-bill-heading">
+                        <h3 class="detail-bill-heading-title">Ngày kết thúc:</h3>
+                        <span class="detail-bill-heading-name">@Html.DisplayFor(model => model.NgayKetThuc)</span>
+                    </div>
+                </div>
+                <div class="col-lg-6">
+                    <div class="detail-bill-heading">
+                        <h3 class="detail-bill-heading-title">Trạng thái:</h3>
+                        <span class="detail-bill-heading-name">@Html.DisplayFor(model => model.TrangThai)</span>
+                    </div>
+                </div>
+                <div class="col-lg-6">
+                    <div class="detail-bill-heading">
+                        <h3 class="detail-bill-heading-title">Đã thanh toán:</h3>
+                        <span class="detail-bill-heading-name">@Html.DisplayFor(model => model.DaThanhToan)</span>
+                    </div>
+                </div>
+            </div>
+            <div class="form-add-bill">
+                <a href="~/Admin/DanhSachHopDong" class="btn__go-home">
+                    <i class="fa-regular fa-chevrons-left"></i>
+                    Trở về danh sách hợp dồng
+                </a>
+            </div>
+        </div>
     </div>
-</body>
-</html>
+</div>
+

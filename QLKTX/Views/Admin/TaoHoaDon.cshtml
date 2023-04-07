@@ -100,28 +100,27 @@
                         <div class="profile--form__text-field">
                             @if (item.TinhTheoChiSo)
                             {
-                                <label> <span class="tenDV">@item.TenDichVu</span> | Giá hiện tại: <b class="gia"> @item.GiaHienTai</b>đ - Chỉ số cũ: <b id="@("csc" + item.MaDichVu)"> </b></label>
+                                <label><span class="tenDV">@item.TenDichVu</span>  | Giá hiện tại: <b class="gia"> @item.GiaHienTai</b>đ - Chỉ số cũ: <b id="@("csc" + item.MaDichVu)"> </b><span class="loi" hidden> * Sai dữ liệu đầu vào</span></label>
                                 <input required type="number" min="" max="999999999" maxlength="10" id="@item.MaDichVu" value="" name="@item.MaDichVu" class="dvPhong" disabled placeholder="Nhập chỉ số mới" /> <br />
                             }
                             else
                             {
-                                <label>@item.TenDichVu | Giá hiện tại: <b class="gia"> @item.GiaHienTai</b>đ</label>
+                                <label><span class="tenDV">@item.TenDichVu</span> | Giá hiện tại: <b class="gia"> @item.GiaHienTai</b>đ <span class="loi" hidden> * Sai dữ liệu đầu vào</span></label>
                                 <input required type="number" min="0" max="999999999" maxlength="10" value="" name="@item.MaDichVu" class="dvPhong" disabled placeholder="Nhập số lượng" /> <br />
                             }
                         </div>
-                        <span class="loi" hidden>Sai dữ liệu đầu vào</span>
                     </div>
                 }
             </div>
             <div class="row">
-                <center><h3>Chi tiết hóa đơn</h3></center>
-                <table class="table" align="center">
-                    <tr>
-                        <th>Tên dịch vụ</th>
-                        <th>Giá</th>
-                        <th>Số lượng</th>
-                        <th>Tổng tiền</th>
-                    </tr>
+                <h3 class="bill-heading-title">Chi tiết hóa đơn</h3>
+                <table class=" main-info-users-table" align="center">
+                    <thead>
+                        <td>Tên dịch vụ</td>
+                        <td>Giá</td>
+                        <td>Số lượng</td>
+                        <td>Tổng tiền</td>
+                    </thead>
                     <tbody id="dvPhongTable">
                         @for (var i = 0; i < Model.Count(); i++)
                         {
@@ -131,8 +130,11 @@
                     <tbody id="dvDon">
                     </tbody>
                 </table>
-                <p>Thành tiền: <span style="color:crimson" id="thanhtien"></span></p>
-                <a class="open_btn btn btn-primary">Tạo hóa đơn</a>
+                <div class="form-add-bill">
+                    <p class="thanhtien">Thành tiền: <span style="color:crimson" id="thanhtien"></span></p>
+                    <a class="open_btn btn btn-primary">Tạo hóa đơn</a>
+                </div>
+                
             </div>
             <div class="row">
                 <div class="modall an">

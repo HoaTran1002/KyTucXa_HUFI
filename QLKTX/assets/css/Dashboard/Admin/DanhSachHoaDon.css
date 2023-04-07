@@ -7,6 +7,7 @@
     border:none;
     margin-right:10px;
     cursor:pointer;
+    display:inline-block;
 }
 .filter-title{
     color:var(--font-color-primary);
@@ -49,4 +50,11 @@
 }
 .bill-button-detail{
     color:var(--font-color-primary);
+}
+.filter-list-bill {
+    display: flex;
+    flex-direction:column;
+    align-items: flex-start;
+    gap: 15px;
+    margin-bottom: 10px;
 }
