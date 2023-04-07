@@ -1,0 +1,74 @@
+﻿.form-add-conflim {
+    position: fixed;
+    width: calc(100vw - var(--sidebar-left-width) - var(--sidebar-right-width));
+    left: var(--sidebar-left-width);
+    padding: 20px 40px;
+    background-color: var(--bg-white);
+    bottom: 0;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+    .form-add-conflim .open_btn {
+        background-color: rgba(219, 52, 30,0.2);
+        color:red;
+        font-size: 2.2rem;
+        border:none;
+    }
+.btn__go-home {
+    background-color: transparent;
+    font-size: 2.2rem;
+    color: var(--font-color-primary);
+    padding: 8px 10px;
+    border-radius: 5px;
+    border: 1px solid var(--font-color-primary);
+}
+.btn__go-home i {
+    color: var(--font-color-primary);
+}
+.detail-bill-heading {
+    display: flex;
+    align-items: center;
+    margin-top: 20px;
+}
+
+.detail-bill-heading-title, .detail-bill-heading-name {
+    color: var(--font-color-primary);
+    font-size: 2rem;
+}
+
+.detail-bill-heading-title {
+    font-weight: 500;
+}
+
+.detail-bill-heading-name {
+    font-weight: bold;
+}
+
+.heading-bill-title {
+    color: var(--font-color-primary);
+    font-weight: bold;
+    font-size: 1.8rem;
+    text-align: center;
+    margin: 15px 0;
+}
+.Approval-user-img {
+    width: 100%;
+    border: 1px solid var(--font-color-primary);
+    border-radius:5px;
+}
+.detail-list-box{
+    width:100%;
+}
+.form-add-conflim-box .btn-primary{
+    background-color:var(--bg-color-primary);
+    font-size:2.2rem;
+    border:none;
+    margin-right:10px;
+}
+.bg-white-content {
+    background-color: var(--bg-white);
+    border-radius: 5px;
+    padding: 10px;
+}

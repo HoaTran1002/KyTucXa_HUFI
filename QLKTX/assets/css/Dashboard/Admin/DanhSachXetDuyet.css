@@ -1,0 +1,39 @@
+﻿.btn{
+    padding:4px 8px;
+    font-size:1.7rem;
+    display:inline-block;
+    font-weight:bold;
+    margin-bottom:5px;
+}
+.btn-info {
+    background-color: var(--bg-color-primary-blur);
+    color: var(--font-color-primary);
+    border: 1px solid var(--font-color-primary);
+}
+.btn-primary {
+    background-color: var(--bg-color-primary);
+    color: white;
+}
+.btn-info:hover {
+    background-color: var(--bg-color-primary);
+    color: white;
+}
+.btn-warning {
+    background-color: rgba(255, 89, 34,0.2);
+    color:red;
+    border:none;
+}
+.btn-warning:hover {
+    background-color: red;
+    color: white;
+    border:none;
+}
+.Approval-all button{
+    padding:8px 10px;
+    color:white;
+    background-color:var(--bg-color-primary);
+    border:none;
+    border-radius:5px;
+    font-size:1.8rem;
+    font-weight:bold;
+}

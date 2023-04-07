@@ -4,48 +4,113 @@
     ViewBag.Title = "TrangChu";
     Layout = "~/Views/Admin/LayoutAdmin.cshtml";
 }
-<!DOCTYPE html>
-<html>
-<head>
-    <meta name="viewport" content="width=device-width" />
-    <title>DanhSachXetDuyet</title>
-</head>
-<body>
-    <button>Xét duyệt hàng loạt</button>
-    <table class="table">
-        <tr>
-            <td></td>
-            <th>
-                Mã sinh viên
-            </th>
-            <th>
-                Ngày gửi
-            </th>
-            <th>                
-            </th>
-            <th></th>
-        </tr>    
-    @foreach (var item in Model) {
-        <tr>
-            <td>
-                <input type="checkbox" name="@("chk"+item.MaSV)" />
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.MaSV)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.NgayGui)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.GhiChu)
-            </td>
-            <td>
-                <a class="btn btn-info" href="@Url.Action("XemThongTinXetDuyet",new {maSV = item.MaSV})">Chi tiết</a> 
-                <a class="btn btn-primary" href="@Url.Action("PhanHoiXetDuyet",new {maSV = item.MaSV, trangThai = "Đã xét duyệt"})">Duyệt</a> 
-                <button class="btn btn-warning"  id="huyBo" value="@item.MaSV">Hủy bỏ</button>
-            </td>
-        </tr>
-    }   
-    </table>
-</body>
-</html>
+@section sidebarLeft{
+    <ul class="sidebar-left-navbar-nav">
+        <li class="sidebar-left-navbar-nav-item ">
+            <a href="~/Admin/TrangChu" class="sidebar-left-navbar-nav-item-link">
+                <i class="fa-light fa-grid-2"></i>
+                Trang chủ
+            </a>
+        </li>
+        <li class="sidebar-left-navbar-nav-item ">
+            <a href="~/Admin/DanhSachPhong" class="sidebar-left-navbar-nav-item-link">
+                <i class="fa-light fa-user"></i>
+                Danh sách phòng
+            </a>
+        </li>
+        <li class="sidebar-left-navbar-nav-item ">
+            <a href="~/Admin/DanhSachSinhVien" class="sidebar-left-navbar-nav-item-link">
+                <i class="fa-light fa-leaf"></i>
+                Danh sách sinh viên
+            </a>
+        </li>
+        <li class="sidebar-left-navbar-nav-item ">
+            <a href="~/Admin/QuanLyNhanVien" class="sidebar-left-navbar-nav-item-link">
+                <i class="fa-light fa-circle-minus"></i>
+                Danh sách nhân viên
+            </a>
+        </li>
+        <li class="sidebar-left-navbar-nav-item">
+            <a href="#" class="sidebar-left-navbar-nav-item-link">
+                <i class="fa-light fa-file"></i>
+                Danh sách vi phạm
+            </a>
+        </li>
+        <li class="sidebar-left-navbar-nav-item">
+            <a href="~/Admin/DanhSachHoaDon" class="sidebar-left-navbar-nav-item-link">
+                <i class="fa-light fa-memo"></i>
+                Danh sách hóa đơn
+            </a>
+        </li>
+        <li class="sidebar-left-navbar-nav-item">
+            <a href="~/Admin/DanhSachHopDong" class="sidebar-left-navbar-nav-item-link">
+                <i class="fa-light fa-money-bill"></i>
+                Danh sách hợp đồng
+            </a>
+        </li>
+        <li class="sidebar-left-navbar-nav-item active">
+            <a href="~/Admin/DanhSachXetDuyet" class="sidebar-left-navbar-nav-item-link">
+                <i class="fa-light fa-flag"></i>
+                Xét duyệt - kiểm tra
+            </a>
+        </li>
+        <li class="sidebar-left-navbar-nav-item">
+            <a href="#" class="sidebar-left-navbar-nav-item-link">
+                <i class="fa-light fa-flag"></i>
+                Thông tin quản trị
+            </a>
+        </li>
+    </ul>
+}
+<link rel="stylesheet" href="~/assets/css/Dashboard/Admin/DanhSachXetDuyet.css" />
+<div class="sidebar-right-content-heading">
+    <h2 class="sidebar-right-content-heading-name"> Chi tiết hóa đơn</h2>
+</div>
+<div class="container-fluid">
+    <div class="row">
+        <div class="Approval-all">
+            <button>Xét duyệt hàng loạt</button>
+        </div>
+        <table class="table main-info-users-table">
+            <thead>
+                <td></td>
+                <td>
+                    Mã sinh viên
+                </td>
+                <td>
+                    Ngày gửi
+                </td>   
+                <td>
+                    Ghi chú
+                </td>
+                <td></td>
+            </thead>
+                <tbody>
+                    @foreach (var item in Model)
+                    {
+                        <tr>
+                            <td>
+                                <input type="checkbox" name="@("chk"+item.MaSV)" />
+                            </td>
+                            <td>
+                                @Html.DisplayFor(modelItem => item.MaSV)
+                            </td>
+                            <td>
+                                @Html.DisplayFor(modelItem => item.NgayGui)
+                            </td>
+                            <td>
+                                @Html.DisplayFor(modelItem => item.GhiChu)
+                            </td>
+                            <td>
+                                <a class="btn btn-info" href="@Url.Action("XemThongTinXetDuyet",new {maSV = item.MaSV})">Chi tiết</a>
+                                <a class="btn btn-primary" href="@Url.Action("PhanHoiXetDuyet",new {maSV = item.MaSV, trangThai = "Đã xét duyệt"})">Duyệt</a>
+                                <button class="btn btn-warning" id="huyBo" value="@item.MaSV">Hủy bỏ</button>
+                            </td>   
+                        </tr>
+                    }
+                    
+                </tbody>
+        </table>
+    </div>
+</div>
+    

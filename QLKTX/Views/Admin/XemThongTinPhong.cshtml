@@ -4,62 +4,157 @@
     Layout = null;
     Layout = "~/Views/Admin/LayoutAdmin.cshtml";
 }
+@section sidebarLeft{
+    <ul class="sidebar-left-navbar-nav">
+        <li class="sidebar-left-navbar-nav-item ">
+            <a href="~/Admin/TrangChu" class="sidebar-left-navbar-nav-item-link">
+                <i class="fa-light fa-grid-2"></i>
+                Trang chủ
+            </a>
+        </li>
+        <li class="sidebar-left-navbar-nav-item active">
+            <a href="~/Admin/DanhSachPhong" class="sidebar-left-navbar-nav-item-link">
+                <i class="fa-light fa-user"></i>
+                Danh sách phòng
+            </a>
+        </li>
+        <li class="sidebar-left-navbar-nav-item">
+            <a href="~/Admin/DanhSachSinhVien" class="sidebar-left-navbar-nav-item-link">
+                <i class="fa-light fa-leaf"></i>
+                Danh sách sinh viên
+            </a>
+        </li>
+        <li class="sidebar-left-navbar-nav-item">
+            <a href="~/Admin/QuanLyNhanVien" class="sidebar-left-navbar-nav-item-link">
+                <i class="fa-light fa-circle-minus"></i>
+                Danh sách nhân viên
+            </a>
+        </li>
+        <li class="sidebar-left-navbar-nav-item">
+            <a href="#" class="sidebar-left-navbar-nav-item-link">
+                <i class="fa-light fa-file"></i>
+                Danh sách vi phạm
+            </a>
+        </li>
+        <li class="sidebar-left-navbar-nav-item">
+            <a href="~/Admin/DanhSachHoaDon" class="sidebar-left-navbar-nav-item-link">
+                <i class="fa-light fa-memo"></i>
+                Danh sách hóa đơn
+            </a>
+        </li>
+        <li class="sidebar-left-navbar-nav-item">
+            <a href="~/Admin/DanhSachHopDong" class="sidebar-left-navbar-nav-item-link">
+                <i class="fa-light fa-money-bill"></i>
+                Danh sách hợp đồng
+            </a>
+        </li>
+        <li class="sidebar-left-navbar-nav-item">
+            <a href="~/Admin/DanhSachXetDuyet" class="sidebar-left-navbar-nav-item-link">
+                <i class="fa-light fa-flag"></i>
+                Xét duyệt - kiểm tra
+            </a>
+        </li>
+        <li class="sidebar-left-navbar-nav-item">
+            <a href="#" class="sidebar-left-navbar-nav-item-link">
+                <i class="fa-light fa-flag"></i>
+                Thông tin quản trị
+            </a>
+        </li>
+    </ul>
+}
+<link rel="stylesheet" href="~/assets/css/hopThoai.css" />
+<link rel="stylesheet" href="~/assets/css/Dashboard/Admin/XemThongTinPhong.css">
+<div class="sidebar-right-content-heading">
+    <h2 class="sidebar-right-content-heading-name">Chi tiết phòng @Model.Ten</h2>
+</div>
+    <div class="container-fluid">
+        <div class="bg-white-content">
+            <div class="row">
+                <h4 class="heading-bill-title">Thông tin phòng @Model.Ten</h4>
+            </div>
+            <div class="row">
+                <div class="col-lg-6">
+                    <div class="detail-bill-heading">
+                        <h3 class="detail-bill-heading-title">Mã phòng:</h3>
+                        <span class="detail-bill-heading-name">@Model.Ma</span>
+                    </div>
+                </div>
+                <div class="col-lg-6">
+                    <div class="detail-bill-heading">
+                        <h3 class="detail-bill-heading-title">Tầng phòng:</h3>
+                        <span class="detail-bill-heading-name">@Model.Tang.Ten</span>
+                    </div>
+                </div>
+                <div class="col-lg-6">
+                    <div class="detail-bill-heading">
+                        <h3 class="detail-bill-heading-title">Số lượng đang ở:</h3>
+                        <span class="detail-bill-heading-name">@(10 - Model.SoLuongTrong)</span>
+                    </div>
+                </div>
+                <div class="col-lg-6">
+                    <div class="detail-bill-heading">
+                        <h3 class="detail-bill-heading-title">Trạng thái:</h3>
+                        <span class="detail-bill-heading-name">@(Model.DangSuaChua ? "Đang sửa chửa":"Đang hoạt động")</span>
+                    </div>
+                </div>
+                <div class="col-lg-6">
+                    <div class="detail-bill-heading">
+                        <h3 class="detail-bill-heading-title">Trưởng phòng:</h3>
+                        <span class="detail-bill-heading-name">@Model.TruongPhong</span>
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <h2 class="heading-bill-title">Danh sách thành viên</h2>
+                <table class="table main-info-users-table">
+                    <thead>
+                    <td></td>
+                    <td>Mã sinh viên</td>
+                    <td>Họ và tên</td>
+                    <td>Lớp</td>
+                    <td>Số điện thoại</td>
+                    <td>Email</td>
+                    <td>Trạng thái</td>
+                    <td></td>
+                    </thead>
+                    <tbody>
+                        @foreach (var item in Model.SinhViens)
+                        {
+                            <tr>
+                                <td><img src="@item.AnhDaiDien" style="width:100px; height:100px;" /></td>
+                                <td>@item.MaSV</td>
+                                <td>@item.Ho @item.Ten</td>
+                                <td>@item.Lop</td>
+                                <td>@item.SoDienThoai</td>
+                                <td>item.Email</td>
+                                <td>@item.TrangThai</td>
+                                @if (Model.TruongPhong == item.MaSV)
+                                {
+                                    <td><b class="leader-room-name">Trưởng phòng</b></td>
+                                }
+                                else
+                                {
+                                    <td><button value="@item.MaSV" class="btn btn-primary btn_xacnhan open_btn">Đổi trưởng phòng</button></td>
+                                }
+                            </tr>
+                        }
 
-<!DOCTYPE html>
-
-<html>
-<head>
-    <meta name="viewport" content="width=device-width" />
-    <title>XemThongTinPhong</title>
-    <link rel="stylesheet" href="~/assets/css/hopThoai.css" />
-</head>
-<body>
-    <div>
-        <center><b>Thông tin phòng @Model.Ten</b></center>
-        <center>
-            <span>Mã Phòng: @Model.Ma</span>
-            <span>Tên Phòng: @Model.Ten</span>
-            <span>Tầng Phòng: @Model.Tang.Ten</span>
-            <span>Số lượng đang ở: @(10-Model.SoLuongTrong)</span><br />
-            <span>Trạng thái: @(Model.DangSuaChua ? "Đang sửa chửa":"Đang hoạt động")</span>       
-            <span>Trưởng phòng: @Model.TruongPhong</span>
-        </center>
+                    </tbody>
+                </table>
+            </div>
+            <div class="row">
+                <div class="form-add-bill">
+                    <a href="~/Admin/DanhSachPhong" class="btn__go-home">
+                        <i class="fa-regular fa-chevrons-left"></i>
+                        Trở về danh sách phòng
+                    </a>
+                </div>
+            </div>
+        </div>
     </div>
-    <center><p>Danh sách thành viên</p></center>
-    <table class="table">
-        <tr>
-            <th></th>
-            <th>Mã sinh viên</th>
-            <th>Họ và tên</th>
-            <th>Lớp</th>
-            <th>Số điện thoại</th>
-            <th>Email</th>
-            <th>Trạng thái</th>
-            <th></th>
-        </tr>
-        @foreach (var item in Model.SinhViens)
-        {
-            <tr>
-                <td><img src="@item.AnhDaiDien" style="width:100px; height:100px;" /></td>
-                <td>@item.MaSV</td>
-                <td>@item.Ho @item.Ten</td>
-                <td>@item.Lop</td>
-                <td>@item.SoDienThoai</td>
-                <td>item.Email</td>
-                <td>@item.TrangThai</td>
-                @if (Model.TruongPhong == item.MaSV)
-                {
-                    <td><b>Trưởng phòng</b></td>
-                }
-                else
-                {
-                    <td><button value="@item.MaSV" class="btn btn-primary btn_xacnhan open_btn">Đổi trưởng phòng</button></td>
-                }
-            </tr>
-        }
-    </table>
+    
     <div class="modall an">
-        @using (Html.BeginForm("DoiTruongPhong", "Admin", new {maPhong = Model.Ma, url = Request.Url.ToString() }))
+        @using (Html.BeginForm("DoiTruongPhong", "Admin", new { maPhong = Model.Ma, url = Request.Url.ToString() }))
         {
             <div class="modal__innerr">
                 <div class="modal__headerr">
@@ -78,8 +173,3 @@
     </div>
     <script src="~/assets/js/HopThoai.js"></script>
     <script src="~/assets/js/hopXacNhan.js"></script>
-    <script>
-
-    </script>
-</body>
-</html>

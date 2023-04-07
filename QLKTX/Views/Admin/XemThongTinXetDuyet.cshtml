@@ -4,110 +4,178 @@
     ViewBag.Title = "XemThongTin";
     Layout = "~/Views/Admin/LayoutAdmin.cshtml";
 }
-
-<h2>XemThongTin</h2>
+@section sidebarLeft{
+    <ul class="sidebar-left-navbar-nav">
+        <li class="sidebar-left-navbar-nav-item ">
+            <a href="~/Admin/TrangChu" class="sidebar-left-navbar-nav-item-link">
+                <i class="fa-light fa-grid-2"></i>
+                Trang chủ
+            </a>
+        </li>
+        <li class="sidebar-left-navbar-nav-item ">
+            <a href="~/Admin/DanhSachPhong" class="sidebar-left-navbar-nav-item-link">
+                <i class="fa-light fa-user"></i>
+                Danh sách phòng
+            </a>
+        </li>
+        <li class="sidebar-left-navbar-nav-item ">
+            <a href="~/Admin/DanhSachSinhVien" class="sidebar-left-navbar-nav-item-link">
+                <i class="fa-light fa-leaf"></i>
+                Danh sách sinh viên
+            </a>
+        </li>
+        <li class="sidebar-left-navbar-nav-item ">
+            <a href="~/Admin/QuanLyNhanVien" class="sidebar-left-navbar-nav-item-link">
+                <i class="fa-light fa-circle-minus"></i>
+                Danh sách nhân viên
+            </a>
+        </li>
+        <li class="sidebar-left-navbar-nav-item">
+            <a href="#" class="sidebar-left-navbar-nav-item-link">
+                <i class="fa-light fa-file"></i>
+                Danh sách vi phạm
+            </a>
+        </li>
+        <li class="sidebar-left-navbar-nav-item">
+            <a href="~/Admin/DanhSachHoaDon" class="sidebar-left-navbar-nav-item-link">
+                <i class="fa-light fa-memo"></i>
+                Danh sách hóa đơn
+            </a>
+        </li>
+        <li class="sidebar-left-navbar-nav-item">
+            <a href="~/Admin/DanhSachHopDong" class="sidebar-left-navbar-nav-item-link">
+                <i class="fa-light fa-money-bill"></i>
+                Danh sách hợp đồng
+            </a>
+        </li>
+        <li class="sidebar-left-navbar-nav-item active">
+            <a href="~/Admin/DanhSachXetDuyet" class="sidebar-left-navbar-nav-item-link">
+                <i class="fa-light fa-flag"></i>
+                Xét duyệt - kiểm tra
+            </a>
+        </li>
+        <li class="sidebar-left-navbar-nav-item">
+            <a href="#" class="sidebar-left-navbar-nav-item-link">
+                <i class="fa-light fa-flag"></i>
+                Thông tin quản trị
+            </a>
+        </li>
+    </ul>
+}
 <link rel="stylesheet" href="~/assets/css/hopThoai.css" />
-<body>
-    <div>
-        <h4>Thông tin sinh viên</h4>
-        <p>Ngày gửi: @Model.DangKyNoiTru.NgayGui</p>
-        <hr />
-        <img src="#" alt="ảnh" />
-        <dl class="dl-horizontal">
-            <dt>
-                Mã sinh viên
-            </dt>
-
-            <dd>
-                @Html.DisplayFor(model => model.MaSV)
-            </dd>
-
-            <dt>
-                Họ vè tên
-            </dt>
-
-            <dd>
-                @(Model.Ho+ " " +Model.Ten)
-            </dd>
-
-            <dt>
-                Giới tính:
-            </dt>
-
-            <dd>
-                @Model.GioiTinh
-            </dd>
-
-            <dt>
-                Ngày sinh
-            </dt>
-
-            <dd>
-                @Html.DisplayFor(model => model.NgaySinh)
-            </dd>
-
-            <dt>
-                Quê quán
-            </dt>
-
-            <dd>
-                @Html.DisplayFor(model => model.QueQuan)
-            </dd>
-
-            <dt>
-                CCCD/CMND
-            </dt>
-
-            <dd>
-                @Html.DisplayFor(model => model.SoCanCuoc)
-            </dd>
-
-            <dt>
-                Số điện thoại
-            </dt>
-
-            <dd>
-                @Html.DisplayFor(model => model.SoDienThoai)
-            </dd>
-
-            <dt>
-                Đang học tại lớp
-            </dt>
-
-            <dd>
-                @Html.DisplayFor(model => model.Lop)
-            </dd>
-        </dl>
-    </div>
-    <a class="btn btn-primary" href="@Url.Action("PhanHoiXetDuyet",new {maSV = Model.MaSV, trangThai = "Đã xét duyệt"})">Phê duyệt</a>
-    <button class="open_btn btn btn-danger">Hủy bỏ</button>
-    <div class="modall an">
-        <div class="modal__innerr">
-            <div class="modal__headerr">
-                <p>Bạn muốn hủy bó xét duyệt này? </p>
-                <i class="fas fa-times"></i>
+<link rel="stylesheet" href="~/assets/css/Dashboard/Admin/XemThongTinXetDuyet.css" />
+<div class="sidebar-right-content-heading">
+    <h2 class="sidebar-right-content-heading-name"> Chi tiết đơn xét duyệt</h2>
+</div>
+<div class="container-fluid">
+    <div class="bg-white-content">
+        <div class="row">
+            <h4 class="heading-bill-title">Thông tin sinh viên</h4>
+            <div class="col-lg-3">
+                <img src="~/assets/img/User.png" alt="ảnh" class="Approval-user-img" />
             </div>
-            @using (Html.BeginForm("PhanHoiXetDuyet", "Admin", new {maSV = Model.MaSV, trangThai = "Bị hủy" }))
-            {
-        <div class="modal__bodyy">
-            <span>Lý do hủy:</span><br />
-            <input type="radio" name="ghiChu" class="rdo_lydo" value="Đã hết chổ trống" id="mau1" checked />
-            <label for="mau1">Phòng này đã hết chổ trống, hãy chọn phòng khác</label><br />
-            <input type="radio" name="ghiChu" class="rdo_lydo" value="Thông tin cá nhân không hợp lệ" id="mau2" />
-            <label for="mau2">Thông tin cá nhân không hợp lệ</label><br />
-            <input type="radio" name="ghiChu" class="rdo_lydo" value="Ký túc xá đã hết chổ trống" id="mau3" />
-            <label for="mau3">Ký túc xá đã hết chổ trống</label><br />
-            <input type="radio" name="ghiChu" value="-1" id="khac" />
-            <label for="khac">Khác</label>
-            <textarea id="lyDoKhac" disabled placeholder="Nhập lý do khác"></textarea>
+            <div class="col-lg-9">
+                <div class="row">
+                    <div class="col-lg-6">
+                        <div class="detail-bill-heading">
+                            <h3 class="detail-bill-heading-title">Ngày gửi:</h3>
+                            <span class="detail-bill-heading-name">@Model.DangKyNoiTru.NgayGui.ToString("dd/MM/yyyy")</span>
+                        </div>
+                    </div>
+                    <div class="col-lg-6">
+                        <div class="detail-bill-heading">
+                            <h3 class="detail-bill-heading-title">Mã sinh viên:</h3>
+                            <span class="detail-bill-heading-name">@Html.DisplayFor(model => model.MaSV)</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-lg-6">
+                        <div class="detail-bill-heading">
+                            <h3 class="detail-bill-heading-title">Họ và tên:</h3>
+                            <span class="detail-bill-heading-name">@(Model.Ho+ " " +Model.Ten)</span>
+                        </div>
+                    </div>
+                    <div class="col-lg-6">
+                        <div class="detail-bill-heading">
+                            <h3 class="detail-bill-heading-title">Giới tính:</h3>
+                            <span class="detail-bill-heading-name">@Html.DisplayFor(model => model.GioiTinh)</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-lg-6">
+                        <div class="detail-bill-heading">
+                            <h3 class="detail-bill-heading-title">Số điện thoại:</h3>
+                            <span class="detail-bill-heading-name">@Html.DisplayFor(model => model.SoDienThoai)</span>
+                        </div>
+                    </div>
+                    <div class="col-lg-6">
+                        <div class="detail-bill-heading">
+                            <h3 class="detail-bill-heading-title">CMND/CCCD:</h3>
+                            <span class="detail-bill-heading-name">@Html.DisplayFor(model => model.SoCanCuoc)</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-lg-6">
+                <div class="detail-bill-heading">
+                    <h3 class="detail-bill-heading-title">Quê quán:</h3>
+                    <span class="detail-bill-heading-name">@Html.DisplayFor(model => model.QueQuan)</span>
+                </div>
+            </div>
+            <div class="col-lg-6">
+                <div class="detail-bill-heading">
+                    <h3 class="detail-bill-heading-title">Đang học tại:</h3>
+                    <span class="detail-bill-heading-name">@Html.DisplayFor(model => model.Lop)</span>
+                </div>
+            </div>
         </div>
+        <div class="row">
+            <div class="form-add-conflim">
+                <div class="form-add-conflim-box">
+                    <a class="btn btn-primary" href="@Url.Action("PhanHoiXetDuyet",new {maSV = Model.MaSV, trangThai = "Đã xét duyệt"})">Phê duyệt</a>
+                    <button class="open_btn btn btn-danger">Hủy bỏ</button>
+                </div>
+                <div class="form-add-conflim-box">
+                    <a href="~/Admin/DanhSachHoaDon" class="btn__go-home">
+                        <i class="fa-regular fa-chevrons-left"></i>
+                        Trở về danh sách xét duyệt
+                    </a>
+                </div>
+            </div>
+
+        </div>
+    </div>
+    
+</div>
+
+<div class="modall an">
+    <div class="modal__innerr">
+        <div class="modal__headerr">
+            <p>Bạn muốn hủy bó xét duyệt này? </p>
+            <i class="fas fa-times"></i>
+        </div>
+        @using (Html.BeginForm("PhanHoiXetDuyet", "Admin", new { maSV = Model.MaSV, trangThai = "Bị hủy" }))
+        {
+            <div class="modal__bodyy">
+                <span>Lý do hủy:</span><br />
+                <input type="radio" name="ghiChu" class="rdo_lydo" value="Đã hết chổ trống" id="mau1" checked />
+                <label for="mau1">Phòng này đã hết chổ trống, hãy chọn phòng khác</label><br />
+                <input type="radio" name="ghiChu" class="rdo_lydo" value="Thông tin cá nhân không hợp lệ" id="mau2" />
+                <label for="mau2">Thông tin cá nhân không hợp lệ</label><br />
+                <input type="radio" name="ghiChu" class="rdo_lydo" value="Ký túc xá đã hết chổ trống" id="mau3" />
+                <label for="mau3">Ký túc xá đã hết chổ trống</label><br />
+                <input type="radio" name="ghiChu" value="-1" id="khac" />
+                <label for="khac">Khác</label>
+                <textarea id="lyDoKhac" disabled placeholder="Nhập lý do khác"></textarea>
+            </div>
             <div class="modal__footerr">
                 <a class="close btn btn-warning">Hủy bỏ</a>
                 <button type="submit" class="btn btn-danger">Xác nhận hủy</button>
             </div>
-            }
-        </div>
+        }
     </div>
-</body>
+</div>
 <script src="~/assets/js/HopThoai.js"></script>
 <script src="~/assets/js/HopThoaiCheck.js"></script>
