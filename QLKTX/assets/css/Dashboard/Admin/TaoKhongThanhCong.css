@@ -1,0 +1,15 @@
+﻿.not-suscess
+{
+    display:flex;
+    flex-direction:column;
+    align-items:center;
+    justify-content:center;
+}
+.not-suscess img{
+    width:200px;
+}
+.not-suscess h1{
+    font-size:2rem;
+    font-weight:bold;
+    color:var(--font-color-primary);
+}
