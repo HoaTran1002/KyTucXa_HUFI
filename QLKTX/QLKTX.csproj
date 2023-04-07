@@ -327,10 +327,13 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="Areas\HelpPage\HelpPage.css" />
+    <Content Include="assets\css\Dashboard\Admin\DanhSachHoaDon.css" />
+    <Content Include="assets\css\Dashboard\Admin\DanhSachHopDong.css" />
     <Content Include="assets\css\Dashboard\Admin\DanhSachPhong.css" />
     <Content Include="assets\css\Dashboard\Admin\DanhSachSinhVien.css" />
     <Content Include="assets\css\Dashboard\Admin\QuanLyNhanVien.css" />
     <Content Include="assets\css\Dashboard\Admin\style.css" />
+    <Content Include="assets\css\Dashboard\Admin\TaoHoaDon.css" />
     <Content Include="assets\css\Dashboard\base.css" />
     <Content Include="assets\css\Dashboard\reset.css" />
     <Content Include="assets\css\Dashboard\responsive.css" />

@@ -1,0 +1,23 @@
+﻿.filter-list{
+    display:flex;
+    align-items:center;
+    gap:15px;
+}
+
+.filter-title {
+    font-size: 1.8rem;
+    color: var(--font-color-primary);
+    font-weight: bold;
+}
+.filter-button{
+    padding:8px 10px;
+    color:white;
+    background-color:var(--bg-color-primary);
+    border-radius:5px;
+    font-size:1.8rem;
+    font-weightbold;
+    border:none;
+}
+.Contact-detail-link{
+    color:var(--font-color-primary);
+}

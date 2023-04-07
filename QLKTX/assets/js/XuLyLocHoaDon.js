@@ -112,12 +112,15 @@ var LocHoaDon = (value) => {
                         <td>${item.ThanhTien.toLocaleString('de-DE')}đ</td>
                         <td>${item.NguoiTao}</td>
                         <td>${item.DaThanhToan == true ? "Đã " : "Chưa "}thanh toán</td>
-                        <td><a href="${link + item.MaHoaDon}">Chi tiết</a>  ${nut}</td>
+                        <td><a href="${link + item.MaHoaDon}" class="bill-button-detail">Chi tiết</a>  ${nut}</td>
                       </tr>`
                 console.log(item.MaHoaDon)
             })
             if (s == '') {
-                showHoaDon.innerHTML = "không tìm thấy dữ liệu";
+                var title = document.createElement("h3");
+                title.innerHTML = "không tìm thấy dữ liệu";
+                title.className = "no_found-list";
+                showHoaDon.appendChild(title);
                 return;
             }
             showHoaDon.innerHTML = s;

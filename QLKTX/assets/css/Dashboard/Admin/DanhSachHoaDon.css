@@ -1,0 +1,52 @@
+﻿#btn_loc,.showAllHD-button {
+    background-color: var(--bg-color-primary);
+    font-size: 1.8rem;
+    padding: 8px 10px;
+    color: white;
+    border-radius: 5px;
+    border:none;
+    margin-right:10px;
+    cursor:pointer;
+}
+.filter-title{
+    color:var(--font-color-primary);
+    font-size:2rem;
+    font-weight:bold;
+}
+.filter-select {
+    padding: 8px 10px;
+    boder: 1px solid var(--font-color-primary);
+    color: var(--font-color-primary);
+    border-radius: 5px;
+    font-size: 1.8rem;
+}
+.filter-list{
+    display:flex;
+    align-items:center;
+    gap:20px;
+    margin-bottom:10px;
+}
+.no_found-list{
+    display:block;
+    color:var(--font-color-primary);
+    font-size:2.2rem;
+    font-weight:bold;
+    text-align:center;
+    position:absolute;
+    top:50%;
+    left:50%;
+    transform:translate(-50%,-50%);
+}
+#showHoaDon{
+    position:relative;
+}
+.btn_xacnhan {
+    padding: 4px 10px;
+    background-color: var(--bg-color-primary);
+    border-radius: 5px;
+    color: white;
+    border: none;
+}
+.bill-button-detail{
+    color:var(--font-color-primary);
+}
