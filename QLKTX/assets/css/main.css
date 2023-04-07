@@ -804,9 +804,14 @@
     align-items: center;  
     justify-content: center;
 }
+/*content*/
+.content-app{
+    position: relative;
 
+}
 /* footer */
-#footer{
+#footer {
+    position: absolute;
     background-color: var(--gray-color);
     padding: 50px 0;
     margin-top: 50px;
