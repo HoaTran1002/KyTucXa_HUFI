@@ -1,0 +1,20 @@
+﻿
+
+
+.wrapper{
+    
+    background-color: green;
+  
+}
+.about-block{
+    display: flex;
+    justify-content: space-around;
+}
+.image-about-block {
+    width: 300px;
+    height: 300px;
+}
+.text-about-block {
+    width: 300px;
+    height: 300px;
+}

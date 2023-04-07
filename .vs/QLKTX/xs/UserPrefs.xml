@@ -1,0 +1,33 @@
+﻿<Properties StartupConfiguration="{E52399B2-3FC6-43E0-B7A5-B9DAD4ED6E5E}|">
+  <MultiItemStartupConfigurations />
+  <MonoDevelop.Ide.DebuggingService.PinnedWatches />
+  <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
+  <MonoDevelop.Ide.ItemProperties.QLKTX PreferredExecutionTarget="/Applications/Google Chrome.app" />
+  <MonoDevelop.Ide.DebuggingService.Breakpoints>
+    <BreakpointStore />
+  </MonoDevelop.Ide.DebuggingService.Breakpoints>
+  <MonoDevelop.Ide.Workbench ActiveDocument="QLKTX/Views/About/Index.cshtml">
+    <Files>
+      <File FileName="QLKTX/Views/About/Index.cshtml" Line="15" Column="50" />
+      <File FileName="QLKTX/Views/Shared/_Layout.cshtml" />
+      <File FileName="QLKTX/assets/css/main.css" />
+      <File FileName="QLKTX/assets/css/reset.css" />
+    </Files>
+    <Pads>
+      <Pad Id="ProjectPad">
+        <State name="__root__">
+          <Node name="QLKTX" expanded="True">
+            <Node name="QLKTX" expanded="True">
+              <Node name="Views" expanded="True">
+                <Node name="About" expanded="True">
+                  <Node name="Index.cshtml" selected="True" />
+                </Node>
+                <Node name="Shared" expanded="True" />
+              </Node>
+            </Node>
+          </Node>
+        </State>
+      </Pad>
+    </Pads>
+  </MonoDevelop.Ide.Workbench>
+</Properties>
