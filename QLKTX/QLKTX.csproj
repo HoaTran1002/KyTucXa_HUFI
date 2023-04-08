@@ -498,6 +498,9 @@
     <Content Include="assets\css\about.css" />
     <None Include="assets\img\ktx_3.jpeg" />
     <None Include="assets\img\ktx_2.jpeg" />
+    <None Include="assets\img\elon.jpeg" />
+    <Content Include="assets\lib\css\tempusdominus-bootstrap-4.css" />
+    <Content Include="assets\lib\css\tempusdominus-bootstrap-4.min.css" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
