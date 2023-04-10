@@ -20,7 +20,7 @@
     <link rel="stylesheet" href="~/assets/css/reset.css">
     <link rel="stylesheet" href="~/assets/css/root.css">
     <link rel="stylesheet" href="~/assets/css/main.css">
-    <link rel="stylesheet" href="~/assets/css/about.css">
+    
     <link rel="stylesheet" href="~/assets/css/responsive.css">
     <title>Home</title>
 </head>
@@ -177,46 +177,46 @@
                         <!-- Khi chưa đăng nhập -->
                         @if (SV == null)
                         {
-                        <div class="header-top-right_register_login hide-on-mobile">
-                            <a href="@Url.Action("DangKy","Home",new {ReturnUrl = Request.Url.ToString() })" class="btn_page btn-Register">Đăng ký</a>
-                            <a href="@Url.Action("DangNhap","Home",new {ReturnUrl = Request.Url.ToString() })" class="btn_page btn-login">Đăng nhập</a>
-                        </div>
+                            <div class="header-top-right_register_login hide-on-mobile">
+                                <a href="@Url.Action("DangKy","Home",new {ReturnUrl = Request.Url.ToString() })" class="btn_page btn-Register">Đăng ký</a>
+                                <a href="@Url.Action("DangNhap","Home",new {ReturnUrl = Request.Url.ToString() })" class="btn_page btn-login">Đăng nhập</a>
+                            </div>
 
                         }
                         else //Khi đã đăng nhập
                         {
-                         <div class="header-top-right_has_login">
-                            <div class="header-top-right_has_login-name " >@(SV.Ho+" "+SV.Ten) </div>
-                            <div class="header-top-right_has_login-img element-tooltip" data-tooltip="Tài khoản">
-                                <img src="~/assets/img/User.png" alt="Ảnh người dùng">
-                                <div class="header-top-right_has_login-img-menu ">
-                                    <a href="/User/TaiKhoanCaNhan" class="has_login-img-menu-info">
-                                        <div class="has_login-img-menu-info-img">
-                                            <img src="~/assets/img/User.png" alt="Ảnh người dùng">
-                                        </div>
-                                        <div class="has_login-img-menu-info-name">@(SV.Ho+" "+SV.Ten)</div>
-                                    </a>
-                                    <div class="has_login-img-menu-setting ">
-                                        <div class="has_login-img-menu-setting-list">
-                                            <a href="/Home/DangXuat" class="has_login-img-menu-setting-list-link">
-                                                <span class="has_login-img-menu-setting-list-logo">
-                                                    <i class="fa-duotone fa-right-from-bracket"></i>
-                                                </span>
-                                                <div class="has_login-img-menu-setting-list-name">Đăng xuất </div>
-                                            </a>
-                                        </div>
-                                        <div class="has_login-img-menu-setting-list">
-                                            <a href="#" class="has_login-img-menu-setting-list-link">
-                                                <span class="has_login-img-menu-setting-list-logo">
-                                                    <i class="fa-duotone fa-bars-progress"></i>
-                                                </span>
-                                                <div class="has_login-img-menu-setting-list-name">Quản lý Phòng </div>
-                                            </a>
+                            <div class="header-top-right_has_login">
+                                <div class="header-top-right_has_login-name ">@(SV.Ho+" "+SV.Ten) </div>
+                                <div class="header-top-right_has_login-img element-tooltip" data-tooltip="Tài khoản">
+                                    <img src="~/assets/img/User.png" alt="Ảnh người dùng">
+                                    <div class="header-top-right_has_login-img-menu ">
+                                        <a href="/User/TaiKhoanCaNhan" class="has_login-img-menu-info">
+                                            <div class="has_login-img-menu-info-img">
+                                                <img src="~/assets/img/User.png" alt="Ảnh người dùng">
+                                            </div>
+                                            <div class="has_login-img-menu-info-name">@(SV.Ho+" "+SV.Ten)</div>
+                                        </a>
+                                        <div class="has_login-img-menu-setting ">
+                                            <div class="has_login-img-menu-setting-list">
+                                                <a href="/Home/DangXuat" class="has_login-img-menu-setting-list-link">
+                                                    <span class="has_login-img-menu-setting-list-logo">
+                                                        <i class="fa-duotone fa-right-from-bracket"></i>
+                                                    </span>
+                                                    <div class="has_login-img-menu-setting-list-name">Đăng xuất </div>
+                                                </a>
+                                            </div>
+                                            <div class="has_login-img-menu-setting-list">
+                                                <a href="#" class="has_login-img-menu-setting-list-link">
+                                                    <span class="has_login-img-menu-setting-list-logo">
+                                                        <i class="fa-duotone fa-bars-progress"></i>
+                                                    </span>
+                                                    <div class="has_login-img-menu-setting-list-name">Quản lý Phòng </div>
+                                                </a>
+                                            </div>
                                         </div>
                                     </div>
                                 </div>
                             </div>
-                        </div> 
                         }
                     </div>
                 </div>
@@ -388,9 +388,8 @@
             </table>
         </div>
     </div>
-    <div class="content-app">
-        @RenderBody()
-    </div>
+
+    @RenderBody()
     <footer id="footer">
         <div class="container-lg">
             <div class="row">

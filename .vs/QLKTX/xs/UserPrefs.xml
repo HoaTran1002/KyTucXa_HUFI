@@ -6,22 +6,39 @@
   <MonoDevelop.Ide.DebuggingService.Breakpoints>
     <BreakpointStore />
   </MonoDevelop.Ide.DebuggingService.Breakpoints>
-  <MonoDevelop.Ide.Workbench ActiveDocument="QLKTX/Views/About/Index.cshtml">
+  <MonoDevelop.Ide.Workbench ActiveDocument="QLKTX/assets/css/about.css">
     <Files>
-      <File FileName="QLKTX/Views/About/Index.cshtml" Line="15" Column="50" />
-      <File FileName="QLKTX/Views/Shared/_Layout.cshtml" />
+      <File FileName="QLKTX/Views/About/Index.cshtml" Line="102" Column="74" />
+      <File FileName="QLKTX/Views/Shared/_Layout.cshtml" Line="23" Column="5" />
       <File FileName="QLKTX/assets/css/main.css" />
       <File FileName="QLKTX/assets/css/reset.css" />
+      <File FileName="QLKTX/assets/css/about.css" Line="80" Column="19" />
+      <File FileName="QLKTX/Views/Home/TrangChu.cshtml" />
+      <File FileName="QLKTX/assets/css/stylee.css" />
+      <File FileName="QLKTX/assets/css/hopThoai.css" />
+      <File FileName="QLKTX/Views/Web.config" Line="1" Column="1" />
+      <File FileName="QLKTX/Web.config" Line="1" Column="1" />
+      <File FileName="QLKTX/Startup.cs" Line="1" Column="1" />
+      <File FileName="QLKTX/Global.asax" Line="1" Column="1" />
+      <File FileName="QLKTX/libman.json" Line="1" Column="1" />
+      <File FileName="QLKTX/packages.config" Line="1" Column="1" />
+      <File FileName="QLKTX/assets/css/date.css" Line="1" Column="1" />
     </Files>
     <Pads>
       <Pad Id="ProjectPad">
         <State name="__root__">
           <Node name="QLKTX" expanded="True">
             <Node name="QLKTX" expanded="True">
-              <Node name="Views" expanded="True">
-                <Node name="About" expanded="True">
-                  <Node name="Index.cshtml" selected="True" />
+              <Node name="assets" expanded="True">
+                <Node name="css" expanded="True" />
+                <Node name="img" expanded="True" />
+                <Node name="lib" expanded="True">
+                  <Node name="css" expanded="True" />
                 </Node>
+              </Node>
+              <Node name="Views" expanded="True">
+                <Node name="About" expanded="True" />
+                <Node name="Home" expanded="True" />
                 <Node name="Shared" expanded="True" />
               </Node>
             </Node>
