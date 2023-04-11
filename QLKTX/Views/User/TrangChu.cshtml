@@ -1,34 +1,89 @@
-﻿
+﻿@model QLKTX.Models.SinhVien
 @{
     ViewBag.Title = "TrangChu";
     Layout = "~/Views/Shared/LayoutUser.cshtml";
 }
-
+<script>
+    document.getElementById('sidebar-trangchu').classList.add("active");
+</script>
 <div class="container-fluid">
     <div class="row">
         <div class="col-lg-6 col-md-12 col-12">
             <div class="room-info">
-                <a href="" class="room-info-content-none-room">
-                    <i class="fa-regular fa-plus"></i>
-                    <p>Đăng ký phòng</p>
-                </a>
-                <!-- <a href="" class="room-info-content-have-room"></a> -->
-                <div class="room-info-content-room-detail">
-                    <ul class="info-room-list">
-                        <li class="info-room-item">
-                            <span class="info-room-item-title">Lầu</span> : <span class="info-room-item-name">Chưa đăng ký</span>
-                        </li>
-                        <li class="info-room-item">
-                            <span class="info-room-item-title">Phòng</span> : <span class="info-room-item-name">Chưa đăng ký</span>
-                        </li>
-                        <li class="info-room-item">
-                            <span class="info-room-item-title">Số sinh viên</span> : <span class="info-room-item-name">Chưa đăng ký</span>
-                        </li>
-                        <li class="info-room-item">
-                            <span class="info-room-item-title">Loại</span> : <span class="info-room-item-name">Chưa đăng ký</span>
-                        </li>
-                    </ul>
-                </div>
+                @if (Model.MaPhong == null)
+                {
+                    if (Model.DangKyNoiTru != null || Model.DangKyNoiTru.TrangThai == "Chờ xét duyệt")
+                    {
+                        <a href="DangKynoiTru" class="room-info-content-none-room">
+                            <p>Chờ xét duyệt</p>
+                            <i class="fa-light fa-pen-to-square"></i><br>
+                            <p>Thay đổi</p>
+                        </a>
+                        <div class="room-info-content-room-detail">
+                            <ul class="info-room-list">
+                                <li class="info-room-item">
+                                    <span class="info-room-item-title">Khu</span> : <span class="info-room-item-name">@Model.DangKyNoiTru.Phong.Tang.Khu.Ten</span>
+                                </li>
+                                <li class="info-room-item">
+                                    <span class="info-room-item-title">Tầng</span> : <span class="info-room-item-name">@Model.DangKyNoiTru.Phong.Tang.Ten</span>
+                                </li>
+                                <li class="info-room-item">
+                                    <span class="info-room-item-title">Phòng</span> : <span class="info-room-item-name">@Model.DangKyNoiTru.Phong.Ten</span>
+                                </li>
+                                <li class="info-room-item">
+                                    <span class="info-room-item-title">Số chổ trống</span> : <span class="info-room-item-name">@Model.DangKyNoiTru.Phong.SoLuongTrong</span>
+                                </li>
+                            </ul>
+                        </div>
+                    }
+                    else
+                    {
+                        <a href="DangKynoiTru" class="room-info-content-none-room">
+                            <i class="fa-regular fa-plus"></i>
+                            <p>Đăng ký phòng</p>
+                        </a>
+                        <div class="room-info-content-room-detail">
+                            <ul class="info-room-list">
+                                <li class="info-room-item">
+                                    <span class="info-room-item-title">Khu</span> : <span class="info-room-item-name">Chưa đăng ký</span>
+                                </li>
+                                <li class="info-room-item">
+                                    <span class="info-room-item-title">Tầng</span> : <span class="info-room-item-name">Chưa đăng ký</span>
+                                </li>
+                                <li class="info-room-item">
+                                    <span class="info-room-item-title">Phòng</span> : <span class="info-room-item-name">Chưa đăng ký</span>
+                                </li>
+                                <li class="info-room-item">
+                                    <span class="info-room-item-title">Số sinh viên</span> : <span class="info-room-item-name">Chưa đăng ký</span>
+                                </li>
+                            </ul>
+                        </div>
+                    }
+                }
+                else
+                {
+                    <a href="DangKyThayDoiPhong" class="room-info-content-none-room">
+                        <i class="fa-light fa-pen-to-square"></i><br>
+                        <p>Thay đổi phòng</p>
+                    </a>
+                    <div class="room-info-content-room-detail">
+                        <ul class="info-room-list">
+                            <li class="info-room-item">
+                                <span class="info-room-item-title">Khu</span> : <span class="info-room-item-name">@Model.Phong.Tang.Khu.Ten</span>
+                            </li>
+                            <li class="info-room-item">
+                                <span class="info-room-item-title">Tầng</span> : <span class="info-room-item-name">@Model.Phong.Tang.Ten</span>
+                            </li>
+                            <li class="info-room-item">
+                                <span class="info-room-item-title">Phòng</span> : <span class="info-room-item-name">@Model.Phong.Ten</span>
+                            </li>
+                            <li class="info-room-item">
+                                <span class="info-room-item-title">Số sinh viên</span> : <span class="info-room-item-name">@Model.Phong.SinhViens.Count()</span>
+                            </li>
+                        </ul>
+                    </div>
+                }
+
             </div>
         </div>
         <div class="col-lg-3 col-md-6 col-6">
@@ -121,95 +176,39 @@
     <div class="row">
         <div class="col-lg-9 col-md-12 hide-in-mobile">
             <div class="main-info-users">
-                <h1 class="main-info-users-title">Danh sách sinh viên phòng <span class="name-room">405</span></h1>
-                <table class="main-info-users-table">
-                    <thead>
-                    <td>STT</td>
-                    <td>Tên sinh viên</td>
-                    <td>Mã sinh viên</td>
-                    <td>Lớp</td>
-                    <td>tình trạng</td>
-                    </thead>
-                    <tbody>
-                        <tr>
-                            <td>1</td>
-                            <td>Huỳnh Đăng khoa</td>
-                            <td>2001207266</td>
-                            <td>11DHTH11</td>
-                            <td>Đang ở</td>
-                        </tr>
-                        <tr>
-                            <td>1</td>
-                            <td>Huỳnh Đăng khoa</td>
-                            <td>2001207266</td>
-                            <td>11DHTH11</td>
-                            <td>Đang ở</td>
-                        </tr>
-                        <tr>
-                            <td>1</td>
-                            <td>Huỳnh Đăng khoa</td>
-                            <td>2001207266</td>
-                            <td>11DHTH11</td>
-                            <td>Đang ở</td>
-                        </tr>
-                        <tr>
-                            <td>1</td>
-                            <td>Huỳnh Đăng khoa</td>
-                            <td>2001207266</td>
-                            <td>11DHTH11</td>
-                            <td>Đang ở</td>
-                        </tr>
-                        <tr>
-                            <td>1</td>
-                            <td>Huỳnh Đăng khoa</td>
-                            <td>2001207266</td>
-                            <td>11DHTH11</td>
-                            <td>Đang ở</td>
-                        </tr>
-                        <tr>
-                            <td>1</td>
-                            <td>Huỳnh Đăng khoa</td>
-                            <td>2001207266</td>
-                            <td>11DHTH11</td>
-                            <td>Đang ở</td>
-                        </tr>
-                        <tr>
-                            <td>1</td>
-                            <td>Huỳnh Đăng khoa</td>
-                            <td>2001207266</td>
-                            <td>11DHTH11</td>
-                            <td>Đang ở</td>
-                        </tr>
-                        <tr>
-                            <td>1</td>
-                            <td>Huỳnh Đăng khoa</td>
-                            <td>2001207266</td>
-                            <td>11DHTH11</td>
-                            <td>Đang ở</td>
-                        </tr>
-                        <tr>
-                            <td>1</td>
-                            <td>Huỳnh Đăng khoa</td>
-                            <td>2001207266</td>
-                            <td>11DHTH11</td>
-                            <td>Đang ở</td>
-                        </tr>
-                        <tr>
-                            <td>1</td>
-                            <td>Huỳnh Đăng khoa</td>
-                            <td>2001207266</td>
-                            <td>11DHTH11</td>
-                            <td>Đang ở</td>
-                        </tr>
-                    </tbody>
-                    <tfoot>
-                    <td>STT</td>
-                    <td>Tên sinh viên</td>
-                    <td>Mã sinh viên</td>
-                    <td>Lớp</td>
-                    <td>tình trạng</td>
-                    </tfoot>
-                </table>
+                <center><h1 class="main-info-users-title">Thông tin phòng</h1></center><br /><br />
+                @if (Model.MaPhong == null)
+                {
+                    <b class="main-info-users-title">Bạn chưa là thành viên của ký túc xá</b>
+                }
+                else
+                {
+                    int i = 1;
+                    <table class="main-info-users-table">
+                        <thead>
+                            <tr>
+                                <td>STT</td>
+                                <td>Tên sinh viên</td>
+                                <td>Mã sinh viên</td>
+                                <td>Lớp</td>
+                                <td>Liên hệ</td>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            @foreach (var item in Model.Phong.SinhViens)
+                            {
+                                <tr>
+                                    <td>@(i++)</td>
+                                    <td>@item.Ho @item.Ten</td>
+                                    <td>@item.MaSV</td>
+                                    <td>@item.Lop</td>
+                                    <td>@item.SoDienThoai</td>
+                                </tr>
+                            }
+
+                        </tbody>
+                    </table>
+                }
             </div>
         </div>
         <div class="col-lg-3 col-md-12">

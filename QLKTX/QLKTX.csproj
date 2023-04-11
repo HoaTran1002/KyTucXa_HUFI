@@ -472,15 +472,10 @@
     <Content Include="Views\Home\DangNhap.cshtml" />
     <Content Include="Views\Home\DangKy.cshtml" />
     <Content Include="Views\Home\TrangChu.cshtml" />
-    <Content Include="Views\User\TaiKhoanCaNhan.cshtml" />
     <Content Include="Views\Shared\LayoutUser.cshtml" />
-    <Content Include="Views\User\DangKyNoiTru.cshtml" />
-    <Content Include="Views\User\XacNhanDangKy.cshtml" />
-    <Content Include="Views\User\DangKyThanhCong.cshtml" />
     <Content Include="Views\Admin\DanhSachXetDuyet.cshtml" />
     <Content Include="Views\Admin\LayoutAdmin.cshtml" />
     <Content Include="Views\Admin\XemThongTinXetDuyet.cshtml" />
-    <Content Include="Views\User\ThongTinSinhVien.cshtml" />
     <Content Include="Views\Admin\TaoKhongThanhCong.cshtml" />
     <Content Include="Views\Admin\DanhSachHopDong.cshtml" />
     <Content Include="Views\Admin\XemThongTinSinhVien.cshtml" />
@@ -491,7 +486,6 @@
     <Content Include="Views\Admin\DanhSachHoaDon.cshtml" />
     <Content Include="Views\Admin\XemChiTietHoaDon.cshtml" />
     <Content Include="Views\Admin\QuanLyNhanVien.cshtml" />
-    <Content Include="Views\User\TrangChu.cshtml" />
     <Content Include="Views\About\Index.cshtml" />
     <Content Include="Views\Contact\Index.cshtml" />
     <Content Include="Views\Form\Index.cshtml" />
@@ -506,6 +500,13 @@
     <None Include="assets\img\elon.jpeg" />
     <Content Include="assets\lib\css\tempusdominus-bootstrap-4.css" />
     <Content Include="assets\lib\css\tempusdominus-bootstrap-4.min.css" />
+    <Content Include="Views\User\DangKyLuuTruHe.cshtml" />
+    <Content Include="Views\User\DangKyNoiTru.cshtml" />
+    <Content Include="Views\User\DangKyThanhCong.cshtml" />
+    <Content Include="Views\User\TaiKhoanCaNhan.cshtml" />
+    <Content Include="Views\User\ThongTinSinhVien.cshtml" />
+    <Content Include="Views\User\TrangChu.cshtml" />
+    <Content Include="Views\User\XacNhanDangKy.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

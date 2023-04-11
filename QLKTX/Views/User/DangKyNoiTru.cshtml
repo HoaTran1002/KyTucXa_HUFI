@@ -1,107 +1,84 @@
 ﻿@model QLKTX.Models.SinhVien
 @using QLKTX.Models;
 
-@{        
-    Layout = null;
+@{
+
+    ViewBag.Title = "TrangChu";
+    Layout = "~/Views/Shared/LayoutUser.cshtml";
     List<Phong> lPhong = Session["lPhong"] as List<Phong>;
 }
-
-<!DOCTYPE html>
-
-<html>
-<head>
-    <meta name="viewport" content="width=device-width" />
-    <title>DangKyNoiTru</title>
-    <link rel="stylesheet" type="text/css" href="~/assets/css/date.css">
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/flatpickr/dist/flatpickr.min.css">
-</head>
-<body>    
+<style>
+    #container {
+        font-size: 17px;
+    }
+</style>
+<link rel="stylesheet" href="~/assets/css/hopThoai.css">
+<div id="container">
+    <h4>Thông tin sinh viên</h4>
+    <hr />
+    <b style="color:crimson">@ViewBag.ThongBao</b>
     <div>
-        <h4>Thông tin sinh viên</h4>
-        <hr />
-        <b style="color:crimson">@ViewBag.ThongBao</b>
-        <div>
-            <span>Mã số sinh viên: </span>
-            <span>@Model.MaSV</span>
-        </div>
-
-        <div>
-            <span>Họ và tên: </span>
-            <span>@Model.Ho @Model.Ten</span>
-        </div>
-        <div>
-            <span>Giới tính: </span>
-            <span>@Model.GioiTinh</span>
-        </div>
-
-        <div>
-            <span>Ngày Sinh: </span>
-            <span>@string.Format("{0:dd/MM/yyyy}", Model.NgaySinh)</span>
-        </div>
-
-        <div>
-            <span>Quê quán: </span>
-            <span>@Model.QueQuan</span>
-        </div>
-
-        <div>
-            <span>Số căn cước: </span>
-            <span>@Model.SoCanCuoc</span>
-        </div>
-
-        <div>
-            <span>Số điện thoại: </span>
-            <span>@Model.SoDienThoai</span>
-        </div>
-
-        <div>
-            <span>Lớp: </span>
-            <span>@Model.Lop</span>
-        </div>
-        @using (Html.BeginForm("XacNhanDangKy", "User", method: FormMethod.Get))
-        {
-            @Html.AntiForgeryToken()
-            <div class="form-group">
-                <span>Danh sách phòng trống</span>
-                <div class="col-md-10">
-                    <select name="MaPhong">
-                        @foreach (var item in lPhong)
-                        {
-                            <option value="@item.Ma">@item.Ten (@(10-item.SoLuongTrong) chổ)</option>
-                        }
-                    </select>
-                </div>
-            </div>
-            if (ViewBag.ThongBao != null)
-            {
-                <div class="form-group">
-                    <div class="col-md-offset-2 col-md-10">
-                        <input type="submit" value="Gửi yêu cầu đăng ký lưu trú" class="btn btn-default" />
-                    </div>
-                </div>
-            }
-        }
+        <span>Mã số sinh viên: </span>
+        <span>@Model.MaSV</span>
     </div>
-</body>
-</html>
-@if (Model.GioiTinh != null)
-{
-    if (Model.GioiTinh == "Nam")
-    {
-        <script>
-            document.getElementById('nam').checked = true;
-        </script>
-    }
-    else
-    {
-        <script>
-            document.getElementById('nu').checked = true;
-        </script>
-    }
-}
-<script src="https://cdn.jsdelivr.net/npm/flatpickr"></script>
-<script type="text/javascript" src="~/assets/js/date.js"></script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js" integrity="sha512-894YE6QWD5I59HgZOGReFYm4dnWc1Qt5NtvYSaNcOP+u1T9qYdvdihz0PPSiiqn/+/3e7Jo4EaG7TubfWGUrMQ==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/axios/0.26.1/axios.min.js" integrity="sha512-bPh3uwgU5qEMipS/VOmRqynnMXGGSRv+72H/N260MQeXZIK4PG48401Bsby9Nq5P5fz7hy5UGNmC/W1Z51h2GQ==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
-<script src="~/assets/js/GetAddressApi.js"></script>
+
+    <div>
+        <span>Họ và tên: </span>
+        <span>@Model.Ho @Model.Ten</span>
+    </div>
+    <div>
+        <span>Giới tính: </span>
+        <span>@Model.GioiTinh</span>
+    </div>
+
+    <div>
+        <span>Ngày Sinh: </span>
+        <span>@string.Format("{0:dd/MM/yyyy}", Model.NgaySinh)</span>
+    </div>
+
+    <div>
+        <span>Quê quán: </span>
+        <span>@Model.QueQuan</span>
+    </div>
+
+    <div>
+        <span>Số căn cước: </span>
+        <span>@Model.SoCanCuoc</span>
+    </div>
+
+    <div>
+        <span>Số điện thoại: </span>
+        <span>@Model.SoDienThoai</span>
+    </div>
+
+    <div>
+        <span>Lớp: </span>
+        <span>@Model.Lop</span>
+    </div>
+
+    <div class="form-group">
+        <span>Danh sách phòng trống</span>
+        <div class="col-md-10">
+            <select onchange="xacnhan.value = this.value" name="MaPhong">
+                @foreach (var item in lPhong)
+                {
+                    int sl = item.DangKyNoiTrus.Count(t => t.TrangThai != "Bị hủy");
+                    <option value="@item.Ma">@item.Ten (@(item.SoLuongTrong) chổ) (@sl đăng ký mới)</option>
+
+                }
+            </select>
+        </div>
+    </div>
+    @*//if (ViewBag.ThongBao != null)
+        //{*@
+    <button value="@lPhong[0].Ma" id="xacnhan" class="open_btn btn_xacnhan">Xác nhận</button>
+    @*<input type="submit" value="Đăng ký" />*@
+    @*}*@
+    <script src="~/assets/js/TaoHopThoai.js"></script>
+    <script>
+        WriteHopThoai("Bạn muốn đăng ký nội trú với phòng", "Xác nhận chọn phòng này, cho dù phòng này có vượt quá số lượng đăng ký?", "XacNhanDangKy", "get", "maPhong","@lPhong[0].Ma")
+    </script>
+    <script src="~/assets/js/HopThoai.js"></script>
+    <script src="~/assets/js/hopXacNhan.js"></script>
+</div>
 

@@ -28,23 +28,23 @@ namespace QLKTX.Controllers
             db.SinhViens.Attach(sv);
             db.Entry(sv).State = System.Data.Entity.EntityState.Modified;
             db.SaveChanges();
-            return View(SessionLoginUser.GetSession);            
+            SessionLoginUser.Refresh();
+            return View(SessionLoginUser.GetSession);
         }
         public ActionResult DangKyNoiTru()
-        {   
+        {
             SinhVien sv = SessionLoginUser.GetSession;
-            if(sv.GioiTinh==null||sv.QueQuan==null||sv.SoCanCuoc==null||sv.SoDienThoai==null||sv.Lop == null)
+            if (sv.GioiTinh == null || sv.QueQuan == null || sv.SoCanCuoc == null || sv.SoDienThoai == null || sv.Lop == null)
             {
                 ViewBag.ThongBao = "Vui Lòng cập nhật đầy đủ thông tin của bạn để tiến hành đăng ký!";
-            }    
-            int min = 0, max = 9;
-            if (sv.GioiTinh != null && sv.GioiTinh == "Nam")
-                min = 6;
-            else
-                max = 7;
-            List<Phong> lPhong = db.Phongs.Where(p => p.SoLuongTrong > 0 && min > Convert.ToInt32(p.MaTang.Trim()) && Convert.ToInt32(p.MaTang.Trim())<max ).ToList();
-            Session["lPhong"] = lPhong; 
-            return View(sv);            
+            }
+            List<Phong> lPhong;
+            string makhu = "A";
+            if (sv.GioiTinh != null && sv.GioiTinh == "Nữ")
+                makhu = "B";
+            lPhong = db.Phongs.Where(p => p.SoLuongTrong > 0 && p.Tang.MaKhu == makhu).ToList();
+            Session["lPhong"] = lPhong;
+            return View(sv);
         }    
         public ActionResult XacNhanDangKy(string MaPhong)
         {
@@ -92,6 +92,15 @@ namespace QLKTX.Controllers
         }
         public ActionResult TrangChu()
         {
+            return View();
+        }
+        public ActionResult QuanLyPhong()
+        {
+            return View();
+        }
+        public ActionResult DangKyLuuTruHe()
+        {
+
             return View();
         }
     }
