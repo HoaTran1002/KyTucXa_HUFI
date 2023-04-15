@@ -349,10 +349,10 @@
     <Content Include="assets\css\hopThoai.css" />
     <Content Include="assets\css\main.css" />
     <Content Include="assets\css\menu_user.css" />
-    <Content Include="assets\css\reset.css" />
+    <Content Include="assets\css\Client\reset.css" />
     <Content Include="assets\css\responsive.css" />
     <Content Include="assets\css\root.css" />
-    <Content Include="assets\css\stylee.css" />
+    <Content Include="assets\css\Client\style.css" />
     <Content Include="assets\img\banner-logn-res.jpg" />
     <Content Include="assets\img\English_flag-icon.png" />
     <Content Include="assets\img\list-house.png" />

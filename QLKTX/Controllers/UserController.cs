@@ -28,7 +28,7 @@ namespace QLKTX.Controllers
             db.SinhViens.Attach(sv);
             db.Entry(sv).State = System.Data.Entity.EntityState.Modified;
             db.SaveChanges();
-            SessionLoginUser.Refresh();
+            SessionLoginUser.Clear();
             return View(SessionLoginUser.GetSession);
         }
         public ActionResult DangKyNoiTru()
@@ -45,7 +45,7 @@ namespace QLKTX.Controllers
             lPhong = db.Phongs.Where(p => p.SoLuongTrong > 0 && p.Tang.MaKhu == makhu).ToList();
             Session["lPhong"] = lPhong;
             return View(sv);
-        }    
+        }
         public ActionResult XacNhanDangKy(string MaPhong)
         {
             SinhVien sv = SessionLoginUser.GetSession;
@@ -58,7 +58,7 @@ namespace QLKTX.Controllers
             else
             {
                 return RedirectToAction("DangKyNoiTru");
-            }            
+            }
         }
         [HttpPost]
         public ActionResult XacNhanDangKy(string MaPhong, string checkXacNhan)
@@ -67,7 +67,7 @@ namespace QLKTX.Controllers
             if (checkXacNhan == null)
                 return View(sv);
             db.TaoDangKyNoiTru(sv.MaSV, MaPhong);
-            return RedirectToAction("DangKyThanhCong");            
+            return RedirectToAction("DangKyThanhCong");
         }
         public ActionResult DangKyThanhCong()
         {
@@ -92,7 +92,7 @@ namespace QLKTX.Controllers
         }
         public ActionResult TrangChu()
         {
-            return View();
+            return View(SessionLoginUser.GetSession);
         }
         public ActionResult QuanLyPhong()
         {
