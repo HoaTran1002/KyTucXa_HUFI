@@ -345,6 +345,8 @@
     <Content Include="assets\css\Dashboard\responsive.css" />
     <Content Include="assets\css\Dashboard\root.css" />
     <Content Include="assets\css\Dashboard\style.css" />
+    <Content Include="assets\css\Dashboard\User\style.css" />
+    <Content Include="assets\css\Dashboard\User\ThongTinSinhVien.css" />
     <Content Include="assets\css\date.css" />
     <Content Include="assets\css\hopThoai.css" />
     <Content Include="assets\css\main.css" />
@@ -364,6 +366,7 @@
     <Content Include="assets\js\checkform.js" />
     <Content Include="assets\js\Dashboard\Admin\main.js" />
     <Content Include="assets\js\Dashboard\man.js" />
+    <Content Include="assets\js\Dashboard\User\ThongTinSinhVien.js" />
     <Content Include="assets\js\date.js" />
     <Content Include="assets\js\GetAddressApi.js" />
     <Content Include="assets\js\GetDataPhongApi.js" />
@@ -510,8 +513,6 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
-    <Folder Include="assets\css\Dashboard\User\" />
-    <Folder Include="assets\js\Dashboard\User\" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="fonts\glyphicons-halflings-regular.woff2" />

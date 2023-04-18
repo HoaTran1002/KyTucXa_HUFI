@@ -87,40 +87,41 @@ body, html {
     margin-bottom: 20px;
 }
 
-    .profile--form__text-field label {
-        display: inline-block;
-        font-weight: 600;
-        cursor: pointer;
-        position: absolute;
-        top: 0;
-        left: 20px;
-        background-color: var(--bg-white);
-        padding: 1px 5px;
-        font-size: 1.8rem;
-        transform: translateY(-50%);
-        color: var(--font-color-primary);
-    }
+.profile--form__text-field label{
+    display: inline-block;
+    font-weight: 600;
+    cursor: pointer;
+    position: absolute;
+    top: 0;
+    left: 20px;
+    background-color: var(--bg-white);
+    padding: 1px 5px;
+    font-size: 1.8rem;
+    transform: translateY(-50%);
+    color: var(--font-color-primary);
+}
+.profile--form__text-field input[readonly] {
+    background-color: #f6f6fc !important;
+}
+.profile--form__text-field input,
+.profile--form__text-field select {
+    padding: 15px;
+    display: block;
+    width: 100%;
+    font-size: 1.6rem;
+    border: 1px solid var(--font-color-primary);
+    border-radius: 4px;
+    background-color: #f6f6fc;
+    color: var(--font-color-primary);
+    outline: none;
+    pointer-events: none;
+}
 
-    .profile--form__text-field input {
-        padding: 15px;
-        display: block;
-        width: 100%;
-        font-size: 1.6rem;
-        border: 1px solid var(--font-color-primary);
-        border-radius: 4px;
-        background-color: transparent;
-        color: var(--font-color-primary);
-        outline: none;
-        pointer-events: none;
-    }
-
-        .profile--form__text-field input.active {
-            pointer-events: all;
-        }
-
-        .profile--form__text-field input.active {
-            pointer-events: all;
-        }
+.profile--form__text-field input.active,
+.profile--form__text-field select.active {
+    pointer-events: all;
+    background-color: transparent;
+}
 
 .profile--form__submit {
     position: fixed;

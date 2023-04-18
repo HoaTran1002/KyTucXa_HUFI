@@ -20,8 +20,11 @@
     <link rel="stylesheet" type="text/css" href="~/assets/lib/slick-1.8.1/slick/slick.css" />
     <link rel="stylesheet" type="text/css" href="~/assets/lib/slick-1.8.1/slick/slick-theme.css" />
     <!-- css -->
-    <link rel="stylesheet" href="~/assets/css/Client/reset.css">
-    <link rel="stylesheet" href="~/assets/css/Client/style.css">
+    <link rel="stylesheet" href="~/assets/css/Dashboard/reset.css">
+    <link rel="stylesheet" href="~/assets/css/Dashboard/base.css">
+    <link rel="stylesheet" href="~/assets/css/Dashboard/root.css">
+    <link rel="stylesheet" href="~/assets/css/Dashboard/style.css">
+    <link rel="stylesheet" href="~/assets/css/Dashboard/responsive.css">
     <title>Dashboard KTX Hufi</title>
 </head>
 <body>
@@ -36,56 +39,7 @@
                 <img src="~/assets/img/logo-2.png" alt="">
             </a>
             <div class="sidebar-left-navbar">
-                <ul class="sidebar-left-navbar-nav">
-                    <li class="sidebar-left-navbar-nav-item active">
-                        <a href="#" class="sidebar-left-navbar-nav-item-link">
-                            <i class="fa-light fa-grid-2"></i>
-                            Trang chủ
-                        </a>
-                    </li>
-                    <li class="sidebar-left-navbar-nav-item ">
-                        <a href="~/assets/pages/profile.html" class="sidebar-left-navbar-nav-item-link">
-                            <i class="fa-light fa-user"></i>
-                            Hồ sơ sinh viên
-                        </a>
-                    </li>
-                    <li class="sidebar-left-navbar-nav-item">
-                        <a href="#" class="sidebar-left-navbar-nav-item-link">
-                            <i class="fa-light fa-leaf"></i>
-                            Gia nhập
-                        </a>
-                    </li>
-                    <li class="sidebar-left-navbar-nav-item">
-                        <a href="#" class="sidebar-left-navbar-nav-item-link">
-                            <i class="fa-light fa-file"></i>
-                            Biễu mẫu
-                        </a>
-                    </li>
-                    <li class="sidebar-left-navbar-nav-item">
-                        <a href="#" class="sidebar-left-navbar-nav-item-link">
-                            <i class="fa-light fa-memo"></i>
-                            Nội quy - quy định
-                        </a>
-                    </li>
-                    <li class="sidebar-left-navbar-nav-item">
-                        <a href="#" class="sidebar-left-navbar-nav-item-link">
-                            <i class="fa-light fa-money-bill"></i>
-                            Thanh toán - Hóa đơn
-                        </a>
-                    </li>
-                    <li class="sidebar-left-navbar-nav-item">
-                        <a href="#" class="sidebar-left-navbar-nav-item-link">
-                            <i class="fa-light fa-flag"></i>
-                            Liên hệ
-                        </a>
-                    </li>
-                    <li class="sidebar-left-navbar-nav-item">
-                        <a href="#" class="sidebar-left-navbar-nav-item-link">
-                            <i class="fa-light fa-circle-minus"></i>
-                            Vi phạm
-                        </a>
-                    </li>
-                </ul>
+                @RenderSection("sidebarLeftUser", required: false);
             </div>
         </div>
         <div class="sidebar-right">

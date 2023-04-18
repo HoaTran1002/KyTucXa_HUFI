@@ -1,0 +1,42 @@
+﻿
+.profile--form__img img {
+    border-radius: 5px;
+    height: 100%;
+    aspect-ratio: 1/1; /* Tỉ lệ khung hình 1:1 */
+    width: 100%;
+}
+.profile--form__img-edit {
+    position: relative;
+    display: flex;
+    align-items: center;
+    padding: 5px 20px;
+    margin-top: 5px;
+    background-color: var(--bg-color-primary);
+    border-radius: 5px;
+}
+
+    .profile--form__img-edit::before {
+        content: "Thay đổi ảnh";
+        position: absolute;
+        left: 40px;
+        font-size: 1.7rem;
+        color: white;
+    }
+
+    .profile--form__img-edit i {
+        font-size: 1.8rem;
+        color: white;
+        padding-right: 5px;
+    }
+
+#imageInput {
+    display: block;
+    width: 100%;
+    height: 100%;
+    opacity: 0;
+    pointer-events: none;
+}
+
+    #imageInput.active {
+        pointer-events: all;
+    }
