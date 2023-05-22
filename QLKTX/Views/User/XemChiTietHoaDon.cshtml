@@ -1,0 +1,84 @@
+﻿@model QLKTX.Models.HoaDon
+@{
+    ViewBag.Title = "XemChiTietHoaDon";
+    Layout = "~/Views/Shared/LayoutUser.cshtml";
+}
+
+<link rel="stylesheet" href="~/assets/css/Dashboard/Admin/XemChiTietHoaDon.css" />
+<div class="sidebar-right-content-heading">
+    <h1 class="sidebar-right-content-heading-name">Thông tin hóa đơn</h1>
+</div>
+<div class="container-fluid">
+    <div class="bg-white-content">
+        <div class="row">
+            <div class="col-lg-6">
+                <div class="detail-bill-heading">
+                    <h3 class="detail-bill-heading-title">Mã hóa đơn:</h3>
+                    <span class="detail-bill-heading-name">@Html.DisplayFor(model => model.MaHoaDon)</span>
+                </div>
+            </div>
+            <div class="col-lg-6">
+                <div class="detail-bill-heading">
+                    <h3 class="detail-bill-heading-title">Mã phòng:</h3>
+                    <span class="detail-bill-heading-name">@Html.DisplayFor(model => model.MaPhong)</span>
+                </div>
+            </div>
+            <div class="col-lg-6">
+                <div class="detail-bill-heading">
+                    <h3 class="detail-bill-heading-title">Ngày tạo:</h3>
+                    <span class="detail-bill-heading-name">@Html.DisplayFor(model => model.NgayTao)</span>
+                </div>
+            </div>
+            <div class="col-lg-6">
+                <div class="detail-bill-heading">
+                    <h3 class="detail-bill-heading-title">Thành tiền:</h3>
+                    <span class="detail-bill-heading-name">@String.Format("{0:0,0 VND}", Model.ThanhTien) </span>
+                </div>
+            </div>
+            <div class="col-lg-6">
+                <div class="detail-bill-heading">
+                    <h3 class="detail-bill-heading-title">Người tạo:</h3>
+                    <span class="detail-bill-heading-name">@Html.DisplayFor(model => model.NguoiTao)</span>
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <h4 class="heading-bill-title">Chi tiết các khoản dịch vụ</h4>
+        </div>
+        <div class="row">
+            <table class="table main-info-users-table">
+                <thead>
+                    <tr>
+                        <td>Mã dịch vụ</td>
+                        <td>Tên dịch vụ</td>
+                        <td>Giá</td>
+                        <td>Số lượng</td>
+                        <td>Tổng tiền</td>
+                    </tr>
+                </thead>
+                @foreach (var item in Model.ChiTietHoaDons)
+                {
+                    <tr>
+                        <td>@item.MaDichVu</td>
+                        <td>@item.DichVu.TenDichVu</td>
+                        <td>@String.Format("{0:0,0}", item.DonGia)</td>
+                        <td>@item.SoLuong</td>
+                        <td>@String.Format("{0:0,0 VND}", item.DonGia * item.SoLuong)</td>
+                    </tr>
+                }
+            </table>
+            <div class="form-add-bill">
+                <a href="~/Admin/DanhSachHoaDon" class="btn__go-home">
+                    <i class="fa-regular fa-chevrons-left"></i>
+                    Trở về danh sách hóa đơn
+                </a>
+            </div>
+        </div>
+    </div>
+</div>
+@*<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js" integrity="sha512-894YE6QWD5I59HgZOGReFYm4dnWc1Qt5NtvYSaNcOP+u1T9qYdvdihz0PPSiiqn/+/3e7Jo4EaG7TubfWGUrMQ==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/axios/0.26.1/axios.min.js" integrity="sha512-bPh3uwgU5qEMipS/VOmRqynnMXGGSRv+72H/N260MQeXZIK4PG48401Bsby9Nq5P5fz7hy5UGNmC/W1Z51h2GQ==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>*@
+<script src="~/assets/js/HopThoai.js"></script>
+
+
+

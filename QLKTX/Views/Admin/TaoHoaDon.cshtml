@@ -2,68 +2,11 @@
 @{
     Layout = null;
     Layout = "~/Views/Admin/LayoutAdmin.cshtml";
-    
+
 }
-@section sidebarLeft{
-    <ul class="sidebar-left-navbar-nav">
-        <li class="sidebar-left-navbar-nav-item ">
-            <a href="~/Admin/TrangChu" class="sidebar-left-navbar-nav-item-link">
-                <i class="fa-light fa-grid-2"></i>
-                Trang chủ
-            </a>
-        </li>
-        <li class="sidebar-left-navbar-nav-item ">
-            <a href="~/Admin/DanhSachPhong" class="sidebar-left-navbar-nav-item-link">
-                <i class="fa-light fa-user"></i>
-                Danh sách phòng
-            </a>
-        </li>
-        <li class="sidebar-left-navbar-nav-item ">
-            <a href="~/Admin/DanhSachSinhVien" class="sidebar-left-navbar-nav-item-link">
-                <i class="fa-light fa-leaf"></i>
-                Danh sách sinh viên
-            </a>
-        </li>
-        <li class="sidebar-left-navbar-nav-item ">
-            <a href="~/Admin/QuanLyNhanVien" class="sidebar-left-navbar-nav-item-link">
-                <i class="fa-light fa-circle-minus"></i>
-                Danh sách nhân viên
-            </a>
-        </li>
-        <li class="sidebar-left-navbar-nav-item">
-            <a href="#" class="sidebar-left-navbar-nav-item-link">
-                <i class="fa-light fa-file"></i>
-                Danh sách vi phạm
-            </a>
-        </li>
-        <li class="sidebar-left-navbar-nav-item active">
-            <a href="~/Admin/DanhSachHoaDon" class="sidebar-left-navbar-nav-item-link">
-                <i class="fa-light fa-memo"></i>
-                Danh sách hóa đơn
-            </a>
-        </li>
-        <li class="sidebar-left-navbar-nav-item">
-            <a href="~/Admin/DanhSachHopDong" class="sidebar-left-navbar-nav-item-link">
-                <i class="fa-light fa-money-bill"></i>
-                Danh sách hợp đồng
-            </a>
-        </li>
-        <li class="sidebar-left-navbar-nav-item">
-            <a href="~/Admin/DanhSachXetDuyet" class="sidebar-left-navbar-nav-item-link">
-                <i class="fa-light fa-flag"></i>
-                Xét duyệt - kiểm tra
-            </a>
-        </li>
-        <li class="sidebar-left-navbar-nav-item">
-            <a href="#" class="sidebar-left-navbar-nav-item-link">
-                <i class="fa-light fa-flag"></i>
-                Thông tin quản trị
-            </a>
-        </li>
-    </ul>
-}
-<link rel="stylesheet" href="~/assets/css/hopThoai.css" />
+<script>document.getElementById('sidebar-hoadon').classList.add("active");</script>
 <link rel="stylesheet" href="~/assets/css/Dashboard/Admin/TaoHoaDon.css" />
+@*<link rel="stylesheet" href="~/assets/css/Dashboard/style.css">*@
 <div class="sidebar-right-content-heading">
     <h2 class="sidebar-right-content-heading-name">Tạo hóa đơn mới</h2>
 </div>
@@ -71,93 +14,97 @@
     @using (Html.BeginForm("TaoHoaDon", "Admin", FormMethod.Post, new { @class = "bill-form" }))
     {
         <div class="row">
-                <div class="filter-list">
-                    <div class="filter-box">
-                        <span class="filter-title">Chọn khu:</span>
-                        <select name="khu" id="khu" class="filter-select">
-                            <option value=""> --Chọn-- </option>
-                        </select>
-                    </div>
-                    <div class="filter-box">
-                        <span class="filter-title">Chọn tầng:</span>
-                        <select name="tang" id="tang" class="filter-select">
-                            <option value=""> --Chọn-- </option>
-                        </select>
-                    </div>
-                    <div class="filter-box">
-                        <span class="filter-title">Chọn phòng:</span>
-                        <select name="phong" id="phong" class="filter-select">
-                            <option value="">-- Chọn-- </option>
-                        </select>
-                    </div>
+            <div class="filter-list">
+                <div class="filter-box">
+                    <span class="filter-title">Chọn khu:</span>
+                    <select name="khu" id="khu" class="filter-select">
+                        <option value=""> --Chọn-- </option>
+                    </select>
+                </div>
+                <div class="filter-box">
+                    <span class="filter-title">Chọn tầng:</span>
+                    <select name="tang" id="tang" class="filter-select">
+                        <option value=""> --Chọn-- </option>
+                    </select>
+                </div>
+                <div class="filter-box">
+                    <span class="filter-title">Chọn phòng:</span>
+                    <select name="phong" id="phong" class="filter-select">
+                        <option value="">-- Chọn-- </option>
+                    </select>
                 </div>
             </div>
-            <h2 class="bill-heading-title">Nhập thông tin dịch vụ</h2>
-            <div class="row">
-                @foreach (var item in Model)
-                {
-                    <div class="lg-col-12">
-                        <div class="profile--form__text-field">
-                            @if (item.TinhTheoChiSo)
-                            {
-                                <label><span class="tenDV">@item.TenDichVu</span>  | Giá hiện tại: <b class="gia"> @item.GiaHienTai</b>đ - Chỉ số cũ: <b id="@("csc" + item.MaDichVu)"> </b><span class="loi" hidden> * Sai dữ liệu đầu vào</span></label>
-                                <input required type="number" min="" max="999999999" maxlength="10" id="@item.MaDichVu" value="" name="@item.MaDichVu" class="dvPhong" disabled placeholder="Nhập chỉ số mới" /> <br />
-                            }
-                            else
-                            {
-                                <label><span class="tenDV">@item.TenDichVu</span> | Giá hiện tại: <b class="gia"> @item.GiaHienTai</b>đ <span class="loi" hidden> * Sai dữ liệu đầu vào</span></label>
-                                <input required type="number" min="0" max="999999999" maxlength="10" value="" name="@item.MaDichVu" class="dvPhong" disabled placeholder="Nhập số lượng" /> <br />
-                            }
-                        </div>
+        </div>
+        <h2 class="bill-heading-title">Nhập thông tin dịch vụ</h2>
+        <div class="row">
+            @foreach (var item in Model)
+            {
+                <div class="lg-col-12">
+                    <div class="profile--form__text-field">
+                        @if (item.TinhTheoChiSo)
+                        {
+                            <label><strong class="tenDV">@item.TenDichVu</strong>  | Giá hiện tại: <b class="gia"> @item.GiaHienTai</b>đ - Chỉ số cũ: <b id="@("csc" + item.MaDichVu)"> </b><strong class="loi" hidden> * Sai dữ liệu đầu vào</strong></label>
+                            <input required type="number" min="" max="999999999" maxlength="10" id="@item.MaDichVu" value="" name="@item.MaDichVu" class="dvPhong" disabled placeholder="Nhập chỉ số mới" /> <br />
+                        }
+                        else
+                        {
+                            <label><strong class="tenDV">@item.TenDichVu</strong> | Giá hiện tại: <b class="gia"> @item.GiaHienTai</b>đ <strong class="loi" hidden> * Sai dữ liệu đầu vào</strong></label>
+                            <input required type="number" min="0" max="999999999" maxlength="10" value="" name="@item.MaDichVu" class="dvPhong" disabled placeholder="Nhập số lượng" /> <br />
+                        }
                     </div>
-                }
-            </div>
-            <div class="row">
-                <h3 class="bill-heading-title">Chi tiết hóa đơn</h3>
-                <table class=" main-info-users-table" align="center">
-                    <thead>
+                </div>
+            }
+        </div>
+        <div class="row">
+            <h3 class="bill-heading-title">Chi tiết hóa đơn</h3>
+            <table class=" main-info-users-table" align="center">
+                <thead>
+                    <tr>
                         <td>Tên dịch vụ</td>
                         <td>Giá</td>
                         <td>Số lượng</td>
                         <td>Tổng tiền</td>
-                    </thead>
-                    <tbody id="dvPhongTable">
-                        @for (var i = 0; i < Model.Count(); i++)
-                        {
-                            <tr class="ttdichvu"></tr>
-                        }
-                    </tbody>
-                    <tbody id="dvDon">
-                    </tbody>
-                </table>
-                <div class="form-add-bill">
-                    <p class="thanhtien">Thành tiền: <span style="color:crimson" id="thanhtien"></span></p>
-                    <a class="open_btn btn btn-primary">Tạo hóa đơn</a>
-                </div>
-                
+                    </tr>
+                </thead>
+                <tbody title="Chi tiết dịch vụ phòng" id="dvPhongTable">
+                    @for (var i = 0; i < Model.Count(); i++)
+                    {
+                        <tr class="ttdichvu"></tr>
+                    }
+                    @if(Model.Count()%2==1)
+                    {
+                        <tr><td></td></tr>
+                    }
+                </tbody>
+                <tbody title="Chi tiết dịch vụ đơn" id="dvDon">
+                </tbody>
+            </table>
+            <div class="form-add-bill">
+                <p class="thanhtien">Thành tiền: <span style="color:crimson" id="thanhtien"></span></p>
+                <a class="open_btn btn btn-primary" id="taoHoaDon">Tạo hóa đơn</a>
             </div>
-            <div class="row">
-                <div class="modall an">
-                    <div class="modal__innerr">
-                        <div class="modal__headerr">
-                            <p>Bạn đang tạo hóa đơn</p>
-                            <i class="fas fa-times"></i>
-                        </div>
-                        <div class="modal__bodyy">
-                            <p>Xác nhận tạo hóa đơn cho phòng"<span id="idValue"></span>"?</p>
-                        </div>
-                        <div class="modal__footerr">
-                            <a class="close btn btn-warning">Hủy bỏ</a>
-                            <button type="submit" class="Confirm-button ">Xác nhận</button>
-                        </div>
+
+        </div>
+        <div class="row">
+            <div class="modall an">
+                <div class="modal__innerr">
+                    <div class="modal__headerr">
+                        <p>Bạn đang tạo hóa đơn</p>
+                        <i class="fas fa-times" id="exit"></i>
+                    </div>
+                    <div class="modal__bodyy">
+                        <p>Xác nhận tạo hóa đơn cho phòng"<span id="idValue"></span>"?</p>
+                    </div>
+                    <div class="modal__footerr">
+                        <a class="close btn btn-warning">Hủy bỏ</a>
+                        <button type="submit" class="Confirm-button ">Xác nhận</button>
                     </div>
                 </div>
             </div>
+        </div>
     }
 </div>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js" integrity="sha512-894YE6QWD5I59HgZOGReFYm4dnWc1Qt5NtvYSaNcOP+u1T9qYdvdihz0PPSiiqn/+/3e7Jo4EaG7TubfWGUrMQ==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/axios/0.26.1/axios.min.js" integrity="sha512-bPh3uwgU5qEMipS/VOmRqynnMXGGSRv+72H/N260MQeXZIK4PG48401Bsby9Nq5P5fz7hy5UGNmC/W1Z51h2GQ==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
-    <script src="~/assets/js/GetDataPhongApi.js"></script>
-    <script src="~/assets/js/HopThoai.js"></script>
-</body>
-</html>
+@*<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js" integrity="sha512-894YE6QWD5I59HgZOGReFYm4dnWc1Qt5NtvYSaNcOP+u1T9qYdvdihz0PPSiiqn/+/3e7Jo4EaG7TubfWGUrMQ==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/axios/0.26.1/axios.min.js" integrity="sha512-bPh3uwgU5qEMipS/VOmRqynnMXGGSRv+72H/N260MQeXZIK4PG48401Bsby9Nq5P5fz7hy5UGNmC/W1Z51h2GQ==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>*@
+<script src="~/assets/js/GetdataPhongApi.js"></script>
+<script src="~/assets/js/HopThoai.js"></script>

@@ -22,7 +22,7 @@ namespace QLKTX.Models
     
         public string MaViPham { get; set; }
         public string NoiDung { get; set; }
-        public string HinhPhat { get; set; }
+        public int MucDoNghiemTrong { get; set; }
     
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<SinhVienViPham> SinhVienViPhams { get; set; }

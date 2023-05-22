@@ -49,13 +49,37 @@
     <Property Name="MaPhong" Type="char" MaxLength="10" Nullable="false" />
     <Property Name="ChiSoHienTai" Type="int" Nullable="false" />
   </EntityType>
+  <!--Errors Found During Generation:
+warning 6002: The table/view 'KyTucXa.dbo.HinhPhat' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
+  <EntityType Name="HinhPhat">
+    <Key>
+      <PropertyRef Name="MaHinhPhat" />
+      <PropertyRef Name="NoiDung" />
+      <PropertyRef Name="MucDiemApDung" />
+    </Key>
+    <Property Name="MaHinhPhat" Type="varchar" MaxLength="10" Nullable="false" />
+    <Property Name="NoiDung" Type="nvarchar" MaxLength="100" Nullable="false" />
+    <Property Name="MucDiemApDung" Type="int" Nullable="false" />
+  </EntityType>
+  <!--Errors Found During Generation:
+warning 6002: The table/view 'KyTucXa.dbo.HinhPhatQuaCacLanTaiPham' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
+  <EntityType Name="HinhPhatQuaCacLanTaiPham">
+    <Key>
+      <PropertyRef Name="MaViPham" />
+      <PropertyRef Name="LanTaiPham" />
+      <PropertyRef Name="HinhPhat" />
+    </Key>
+    <Property Name="MaViPham" Type="varchar" MaxLength="10" Nullable="false" />
+    <Property Name="LanTaiPham" Type="int" Nullable="false" />
+    <Property Name="HinhPhat" Type="nvarchar" MaxLength="100" Nullable="false" />
+  </EntityType>
   <EntityType Name="HoaDon">
     <Key>
       <PropertyRef Name="MaHoaDon" />
     </Key>
     <Property Name="MaHoaDon" Type="char" MaxLength="20" Nullable="false" />
     <Property Name="MaPhong" Type="char" MaxLength="10" Nullable="false" />
-    <Property Name="NgayTao" Type="date" Nullable="false" />
+    <Property Name="NgayTao" Type="datetime" Nullable="false" />
     <Property Name="ThanhTien" Type="int" Nullable="false" />
     <Property Name="DaThanhToan" Type="bit" Nullable="false" />
     <Property Name="NguoiTao" Type="varchar" MaxLength="20" Nullable="false" />
@@ -73,12 +97,33 @@
     <Property Name="TrangThai" Type="nvarchar" MaxLength="13" Nullable="false" />
     <Property Name="DaThanhToan" Type="bit" Nullable="false" />
   </EntityType>
+  <EntityType Name="KhaiBaoHuHong">
+    <Key>
+      <PropertyRef Name="MaKhaiBao" />
+    </Key>
+    <Property Name="MaKhaiBao" Type="varchar" MaxLength="10" Nullable="false" />
+    <Property Name="NgayYeuCau" Type="datetime" Nullable="false" />
+    <Property Name="MaPhong" Type="char" MaxLength="10" Nullable="false" />
+    <Property Name="MaThietBi" Type="varchar" MaxLength="10" Nullable="false" />
+    <Property Name="TongSoLuong" Type="int" Nullable="false" />
+    <Property Name="DaXuLy" Type="bit" Nullable="false" />
+    <Property Name="NguoiXuLy" Type="varchar" MaxLength="20" />
+  </EntityType>
   <EntityType Name="Khu">
     <Key>
       <PropertyRef Name="Ma" />
     </Key>
     <Property Name="Ma" Type="char" MaxLength="5" Nullable="false" />
     <Property Name="Ten" Type="nvarchar" MaxLength="15" Nullable="false" />
+  </EntityType>
+  <EntityType Name="LoaiThongBao">
+    <Key>
+      <PropertyRef Name="MaLoaiThongBao" />
+    </Key>
+    <Property Name="MaLoaiThongBao" Type="char" MaxLength="10" Nullable="false" />
+    <Property Name="TieuDe" Type="nvarchar" MaxLength="50" />
+    <Property Name="DuongDan" Type="varchar" MaxLength="30" />
+    <Property Name="Loai" Type="nvarchar" MaxLength="20" />
   </EntityType>
   <EntityType Name="NhanVien">
     <Key>
@@ -130,6 +175,8 @@
     <Property Name="MaSV" Type="char" MaxLength="10" Nullable="false" />
     <Property Name="MaViPham" Type="varchar" MaxLength="10" Nullable="false" />
     <Property Name="ThoiGianViPham" Type="datetime" Nullable="false" />
+    <Property Name="MaHinhPhat" Type="varchar" MaxLength="10" Nullable="false" />
+    <Property Name="NguoiTao" Type="char" MaxLength="10" Nullable="false" />
     <Property Name="GhiChu" Type="nvarchar" MaxLength="100" />
     <Property Name="DaGiaiQuyet" Type="bit" Nullable="false" />
   </EntityType>
@@ -154,10 +201,22 @@
     <Key>
       <PropertyRef Name="MaThietBi" />
     </Key>
-    <Property Name="MaThietBi" Type="varchar" MaxLength="1" Nullable="false" />
+    <Property Name="MaThietBi" Type="varchar" MaxLength="10" Nullable="false" />
     <Property Name="TenThietBi" Type="nvarchar" MaxLength="25" Nullable="false" />
     <Property Name="TongSoLuong" Type="int" Nullable="false" />
     <Property Name="SoLuongMoiPhong" Type="int" Nullable="false" />
+  </EntityType>
+  <EntityType Name="ThongBao">
+    <Key>
+      <PropertyRef Name="MaThongBao" />
+    </Key>
+    <Property Name="MaThongBao" Type="varchar" MaxLength="20" Nullable="false" />
+    <Property Name="NguoiNhan" Type="char" MaxLength="10" />
+    <Property Name="NgayTao" Type="datetime" Nullable="false" />
+    <Property Name="MaLoaiThongBao" Type="char" MaxLength="10" Nullable="false" />
+    <Property Name="NoiDung" Type="nvarchar" MaxLength="200" Nullable="false" />
+    <Property Name="ChuoiBien" Type="nvarchar" MaxLength="100" />
+    <Property Name="DaXem" Type="bit" Nullable="false" />
   </EntityType>
   <EntityType Name="ViPham">
     <Key>
@@ -165,19 +224,18 @@
     </Key>
     <Property Name="MaViPham" Type="varchar" MaxLength="10" Nullable="false" />
     <Property Name="NoiDung" Type="nvarchar" MaxLength="100" Nullable="false" />
-    <Property Name="HinhPhat" Type="nvarchar" MaxLength="100" Nullable="false" />
+    <Property Name="MucDoNghiemTrong" Type="int" Nullable="false" />
   </EntityType>
-  <EntityType Name="YeuCauSuaChua">
+  <EntityType Name="XuLyKhaiBaoHuHong">
     <Key>
-      <PropertyRef Name="MaThietBi" />
-      <PropertyRef Name="MaSV" />
-      <PropertyRef Name="NgayYeuCau" />
+      <PropertyRef Name="MaXuLy" />
     </Key>
-    <Property Name="MaThietBi" Type="varchar" MaxLength="1" Nullable="false" />
-    <Property Name="MaSV" Type="char" MaxLength="10" Nullable="false" />
-    <Property Name="NgayYeuCau" Type="datetime" Nullable="false" />
+    <Property Name="MaXuLy" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="MaKhaiBao" Type="varchar" MaxLength="10" Nullable="false" />
     <Property Name="SoLuong" Type="int" Nullable="false" />
-    <Property Name="TrangThai" Type="nchar" MaxLength="14" Nullable="false" />
+    <Property Name="NguyenNhan" Type="nvarchar" MaxLength="100" />
+    <Property Name="ThayMoi" Type="bit" Nullable="false" />
+    <Property Name="ChiPhiPhatSinh" Type="int" />
   </EntityType>
   <!--Errors Found During Generation:
 warning 6002: The table/view 'KyTucXa.dbo.ThongKeDangKyLuTru' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
@@ -335,6 +393,42 @@ warning 6002: The table/view 'KyTucXa.dbo.ThongKeDichVuDonMoiPhong' does not hav
       </Dependent>
     </ReferentialConstraint>
   </Association>
+  <Association Name="FK_KhaiBaoHuHong_MaPhong">
+    <End Role="Phong" Type="Self.Phong" Multiplicity="1" />
+    <End Role="KhaiBaoHuHong" Type="Self.KhaiBaoHuHong" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Phong">
+        <PropertyRef Name="Ma" />
+      </Principal>
+      <Dependent Role="KhaiBaoHuHong">
+        <PropertyRef Name="MaPhong" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_KhaiBaoHuHong_MaThietBi">
+    <End Role="ThietBi" Type="Self.ThietBi" Multiplicity="1" />
+    <End Role="KhaiBaoHuHong" Type="Self.KhaiBaoHuHong" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="ThietBi">
+        <PropertyRef Name="MaThietBi" />
+      </Principal>
+      <Dependent Role="KhaiBaoHuHong">
+        <PropertyRef Name="MaThietBi" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_KhaiBaoHuHong_NguoiXuLy">
+    <End Role="NhanVien" Type="Self.NhanVien" Multiplicity="0..1" />
+    <End Role="KhaiBaoHuHong" Type="Self.KhaiBaoHuHong" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="NhanVien">
+        <PropertyRef Name="TenDangNhap" />
+      </Principal>
+      <Dependent Role="KhaiBaoHuHong">
+        <PropertyRef Name="NguoiXuLy" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
   <Association Name="FK_Phong_MaTang">
     <End Role="Tang" Type="Self.Tang" Multiplicity="1" />
     <End Role="Phong" Type="Self.Phong" Multiplicity="*" />
@@ -431,30 +525,47 @@ warning 6002: The table/view 'KyTucXa.dbo.ThongKeDichVuDonMoiPhong' does not hav
       </Dependent>
     </ReferentialConstraint>
   </Association>
-  <Association Name="FK_YeuCauSuaChua_MaSV">
-    <End Role="SinhVien" Type="Self.SinhVien" Multiplicity="1" />
-    <End Role="YeuCauSuaChua" Type="Self.YeuCauSuaChua" Multiplicity="*" />
+  <Association Name="FK_ThongBao_MaLoaiThongBao">
+    <End Role="LoaiThongBao" Type="Self.LoaiThongBao" Multiplicity="1" />
+    <End Role="ThongBao" Type="Self.ThongBao" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="LoaiThongBao">
+        <PropertyRef Name="MaLoaiThongBao" />
+      </Principal>
+      <Dependent Role="ThongBao">
+        <PropertyRef Name="MaLoaiThongBao" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_ThongBao_NguoiNhan">
+    <End Role="SinhVien" Type="Self.SinhVien" Multiplicity="0..1" />
+    <End Role="ThongBao" Type="Self.ThongBao" Multiplicity="*" />
     <ReferentialConstraint>
       <Principal Role="SinhVien">
         <PropertyRef Name="MaSV" />
       </Principal>
-      <Dependent Role="YeuCauSuaChua">
-        <PropertyRef Name="MaSV" />
+      <Dependent Role="ThongBao">
+        <PropertyRef Name="NguoiNhan" />
       </Dependent>
     </ReferentialConstraint>
   </Association>
-  <Association Name="FK_YeuCauSuaChua_MaThietBi">
-    <End Role="ThietBi" Type="Self.ThietBi" Multiplicity="1" />
-    <End Role="YeuCauSuaChua" Type="Self.YeuCauSuaChua" Multiplicity="*" />
+  <Association Name="FK_XuLyKhaiBaoHuHong_MaKhaiBao">
+    <End Role="KhaiBaoHuHong" Type="Self.KhaiBaoHuHong" Multiplicity="1" />
+    <End Role="XuLyKhaiBaoHuHong" Type="Self.XuLyKhaiBaoHuHong" Multiplicity="*" />
     <ReferentialConstraint>
-      <Principal Role="ThietBi">
-        <PropertyRef Name="MaThietBi" />
+      <Principal Role="KhaiBaoHuHong">
+        <PropertyRef Name="MaKhaiBao" />
       </Principal>
-      <Dependent Role="YeuCauSuaChua">
-        <PropertyRef Name="MaThietBi" />
+      <Dependent Role="XuLyKhaiBaoHuHong">
+        <PropertyRef Name="MaKhaiBao" />
       </Dependent>
     </ReferentialConstraint>
   </Association>
+  <Function Name="CapNhatSoLuongKhaiBaoHuHong" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="maThietBi" Type="varchar" Mode="In" />
+    <Parameter Name="maPhong" Type="char" Mode="In" />
+    <Parameter Name="soLuong" Type="int" Mode="In" />
+  </Function>
   <Function Name="TaoDangKyNoiTru" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
     <Parameter Name="maSV" Type="char" Mode="In" />
     <Parameter Name="maPhong" Type="char" Mode="In" />
@@ -471,7 +582,9 @@ warning 6002: The table/view 'KyTucXa.dbo.ThongKeDichVuDonMoiPhong' does not hav
     <EntitySet Name="DichVuPhongCoChiSo" EntityType="Self.DichVuPhongCoChiSo" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="HoaDon" EntityType="Self.HoaDon" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="HopDong" EntityType="Self.HopDong" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="KhaiBaoHuHong" EntityType="Self.KhaiBaoHuHong" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="Khu" EntityType="Self.Khu" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="LoaiThongBao" EntityType="Self.LoaiThongBao" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="NhanVien" EntityType="Self.NhanVien" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="Phong" EntityType="Self.Phong" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="SinhVien" EntityType="Self.SinhVien" Schema="dbo" store:Type="Tables" />
@@ -479,8 +592,23 @@ warning 6002: The table/view 'KyTucXa.dbo.ThongKeDichVuDonMoiPhong' does not hav
     <EntitySet Name="SuDungDichVuDon" EntityType="Self.SuDungDichVuDon" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="Tang" EntityType="Self.Tang" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="ThietBi" EntityType="Self.ThietBi" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="ThongBao" EntityType="Self.ThongBao" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="ViPham" EntityType="Self.ViPham" Schema="dbo" store:Type="Tables" />
-    <EntitySet Name="YeuCauSuaChua" EntityType="Self.YeuCauSuaChua" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="XuLyKhaiBaoHuHong" EntityType="Self.XuLyKhaiBaoHuHong" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="HinhPhat" EntityType="Self.HinhPhat" store:Type="Tables" store:Schema="dbo">
+      <DefiningQuery>SELECT 
+    [HinhPhat].[MaHinhPhat] AS [MaHinhPhat], 
+    [HinhPhat].[NoiDung] AS [NoiDung], 
+    [HinhPhat].[MucDiemApDung] AS [MucDiemApDung]
+    FROM [dbo].[HinhPhat] AS [HinhPhat]</DefiningQuery>
+    </EntitySet>
+    <EntitySet Name="HinhPhatQuaCacLanTaiPham" EntityType="Self.HinhPhatQuaCacLanTaiPham" store:Type="Tables" store:Schema="dbo">
+      <DefiningQuery>SELECT 
+    [HinhPhatQuaCacLanTaiPham].[MaViPham] AS [MaViPham], 
+    [HinhPhatQuaCacLanTaiPham].[LanTaiPham] AS [LanTaiPham], 
+    [HinhPhatQuaCacLanTaiPham].[HinhPhat] AS [HinhPhat]
+    FROM [dbo].[HinhPhatQuaCacLanTaiPham] AS [HinhPhatQuaCacLanTaiPham]</DefiningQuery>
+    </EntitySet>
     <EntitySet Name="ThongKeDangKyLuTru" EntityType="Self.ThongKeDangKyLuTru" store:Type="Views" store:Schema="dbo">
       <DefiningQuery>SELECT 
     [ThongKeDangKyLuTru].[MaPhong] AS [MaPhong], 
@@ -540,6 +668,18 @@ warning 6002: The table/view 'KyTucXa.dbo.ThongKeDichVuDonMoiPhong' does not hav
       <End Role="NhanVien" EntitySet="NhanVien" />
       <End Role="HopDong" EntitySet="HopDong" />
     </AssociationSet>
+    <AssociationSet Name="FK_KhaiBaoHuHong_MaPhong" Association="Self.FK_KhaiBaoHuHong_MaPhong">
+      <End Role="Phong" EntitySet="Phong" />
+      <End Role="KhaiBaoHuHong" EntitySet="KhaiBaoHuHong" />
+    </AssociationSet>
+    <AssociationSet Name="FK_KhaiBaoHuHong_MaThietBi" Association="Self.FK_KhaiBaoHuHong_MaThietBi">
+      <End Role="ThietBi" EntitySet="ThietBi" />
+      <End Role="KhaiBaoHuHong" EntitySet="KhaiBaoHuHong" />
+    </AssociationSet>
+    <AssociationSet Name="FK_KhaiBaoHuHong_NguoiXuLy" Association="Self.FK_KhaiBaoHuHong_NguoiXuLy">
+      <End Role="NhanVien" EntitySet="NhanVien" />
+      <End Role="KhaiBaoHuHong" EntitySet="KhaiBaoHuHong" />
+    </AssociationSet>
     <AssociationSet Name="FK_Phong_MaTang" Association="Self.FK_Phong_MaTang">
       <End Role="Tang" EntitySet="Tang" />
       <End Role="Phong" EntitySet="Phong" />
@@ -572,13 +712,17 @@ warning 6002: The table/view 'KyTucXa.dbo.ThongKeDichVuDonMoiPhong' does not hav
       <End Role="Khu" EntitySet="Khu" />
       <End Role="Tang" EntitySet="Tang" />
     </AssociationSet>
-    <AssociationSet Name="FK_YeuCauSuaChua_MaSV" Association="Self.FK_YeuCauSuaChua_MaSV">
-      <End Role="SinhVien" EntitySet="SinhVien" />
-      <End Role="YeuCauSuaChua" EntitySet="YeuCauSuaChua" />
+    <AssociationSet Name="FK_ThongBao_MaLoaiThongBao" Association="Self.FK_ThongBao_MaLoaiThongBao">
+      <End Role="LoaiThongBao" EntitySet="LoaiThongBao" />
+      <End Role="ThongBao" EntitySet="ThongBao" />
     </AssociationSet>
-    <AssociationSet Name="FK_YeuCauSuaChua_MaThietBi" Association="Self.FK_YeuCauSuaChua_MaThietBi">
-      <End Role="ThietBi" EntitySet="ThietBi" />
-      <End Role="YeuCauSuaChua" EntitySet="YeuCauSuaChua" />
+    <AssociationSet Name="FK_ThongBao_NguoiNhan" Association="Self.FK_ThongBao_NguoiNhan">
+      <End Role="SinhVien" EntitySet="SinhVien" />
+      <End Role="ThongBao" EntitySet="ThongBao" />
+    </AssociationSet>
+    <AssociationSet Name="FK_XuLyKhaiBaoHuHong_MaKhaiBao" Association="Self.FK_XuLyKhaiBaoHuHong_MaKhaiBao">
+      <End Role="KhaiBaoHuHong" EntitySet="KhaiBaoHuHong" />
+      <End Role="XuLyKhaiBaoHuHong" EntitySet="XuLyKhaiBaoHuHong" />
     </AssociationSet>
   </EntityContainer>
 </Schema>

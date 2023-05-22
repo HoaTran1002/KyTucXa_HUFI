@@ -17,6 +17,8 @@ namespace QLKTX.Models
         public string MaSV { get; set; }
         public string MaViPham { get; set; }
         public System.DateTime ThoiGianViPham { get; set; }
+        public string MaHinhPhat { get; set; }
+        public string NguoiTao { get; set; }
         public string GhiChu { get; set; }
         public bool DaGiaiQuyet { get; set; }
     

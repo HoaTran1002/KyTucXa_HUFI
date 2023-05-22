@@ -1,0 +1,73 @@
+﻿@model QLKTX.Models.KhaiBaoHuHong
+@{
+    ViewBag.Title = "XuLyKhaiBaoHuHong";
+    Layout = "~/Views/Admin/LayoutAdmin.cshtml";
+}
+
+<style>
+    div{
+        font-size:20px;
+    }
+    .item-xuly{
+        border:1px solid #0094ff;
+        border-radius:10px;
+        padding:15px;
+        position:relative;
+    }
+
+</style>
+<div>
+    <!--Thông tin khai báo hư hỏng-->
+    <div>
+        <span>Mã khai báo: </span><span id="MAKHAIBAO">@Model.MaKhaiBao</span>  <br />
+        <span>Ngày yêu cầu: </span><span>@Model.NgayYeuCau</span>  <br />
+        <span>Phòng: </span><span>@Model.MaPhong - @Model.Phong.Ma</span>   <br />
+        <span>Thiết bị hư hỏng: </span><span>@Model.MaThietBi - @Model.ThietBi.MaThietBi</span>  <br />
+        <span>Tổng số lượng hư hỏng:</span><span id="TONGSOLUONG">@Model.TongSoLuong</span>   <br />
+    </div>
+    <!--Thực hiện xử lý khai báo-->
+    <hr />
+    <h4>Thống kê quá trình xử lý</h4>
+
+    <div class="list-items" id="listXuLy">
+                    @*<div class="item-xuly row">
+                        <button onclick="removeItem(this.parentElement)">xóa</button>
+                        <div class="col-lg-5 col-12 item item-left">
+                            <div>
+                                <input class="number soLuong" type="text" name="txtSoLuong1" placeholder="Nhập số lượng" />   <br /><br />
+                                <b>Phương pháp xử lý: </b>       <br />
+                                <input name="phuongphap_1" type="radio" id="phuongphap1" value="Sửa chửa" checked />
+                                <label for="phuongphap1">Sửa chửa</label>
+
+                                <input name="phuongphap_1" type="radio" id="phuongphap2" value="Thay mới" />
+                                <label for="phuongphap2">Thay mới</label><br />
+                                <input oninput="checkInputChiPhiPhatSinh(this)" class="phone" type="text" name="txtChiPhiPhatSinh1" placeholder="Nhập chi phi phát sinh" />
+                            </div>
+                        </div>
+                        <div class="col-lg-7 col-12 item item-right">
+                            <div>
+                                <b>Chọn nguyên nhân:</b>    <br />
+                                <input name="nguyennhan_1" type="radio" id="nguyennhan1" value="Môi trường, thời gian hao mòn gây hư hỏng" checked />
+                                <label for="nguyennhan1">Môi trường, thời gian hao mòn gây hư hỏng</label>               <br />
+
+                                <input name="nguyennhan_1" type="radio" id="nguyennhan2" value="Do sinh viên làm hư hỏng" />
+                                <label for="nguyennhan2">Do sinh viên làm hư hỏng</label>                  <br />
+
+                                <input name="nguyennhan_1" type="radio" id="nguyennhan3" value="Khác" />
+                                <label for="nguyennhan3">Khác</label>           <br />
+                                <textarea  id="textarea1" placeholder="Nhập nguyên nhân khác"></textarea>    <br />
+                            </div>
+                        </div>
+                    </div>*@
+    </div>
+    <div>
+        <button  id="them">Thêm</button>
+    </div>
+    <div>
+        <button id="submitInfo">Xác nhận xử lý</button>
+    </div>
+
+</div>
+<script src="~/assets/js/Dashboard/Admin/xuLyKhaiBaoHuHong.js"></script>
+<script>document.getElementById('sidebar-QuanLyKhaiBaoHuHong').classList.add("active");</script>
+

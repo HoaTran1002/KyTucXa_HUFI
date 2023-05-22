@@ -233,9 +233,14 @@
     <Compile Include="Controllers\AdminController.cs" />
     <Compile Include="Controllers\HoaDonApiController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
+    <Compile Include="Controllers\KhaiBaoHuHongApiController.cs" />
     <Compile Include="Controllers\SessionLoginUser.cs" />
+    <Compile Include="Controllers\ThietBiApiController.cs" />
+    <Compile Include="Controllers\ThongBaoApiController.cs" />
+    <Compile Include="Controllers\ThongBaoController.cs" />
     <Compile Include="Controllers\UserController.cs" />
     <Compile Include="Controllers\ValuesController.cs" />
+    <Compile Include="Controllers\XetDuyetApiController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
@@ -259,10 +264,19 @@
     <Compile Include="Models\DichVuPhongCoChiSo.cs">
       <DependentUpon>KyTucXa.tt</DependentUpon>
     </Compile>
+    <Compile Include="Models\HinhPhat.cs">
+      <DependentUpon>KyTucXa.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\HinhPhatQuaCacLanTaiPham.cs">
+      <DependentUpon>KyTucXa.tt</DependentUpon>
+    </Compile>
     <Compile Include="Models\HoaDon.cs">
       <DependentUpon>KyTucXa.tt</DependentUpon>
     </Compile>
     <Compile Include="Models\HopDong.cs">
+      <DependentUpon>KyTucXa.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\KhaiBaoHuHong.cs">
       <DependentUpon>KyTucXa.tt</DependentUpon>
     </Compile>
     <Compile Include="Models\Khu.cs">
@@ -283,12 +297,16 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>KyTucXa.edmx</DependentUpon>
     </Compile>
+    <Compile Include="Models\LoaiThongBao.cs">
+      <DependentUpon>KyTucXa.tt</DependentUpon>
+    </Compile>
     <Compile Include="Models\NhanVien.cs">
       <DependentUpon>KyTucXa.tt</DependentUpon>
     </Compile>
     <Compile Include="Models\Phong.cs">
       <DependentUpon>KyTucXa.tt</DependentUpon>
     </Compile>
+    <Compile Include="Models\SessionLoginUser.cs" />
     <Compile Include="Models\SinhVien.cs">
       <DependentUpon>KyTucXa.tt</DependentUpon>
     </Compile>
@@ -304,6 +322,9 @@
     <Compile Include="Models\ThietBi.cs">
       <DependentUpon>KyTucXa.tt</DependentUpon>
     </Compile>
+    <Compile Include="Models\ThongBao.cs">
+      <DependentUpon>KyTucXa.tt</DependentUpon>
+    </Compile>
     <Compile Include="Models\ThongKeDangKyLuTru.cs">
       <DependentUpon>KyTucXa.tt</DependentUpon>
     </Compile>
@@ -313,7 +334,7 @@
     <Compile Include="Models\ViPham.cs">
       <DependentUpon>KyTucXa.tt</DependentUpon>
     </Compile>
-    <Compile Include="Models\YeuCauSuaChua.cs">
+    <Compile Include="Models\XuLyKhaiBaoHuHong.cs">
       <DependentUpon>KyTucXa.tt</DependentUpon>
     </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -426,13 +447,6 @@
     <Content Include="Areas\HelpPage\Views\Help\DisplayTemplates\CollectionModelDescription.cshtml" />
     <Content Include="Areas\HelpPage\Views\Help\DisplayTemplates\ApiGroup.cshtml" />
     <Content Include="Areas\HelpPage\Views\Help\Api.cshtml" />
-    <EntityDeploy Include="Models\KyTucXa.edmx">
-      <Generator>EntityModelCodeGenerator</Generator>
-      <LastGenOutput>KyTucXa.Designer.cs</LastGenOutput>
-    </EntityDeploy>
-    <Content Include="Models\KyTucXa.edmx.diagram">
-      <DependentUpon>KyTucXa.edmx</DependentUpon>
-    </Content>
     <Content Include="libman.json" />
     <Content Include="..\.editorconfig">
       <Link>.editorconfig</Link>
@@ -454,6 +468,13 @@
     <Content Include="assets\lib\slick-1.8.1\slick\slick-theme.scss" />
     <Content Include="assets\lib\slick-1.8.1\slick\slick.less" />
     <Content Include="assets\lib\slick-1.8.1\slick\slick.scss" />
+    <EntityDeploy Include="Models\KyTucXa.edmx">
+      <Generator>EntityModelCodeGenerator</Generator>
+      <LastGenOutput>KyTucXa.Designer.cs</LastGenOutput>
+    </EntityDeploy>
+    <Content Include="Models\KyTucXa.edmx.diagram">
+      <DependentUpon>KyTucXa.edmx</DependentUpon>
+    </Content>
     <None Include="Scripts\jquery-3.4.1.intellisense.js" />
     <Content Include="Scripts\jquery-3.4.1.js" />
     <Content Include="Scripts\jquery-3.4.1.min.js" />
@@ -470,49 +491,57 @@
     <Content Include="Areas\HelpPage\Views\_ViewStart.cshtml" />
     <Content Include="Content\Site.css" />
     <Content Include="Views\Web.config" />
-    <Content Include="Views\Shared\Error.cshtml" />
-    <Content Include="Views\Shared\_Layout.cshtml" />
-    <Content Include="Views\Home\DangNhap.cshtml" />
-    <Content Include="Views\Home\DangKy.cshtml" />
-    <Content Include="Views\Home\TrangChu.cshtml" />
-    <Content Include="Views\Shared\LayoutUser.cshtml" />
-    <Content Include="Views\Admin\DanhSachXetDuyet.cshtml" />
-    <Content Include="Views\Admin\LayoutAdmin.cshtml" />
-    <Content Include="Views\Admin\XemThongTinXetDuyet.cshtml" />
-    <Content Include="Views\Admin\TaoKhongThanhCong.cshtml" />
-    <Content Include="Views\Admin\DanhSachHopDong.cshtml" />
-    <Content Include="Views\Admin\XemThongTinSinhVien.cshtml" />
-    <Content Include="Views\Admin\DanhSachPhong.cshtml" />
-    <Content Include="Views\Admin\XemThongTinPhong.cshtml" />
-    <Content Include="Views\Admin\ChiTietHopDong.cshtml" />
-    <Content Include="Views\Admin\TaoHoaDon.cshtml" />
-    <Content Include="Views\Admin\DanhSachHoaDon.cshtml" />
-    <Content Include="Views\Admin\XemChiTietHoaDon.cshtml" />
-    <Content Include="Views\Admin\QuanLyNhanVien.cshtml" />
-    <Content Include="Views\About\Index.cshtml" />
-    <Content Include="Views\Contact\Index.cshtml" />
-    <Content Include="Views\Form\Index.cshtml" />
-    <Content Include="Views\Grouph\Index.cshtml" />
-    <Content Include="Views\Health\Index.cshtml" />
-    <Content Include="Views\Notification\Index.cshtml" />
-    <Content Include="Views\Admin\TrangChu.cshtml" />
-    <Content Include="Views\Admin\DanhSachSinhVien.cshtml" />
     <Content Include="assets\css\about.css" />
     <None Include="assets\img\ktx_3.jpeg" />
     <None Include="assets\img\ktx_2.jpeg" />
     <None Include="assets\img\elon.jpeg" />
     <Content Include="assets\lib\css\tempusdominus-bootstrap-4.css" />
     <Content Include="assets\lib\css\tempusdominus-bootstrap-4.min.css" />
+    <Content Include="Views\About\Index.cshtml" />
+    <Content Include="Views\Admin\ChiTietHopDong.cshtml" />
+    <Content Include="Views\Admin\DanhSachHoaDon.cshtml" />
+    <Content Include="Views\Admin\DanhSachHopDong.cshtml" />
+    <Content Include="Views\Admin\DanhSachPhong.cshtml" />
+    <Content Include="Views\Admin\DanhSachSinhVien.cshtml" />
+    <Content Include="Views\Admin\DanhSachXetDuyet.cshtml" />
+    <Content Include="Views\Admin\LayoutAdmin.cshtml" />
+    <Content Include="Views\Admin\QuanLyKhaiBaoHuHong.cshtml" />
+    <Content Include="Views\Admin\QuanLyNhanVien.cshtml" />
+    <Content Include="Views\Admin\TaoHoaDon.cshtml" />
+    <Content Include="Views\Admin\TaoKhongThanhCong.cshtml" />
+    <Content Include="Views\Admin\TaoViPham.cshtml" />
+    <Content Include="Views\Admin\TrangChu.cshtml" />
+    <Content Include="Views\Admin\XemChiTietHoaDon.cshtml" />
+    <Content Include="Views\Admin\XemThongTinPhong.cshtml" />
+    <Content Include="Views\Admin\XemThongTinSinhVien.cshtml" />
+    <Content Include="Views\Admin\XemThongTinXetDuyet.cshtml" />
+    <Content Include="Views\Admin\XemThongTinXuLyKhaiBaoHuHong.cshtml" />
+    <Content Include="Views\Admin\XuLyKhaiBaoHuHong.cshtml" />
+    <Content Include="Views\Contact\Index.cshtml" />
+    <Content Include="Views\Form\Index.cshtml" />
+    <Content Include="Views\Grouph\Index.cshtml" />
+    <Content Include="Views\Health\Index.cshtml" />
+    <Content Include="Views\Home\DangKy.cshtml" />
+    <Content Include="Views\Home\DangNhap.cshtml" />
+    <Content Include="Views\Home\test.cshtml" />
+    <Content Include="Views\Home\TrangChu.cshtml" />
+    <Content Include="Views\Notification\Index.cshtml" />
+    <Content Include="Views\Shared\Error.cshtml" />
+    <Content Include="Views\Shared\LayoutUser.cshtml" />
+    <Content Include="Views\Shared\_Layout.cshtml" />
     <Content Include="Views\User\DangKyLuuTruHe.cshtml" />
     <Content Include="Views\User\DangKyNoiTru.cshtml" />
     <Content Include="Views\User\DangKyThanhCong.cshtml" />
+    <Content Include="Views\User\KhaiBaoHuHongThietBi.cshtml" />
     <Content Include="Views\User\TaiKhoanCaNhan.cshtml" />
     <Content Include="Views\User\ThongTinSinhVien.cshtml" />
     <Content Include="Views\User\TrangChu.cshtml" />
     <Content Include="Views\User\XacNhanDangKy.cshtml" />
+    <Content Include="Views\User\XemChiTietHoaDon.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
+    <Folder Include="Views\ThongBao\" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="fonts\glyphicons-halflings-regular.woff2" />

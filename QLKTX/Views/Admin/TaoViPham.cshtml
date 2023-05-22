@@ -1,0 +1,74 @@
+﻿
+@{
+    ViewBag.Title = "TaoViPham";
+    Layout = "~/Views/Admin/LayoutAdmin.cshtml";
+}
+<style>
+    div{
+        font-size:20px;
+    }
+</style>
+<h2>Tạo vi phạm</h2>
+
+<div>
+
+
+    <!--Chọn sinh viên vi phạm-->
+    <div class="filter-box">
+        <span class="filter-title">Chọn khu:</span>
+        <select name="khu" id="khu" class="filter-select">
+            <option value=""> --Chọn-- </option>
+        </select>
+    </div>
+    <div class="filter-box">
+        <span class="filter-title">Chọn tầng:</span>
+        <select name="tang" id="tang" class="filter-select">
+            <option value=""> --Chọn-- </option>
+        </select>
+    </div>
+    <div class="filter-box">
+        <span class="filter-title">Chọn phòng:</span>
+        <select name="phong" id="phong" class="filter-select">
+            <option value="">-- Chọn-- </option>
+        </select>
+    </div>
+
+    <div class="filter-box">
+        <span class="filter-title">Sinh viên vi phạm:</span>
+        <select name="sinhvien" id="sinhvien" class="filter-select">
+            <option value="">--Chọn-- </option>
+        </select>
+    </div>
+
+    <div>
+        <input type="text" placeholder="Mã số sinh viên" class="phone" />
+        <input type="text" placeholder="Họ và tên" />
+        <input type="text" placeholder="CMND/CCCD" class="phone" />
+        <input type="text" placeholder="Số điện thoại" class="phone" />
+        <input type="date" placeholder="Ngày tháng năm sinh" />
+    </div>
+
+    <!--Thông tin sinh viên-->
+    <center>Thông tin sinh viên vi phạm</center>
+    <table>
+        <tr>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+        </tr>
+    </table>
+    <!--Chọn lỗi vi phạm-->
+
+    <div>
+        <select>
+            <option>--Chọn--</option>
+        </select>
+    </div>
+
+</div>
+<script  src="~/assets/js/KiemTraChuoiSo.js"></script>
+<script src="~/assets/js/callApiPhong.js"></script>
+

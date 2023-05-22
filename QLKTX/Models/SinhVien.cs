@@ -21,7 +21,7 @@ namespace QLKTX.Models
             this.Phongs = new HashSet<Phong>();
             this.SinhVienViPhams = new HashSet<SinhVienViPham>();
             this.SuDungDichVuDons = new HashSet<SuDungDichVuDon>();
-            this.YeuCauSuaChuas = new HashSet<YeuCauSuaChua>();
+            this.ThongBaos = new HashSet<ThongBao>();
         }
     
         public string MaSV { get; set; }
@@ -50,6 +50,6 @@ namespace QLKTX.Models
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<SuDungDichVuDon> SuDungDichVuDons { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<YeuCauSuaChua> YeuCauSuaChuas { get; set; }
+        public virtual ICollection<ThongBao> ThongBaos { get; set; }
     }
 }

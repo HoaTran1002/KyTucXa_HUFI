@@ -12,7 +12,6 @@
         font-size: 17px;
     }
 </style>
-<link rel="stylesheet" href="~/assets/css/hopThoai.css">
 <div id="container">
     <h4>Thông tin sinh viên</h4>
     <hr />
@@ -74,11 +73,10 @@
     <button value="@lPhong[0].Ma" id="xacnhan" class="open_btn btn_xacnhan">Xác nhận</button>
     @*<input type="submit" value="Đăng ký" />*@
     @*}*@
-    <script src="~/assets/js/TaoHopThoai.js"></script>
     <script>
         WriteHopThoai("Bạn muốn đăng ký nội trú với phòng", "Xác nhận chọn phòng này, cho dù phòng này có vượt quá số lượng đăng ký?", "XacNhanDangKy", "get", "maPhong","@lPhong[0].Ma")
     </script>
-    <script src="~/assets/js/HopThoai.js"></script>
-    <script src="~/assets/js/hopXacNhan.js"></script>
+
+    <script>document.getElementById('sidebar-dangkynoitru').classList.add("active");</script>
 </div>
 

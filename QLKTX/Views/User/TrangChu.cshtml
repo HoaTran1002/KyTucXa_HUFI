@@ -3,58 +3,6 @@
     ViewBag.Title = "TrangChu";
     Layout = "~/Views/Shared/LayoutUser.cshtml";
 }
-@section sidebarLeftUser{
-    <ul class="sidebar-left-navbar-nav">
-        <li class="sidebar-left-navbar-nav-item active">
-            <a href="~/User/TrangChu" class="sidebar-left-navbar-nav-item-link">
-                <i class="fa-light fa-grid-2"></i>
-                Trang chủ
-            </a>
-        </li>
-        <li class="sidebar-left-navbar-nav-item ">
-            <a href="~/User/ThongTinSinhVien" class="sidebar-left-navbar-nav-item-link">
-                <i class="fa-light fa-user"></i>
-                Hồ sơ sinh viên
-            </a>
-        </li>
-        <li class="sidebar-left-navbar-nav-item">
-            <a href="#" class="sidebar-left-navbar-nav-item-link">
-                <i class="fa-light fa-leaf"></i>
-                Gia nhập
-            </a>
-        </li>
-        <li class="sidebar-left-navbar-nav-item">
-            <a href="#" class="sidebar-left-navbar-nav-item-link">
-                <i class="fa-light fa-file"></i>
-                Biễu mẫu
-            </a>
-        </li>
-        <li class="sidebar-left-navbar-nav-item">
-            <a href="#" class="sidebar-left-navbar-nav-item-link">
-                <i class="fa-light fa-memo"></i>
-                Nội quy - quy định
-            </a>
-        </li>
-        <li class="sidebar-left-navbar-nav-item">
-            <a href="#" class="sidebar-left-navbar-nav-item-link">
-                <i class="fa-light fa-money-bill"></i>
-                Thanh toán - Hóa đơn
-            </a>
-        </li>
-        <li class="sidebar-left-navbar-nav-item">
-            <a href="#" class="sidebar-left-navbar-nav-item-link">
-                <i class="fa-light fa-flag"></i>
-                Liên hệ
-            </a>
-        </li>
-        <li class="sidebar-left-navbar-nav-item">
-            <a href="#" class="sidebar-left-navbar-nav-item-link">
-                <i class="fa-light fa-circle-minus"></i>
-                Vi phạm
-            </a>
-        </li>
-    </ul>
-}
 
 <link rel="stylesheet" href="~/assets/css/Dashboard/User/style.css">
 <div class="container-fluid">
@@ -63,10 +11,10 @@
             <div class="room-info">
                 @if (Model.MaPhong == null)
                 {
-                    if (Model.DangKyNoiTru != null || Model.DangKyNoiTru.TrangThai == "Chờ xét duyệt")
+                    if (Model.DangKyNoiTru != null)
                     {
                         <a href="DangKynoiTru" class="room-info-content-none-room">
-                            <p>Chờ xét duyệt</p>
+                            <p>@Model.DangKyNoiTru.TrangThai</p>
                             <i class="fa-light fa-pen-to-square"></i><br>
                             <p>Thay đổi</p>
                         </a>
@@ -82,7 +30,10 @@
                                     <span class="info-room-item-title">Phòng</span> : <span class="info-room-item-name">@Model.DangKyNoiTru.Phong.Ten</span>
                                 </li>
                                 <li class="info-room-item">
-                                    <span class="info-room-item-title">Số chổ trống</span> : <span class="info-room-item-name">@Model.DangKyNoiTru.Phong.SoLuongTrong</span>
+                                    <span class="info-room-item-title">Trống</span> : <span class="info-room-item-name">@Model.DangKyNoiTru.Phong.SoLuongTrong</span>
+                                </li>
+                                <li class="info-room-item">
+                                    <span class="info-room-item-title">Đăng ký</span> : <span class="info-room-item-name">@Model.DangKyNoiTru.Phong.DangKyNoiTrus.Count()</span>
                                 </li>
                             </ul>
                         </div>
@@ -297,6 +248,4 @@
     </div>
 </div>
 
-<script>
-    document.getElementById('sidebar-trangchu').classList.add("active");
-</script>
+<script>document.getElementById('sidebar-trangchu').classList.add("active");</script>

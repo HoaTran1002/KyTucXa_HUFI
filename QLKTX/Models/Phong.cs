@@ -20,6 +20,7 @@ namespace QLKTX.Models
             this.DangKyNoiTrus = new HashSet<DangKyNoiTru>();
             this.DichVuPhongCoChiSoes = new HashSet<DichVuPhongCoChiSo>();
             this.HoaDons = new HashSet<HoaDon>();
+            this.KhaiBaoHuHongs = new HashSet<KhaiBaoHuHong>();
             this.SinhViens = new HashSet<SinhVien>();
         }
     
@@ -36,6 +37,8 @@ namespace QLKTX.Models
         public virtual ICollection<DichVuPhongCoChiSo> DichVuPhongCoChiSoes { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<HoaDon> HoaDons { get; set; }
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
+        public virtual ICollection<KhaiBaoHuHong> KhaiBaoHuHongs { get; set; }
         public virtual Tang Tang { get; set; }
         public virtual SinhVien SinhVien { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]

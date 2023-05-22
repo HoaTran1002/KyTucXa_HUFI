@@ -1,7 +1,7 @@
 ﻿@model QLKTX.Models.SinhVien
 @using QLKTX.Models;
 @{
-    Layout = null;
+    Layout = "~/Views/Shared/LayoutUser.cshtml";
     Phong p = ViewBag.Phong as Phong;
     DateTime today = DateTime.Now;
 }
@@ -11,20 +11,13 @@
 <html>
 <head>
     <meta name="viewport" content="width=device-width" />
-    <title>XacNhanYeuCau</title>
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-GLhlTQ8iRABdZLl6O3oVMWSktQOp6b7In1Zl3/Jr59b6EGGoI1aFkw7cmDA6j6gD" crossorigin="anonymous">
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js" integrity="sha384-w76AqPfDkMBDXo30jS1Sgez6pr3x5MlQ1ZAGC+nuZB+EYdgRZgiwxhTBTkF7CXvN" crossorigin="anonymous"></script>
-
-    <style>
-        .in-dam, to {
-            font-size: 23px;
-            font-weight: bold;
-        }
-    </style>
+    <title>Xác nhận đăng ký</title>
+    <link rel="stylesheet" href="~/assets/css/dkhopdong.css">
 </head>
 <body>
+   
     <div class="container">
-        <div style="width:1300px; padding:160px;font-size:21px;">
+        <div class="hopdong" style="width:100%; font-size:18px">
         <div>
             <div style="width:50%; float:left">
                 <center class="to">TRƯỜNG ĐẠI HỌC CÔNG NGHIỆP</center>
@@ -37,18 +30,18 @@
             </div>
             <div style="clear:both"></div>
             <br />
-            <center><h3>HỢP ĐỒNG THUÊ CHỖ Ở NỘI TRÚ</h3></center><br />
+            <center><h1 style="font-weight:900;font-size:25px;">HỢP ĐỒNG THUÊ CHỖ Ở NỘI TRÚ</h1></center><br />
 <div style="white-space: pre-wrap; text-align: justify;">
     Hôm nay, ngày @today.Day tháng @today.Month năm @today.Year, tại Trung tâm Ký túc xá sinh viên Trường đại học Công nghiệp Thực phẩm thành phố Hồ Chí Minh, 102-104-106 Nguyễn Quý Anh, phường Tân Sơn Nhì, quận Tân Phú, thành phố Hồ Chí Minh. Hai bên gồm:
     <span class="in-dam">BÊN CHO THUÊ (Bên A): TRUNG TÂM KÝ TÚC XÁ SINH VIÊN TRƯỜNG ĐẠI HỌC CÔNG NGHIỆP THỰC PHẨM TP. HỒ CHÍ MINH</span>
-    Đại diện:   Ông Võ Duy Ân,                                              Trung tâm Ký túc xá sinh viên
+    Đại diện:   Ông Võ Duy Ân, Trung tâm Ký túc xá sinh viên
     Chức vụ: Giám đốc
     Số điện thoại: ……………….
     <span class="in-dam">BÊN THUÊ CHỖ Ở (Bên B):</span>
     Họ và tên: @(Model.Ho+" "+Model.Ten)              Giới tính: @Model.GioiTinh     Năm sinh: @string.Format("{0:dd/MM/yyyy}", Model.NgaySinh)
     MSV: @Model.MaSV  Lớp: @Model.Lop  Khoa:………………….Khóa:..……………...
     Số điện thoại: @Model.SoDienThoai
-    Email:...............................
+    Email: @Model.Email
     Hộ khẩu thường trú: @Model.QueQuan
 
     Bên A <span style="font-style:italic">được sự ủy quyền của Hiệu trưởng Trường đại học Công nghiệp Thực phẩm thành phố Hồ Chí Minh</span> cùng Bên B, thống nhất ký kết <b>Hợp đồng cho thuê chỗ ở nội trú tại Ký túc xá trường đại học Công nghiệp Thực phẩm thành phố Hồ Chí Minh với các điều khoản sau:</b>

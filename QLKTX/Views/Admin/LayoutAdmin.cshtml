@@ -17,6 +17,7 @@
     <link href="https://fonts.googleapis.com/css2?family=Lora:wght@400;500;600;700&display=swap" rel="stylesheet">
 
     <!-- slickshider -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/axios/0.26.1/axios.min.js" integrity="sha512-bPh3uwgU5qEMipS/VOmRqynnMXGGSRv+72H/N260MQeXZIK4PG48401Bsby9Nq5P5fz7hy5UGNmC/W1Z51h2GQ==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.3/jquery.min.js" integrity="sha512-STof4xm1wgkfm7heWqFJVn58Hm3EtS31XFaagaa8VMReCXAkQnJZ+jEy8PCC/iT18dFy95WcExNHFTqLyp72eQ==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
     <link rel="stylesheet" type="text/css" href="~/assets/lib/slick-1.8.1/slick/slick.css" />
     <link rel="stylesheet" type="text/css" href="~/assets/lib/slick-1.8.1/slick/slick-theme.css" />
@@ -24,11 +25,18 @@
     <link rel="stylesheet" href="~/assets/css/Dashboard/reset.css">
     <link rel="stylesheet" href="~/assets/css/Dashboard/base.css">
     <link rel="stylesheet" href="~/assets/css/Dashboard/root.css">
-    <link rel="stylesheet" href="~/assets/css/Dashboard/style.css">
+    <link rel="stylesheet" href="~/assets/css/Dashboard/styleLayout.css">
     <link rel="stylesheet" href="~/assets/css/Dashboard/responsive.css">
+    <link rel="stylesheet" href="~/assets/css/Dashboard/Style2.css">
+    <link rel="stylesheet" href="~/assets/css/Dashboard/Admin/style.css">
+    <link rel="stylesheet" href="~/assets/css/hopthoai.css" />
+
+    <!--toastMessage-->
+    <link rel="stylesheet" href="~/assets/css/toastMessage.css" />
     <title>Dashboard KTX Hufi</title>
 </head>
 <body>
+    <ul class="notifications"></ul>
     <div class="sidebar-content">
         <input type="checkbox" id="modal-background" class="modal-background-overplay" hidden>
         <label for="modal-background" class="modal-background"></label>
@@ -40,8 +48,69 @@
                 <img src="~/assets/img/logo-2.png" alt="">
             </a>
             <div class="sidebar-left-navbar">
-                @RenderSection("sidebarLeft", required: false);
-                
+                <ul class="sidebar-left-navbar-nav">
+                    <li class="sidebar-left-navbar-nav-item" id="sidebar-main">
+                        <a href="~/Admin/TrangChu" class="sidebar-left-navbar-nav-item-link">
+                            <i class="fa-light fa-grid-2"></i>
+                            Trang chủ
+                        </a>
+                    </li>
+                    <li class="sidebar-left-navbar-nav-item" id="sidebar-xetduyet">
+                        <a href="~/Admin/DanhSachXetDuyet" class="sidebar-left-navbar-nav-item-link">
+                            <i class="fa-light fa-flag"></i>
+                            Xét duyệt - kiểm tra
+                        </a>
+                    </li>
+                    <li class="sidebar-left-navbar-nav-item" id="sidebar-hopdong">
+                        <a href="~/Admin/DanhSachHopDong" class="sidebar-left-navbar-nav-item-link" id="sidebar-hopdong">
+                            <i class="fa-light fa-money-bill"></i>
+                            Danh sách hợp đồng
+                        </a>
+                    </li>
+                    <li class="sidebar-left-navbar-nav-item" id="sidebar-hoadon">
+                        <a href="~/Admin/DanhSachHoaDon" class="sidebar-left-navbar-nav-item-link">
+                            <i class="fa-light fa-memo"></i>
+                            Danh sách hóa đơn
+                        </a>
+                    </li>
+                    <li class="sidebar-left-navbar-nav-item" id="sidebar-phong">
+                        <a href="~/Admin/DanhSachPhong" class="sidebar-left-navbar-nav-item-link">
+                            <i class="fa-light fa-user"></i>
+                            Quản lý phòng
+                        </a>
+                    </li>
+                    <li class="sidebar-left-navbar-nav-item" id="sidebar-QuanLyKhaiBaoHuHong">
+                        <a href="~/Admin/QuanLyKhaiBaoHuHong" class="sidebar-left-navbar-nav-item-link">
+                            <i class="fa-light fa-file"></i>
+                            Hư hỏng - sửa chửa
+                        </a>
+                    </li>
+                    <li class="sidebar-left-navbar-nav-item" id="sidebar-ds-sinhvien">
+                        <a href="~/Admin/DanhSachSinhVien" class="sidebar-left-navbar-nav-item-link">
+                            <i class="fa-light fa-leaf"></i>
+                            Quản lý sinh viên
+                        </a>
+                    </li>
+                    <li class="sidebar-left-navbar-nav-item" id="sidebar-nhanvien">
+                        <a href="~/Admin/QuanLyNhanVien" class="sidebar-left-navbar-nav-item-link">
+                            <i class="fa-light fa-circle-minus"></i>
+                            Quản lý nhân viên
+                        </a>
+                    </li>
+                    <li class="sidebar-left-navbar-nav-item" id="sidebar-vipham">
+                        <a href="#" class="sidebar-left-navbar-nav-item-link">
+                            <i class="fa-light fa-file"></i>
+                            Danh sách vi phạm
+                        </a>
+                    </li>
+                    <li class="sidebar-left-navbar-nav-item" id="sidebar-quantri">
+                        <a href="#" class="sidebar-left-navbar-nav-item-link">
+                            <i class="fa-light fa-flag"></i>
+                            Thông tin quản trị
+                        </a>
+                    </li>
+                </ul>
+
             </div>
         </div>
         <div class="sidebar-right">
@@ -286,6 +355,8 @@
     </div>
     <script src="~/assets/js/Dashboard/man.js"></script>
     <script src="~/assets/js/Dashboard/Admin/main.js"></script>
+    <script type="text/javascript" src="~/assets/js/Toastmessage.js"></script>
     <script type="text/javascript" src="~/assets/lib/slick-1.8.1/slick/slick.min.js"></script>
+
 </body>
 </html>

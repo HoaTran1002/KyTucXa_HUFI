@@ -34,7 +34,9 @@ namespace QLKTX.Models
         public virtual DbSet<DichVuPhongCoChiSo> DichVuPhongCoChiSoes { get; set; }
         public virtual DbSet<HoaDon> HoaDons { get; set; }
         public virtual DbSet<HopDong> HopDongs { get; set; }
+        public virtual DbSet<KhaiBaoHuHong> KhaiBaoHuHongs { get; set; }
         public virtual DbSet<Khu> Khus { get; set; }
+        public virtual DbSet<LoaiThongBao> LoaiThongBaos { get; set; }
         public virtual DbSet<NhanVien> NhanViens { get; set; }
         public virtual DbSet<Phong> Phongs { get; set; }
         public virtual DbSet<SinhVien> SinhViens { get; set; }
@@ -42,10 +44,30 @@ namespace QLKTX.Models
         public virtual DbSet<SuDungDichVuDon> SuDungDichVuDons { get; set; }
         public virtual DbSet<Tang> Tangs { get; set; }
         public virtual DbSet<ThietBi> ThietBis { get; set; }
+        public virtual DbSet<ThongBao> ThongBaos { get; set; }
         public virtual DbSet<ViPham> ViPhams { get; set; }
-        public virtual DbSet<YeuCauSuaChua> YeuCauSuaChuas { get; set; }
+        public virtual DbSet<XuLyKhaiBaoHuHong> XuLyKhaiBaoHuHongs { get; set; }
+        public virtual DbSet<HinhPhat> HinhPhats { get; set; }
+        public virtual DbSet<HinhPhatQuaCacLanTaiPham> HinhPhatQuaCacLanTaiPhams { get; set; }
         public virtual DbSet<ThongKeDangKyLuTru> ThongKeDangKyLuTrus { get; set; }
         public virtual DbSet<ThongKeDichVuDonMoiPhong> ThongKeDichVuDonMoiPhongs { get; set; }
+    
+        public virtual int CapNhatSoLuongKhaiBaoHuHong(string maThietBi, string maPhong, Nullable<int> soLuong)
+        {
+            var maThietBiParameter = maThietBi != null ?
+                new ObjectParameter("maThietBi", maThietBi) :
+                new ObjectParameter("maThietBi", typeof(string));
+    
+            var maPhongParameter = maPhong != null ?
+                new ObjectParameter("maPhong", maPhong) :
+                new ObjectParameter("maPhong", typeof(string));
+    
+            var soLuongParameter = soLuong.HasValue ?
+                new ObjectParameter("soLuong", soLuong) :
+                new ObjectParameter("soLuong", typeof(int));
+    
+            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction("CapNhatSoLuongKhaiBaoHuHong", maThietBiParameter, maPhongParameter, soLuongParameter);
+        }
     
         public virtual int TaoDangKyNoiTru(string maSV, string maPhong)
         {

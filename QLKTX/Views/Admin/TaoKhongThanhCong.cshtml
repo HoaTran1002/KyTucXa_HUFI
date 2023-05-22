@@ -3,64 +3,7 @@
     ViewBag.Title = "Tạo không thành công";
     Layout = "~/Views/Admin/LayoutAdmin.cshtml";
 }
-@section sidebarLeft{
-    <ul class="sidebar-left-navbar-nav">
-        <li class="sidebar-left-navbar-nav-item ">
-            <a href="~/Admin/TrangChu" class="sidebar-left-navbar-nav-item-link">
-                <i class="fa-light fa-grid-2"></i>
-                Trang chủ
-            </a>
-        </li>
-        <li class="sidebar-left-navbar-nav-item ">
-            <a href="~/Admin/DanhSachPhong" class="sidebar-left-navbar-nav-item-link">
-                <i class="fa-light fa-user"></i>
-                Danh sách phòng
-            </a>
-        </li>
-        <li class="sidebar-left-navbar-nav-item ">
-            <a href="~/Admin/DanhSachSinhVien" class="sidebar-left-navbar-nav-item-link">
-                <i class="fa-light fa-leaf"></i>
-                Danh sách sinh viên
-            </a>
-        </li>
-        <li class="sidebar-left-navbar-nav-item ">
-            <a href="~/Admin/QuanLyNhanVien" class="sidebar-left-navbar-nav-item-link">
-                <i class="fa-light fa-circle-minus"></i>
-                Danh sách nhân viên
-            </a>
-        </li>
-        <li class="sidebar-left-navbar-nav-item">
-            <a href="#" class="sidebar-left-navbar-nav-item-link">
-                <i class="fa-light fa-file"></i>
-                Danh sách vi phạm
-            </a>
-        </li>
-        <li class="sidebar-left-navbar-nav-item ">
-            <a href="~/Admin/DanhSachHoaDon" class="sidebar-left-navbar-nav-item-link">
-                <i class="fa-light fa-memo"></i>
-                Danh sách hóa đơn
-            </a>
-        </li>
-        <li class="sidebar-left-navbar-nav-item active">
-            <a href="~/Admin/DanhSachHopDong" class="sidebar-left-navbar-nav-item-link">
-                <i class="fa-light fa-money-bill"></i>
-                Danh sách hợp đồng
-            </a>
-        </li>
-        <li class="sidebar-left-navbar-nav-item">
-            <a href="~/Admin/DanhSachXetDuyet" class="sidebar-left-navbar-nav-item-link">
-                <i class="fa-light fa-flag"></i>
-                Xét duyệt - kiểm tra
-            </a>
-        </li>
-        <li class="sidebar-left-navbar-nav-item">
-            <a href="#" class="sidebar-left-navbar-nav-item-link">
-                <i class="fa-light fa-flag"></i>
-                Thông tin quản trị
-            </a>
-        </li>
-    </ul>
-}
+<script>document.getElementById('sidebar-hoadon').classList.add("active");</script>
 <link rel="stylesheet" href="~/assets/css/Dashboard/Admin/TaoKhongThanhCong.css" />
 <div class="container-fluid">
     <div class="row">

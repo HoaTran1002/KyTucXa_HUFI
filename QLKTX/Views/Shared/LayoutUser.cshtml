@@ -1,4 +1,8 @@
-﻿<!DOCTYPE html>
+﻿@using QLKTX.Models;
+@{
+    SinhVien SV = SessionLoginUser.GetSession;
+}
+<!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
@@ -16,18 +20,27 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Lora:wght@400;500;600;700&display=swap" rel="stylesheet">
     <!-- slickshider -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/axios/0.26.1/axios.min.js" integrity="sha512-bPh3uwgU5qEMipS/VOmRqynnMXGGSRv+72H/N260MQeXZIK4PG48401Bsby9Nq5P5fz7hy5UGNmC/W1Z51h2GQ==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.3/jquery.min.js" integrity="sha512-STof4xm1wgkfm7heWqFJVn58Hm3EtS31XFaagaa8VMReCXAkQnJZ+jEy8PCC/iT18dFy95WcExNHFTqLyp72eQ==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
     <link rel="stylesheet" type="text/css" href="~/assets/lib/slick-1.8.1/slick/slick.css" />
     <link rel="stylesheet" type="text/css" href="~/assets/lib/slick-1.8.1/slick/slick-theme.css" />
     <!-- css -->
     <link rel="stylesheet" href="~/assets/css/Dashboard/reset.css">
-    <link rel="stylesheet" href="~/assets/css/Dashboard/base.css">
     <link rel="stylesheet" href="~/assets/css/Dashboard/root.css">
-    <link rel="stylesheet" href="~/assets/css/Dashboard/style.css">
+    <link rel="stylesheet" href="~/assets/css/Dashboard/styleLayout.css">
     <link rel="stylesheet" href="~/assets/css/Dashboard/responsive.css">
+    <link rel="stylesheet" href="~/assets/css/hopthoai.css" />
+
+    <!-- toastmessage -->
+    <link rel="stylesheet" href="~/assets/css/toastMessage.css" />
+
+    <!--TaoHopThongBao-->
+    <script src="~/assets/js/taoHopThoai.js"></script>
+
     <title>Dashboard KTX Hufi</title>
 </head>
 <body>
+    <ul class="notifications"></ul>
     <div class="sidebar-content">
         <input type="checkbox" id="modal-background" class="modal-background-overplay" hidden>
         <label for="modal-background" class="modal-background"></label>
@@ -39,7 +52,71 @@
                 <img src="~/assets/img/logo-2.png" alt="">
             </a>
             <div class="sidebar-left-navbar">
-                @RenderSection("sidebarLeftUser", required: false);
+                <ul class="sidebar-left-navbar-nav">
+                    <li class="sidebar-left-navbar-nav-item " id="sidebar-trangchu">
+                        <a href="~/User/TrangChu" class="sidebar-left-navbar-nav-item-link">
+                            <i class="fa-light fa-grid-2"></i>
+                            Trang chủ
+                        </a>
+                    </li>
+                    <li class="sidebar-left-navbar-nav-item " id="sidebar-hoso">
+                        <a href="~/User/ThongTinSinhVien" class="sidebar-left-navbar-nav-item-link">
+                            <i class="fa-light fa-user"></i>
+                            Hồ sơ sinh viên
+                        </a>
+                    </li>
+                    @if (SV.MaPhong == null)
+                    {
+                        <li class="sidebar-left-navbar-nav-item" id="sidebar-dangkynoitru">
+                            <a href="~/User/DangKyNoiTru" class="sidebar-left-navbar-nav-item-link">
+                                <i class="fa-light fa-leaf"></i>
+                                Đăng ký nội trú
+                            </a>
+                        </li>
+                    }
+                    @if (SV.Phong != null)
+                    {
+                        <li class="sidebar-left-navbar-nav-item">
+                            <a href="#" class="sidebar-left-navbar-nav-item-link">
+                                <i class="fa-light fa-money-bill"></i>
+                                Thanh toán - Hóa đơn
+                            </a>
+                        </li>
+                    }
+                    <li class="sidebar-left-navbar-nav-item">
+                        <a href="#" class="sidebar-left-navbar-nav-item-link">
+                            <i class="fa-light fa-file"></i>
+                            Biễu mẫu
+                        </a>
+                    </li>
+                    @if (SV.MaPhong != null)
+                    {
+                        <li class="sidebar-left-navbar-nav-item" id="sidebar-khaibaohuhong">
+                            <a href="~/User/KhaiBaoHuHongThietBi" class="sidebar-left-navbar-nav-item-link">
+                                <i class="fa-light fa-circle-minus"></i>
+                                Khai báo hư hỏng
+                            </a>
+                        </li>
+                        <li class="sidebar-left-navbar-nav-item">
+                            <a href="#" class="sidebar-left-navbar-nav-item-link">
+                                <i class="fa-light fa-circle-minus"></i>
+                                Vi phạm
+                            </a>
+                        </li>
+                    }
+                    <li class="sidebar-left-navbar-nav-item">
+                        <a href="#" class="sidebar-left-navbar-nav-item-link">
+                            <i class="fa-light fa-memo"></i>
+                            Nội quy - quy định
+                        </a>
+                    </li>
+                    <li class="sidebar-left-navbar-nav-item">
+                        <a href="#" class="sidebar-left-navbar-nav-item-link">
+                            <i class="fa-light fa-flag"></i>
+                            Liên hệ
+                        </a>
+                    </li>
+                </ul>
             </div>
         </div>
         <div class="sidebar-right">
@@ -63,14 +140,14 @@
                         </span>
                         <div class="today-content">
                             <div class="time-today">
-                                <span class="hour">12 </span>:
+                                <span class="hour">12</span>:
                                 <span class="minute">00</span>
                             </div>
                             <div class="day-today">
                                 <span class="number-day">Monday</span>
-                                <span class="day">12 </span> tháng
+                                <span class="day">24 </span> tháng
                                 <span class="month">04 </span>
-                                <span class="year">2022</span>
+                                <span class="year">2002</span>
                             </div>
                         </div>
                     </div>
@@ -79,6 +156,12 @@
                     </label>
                 </div>
                 <div class="sidebar-right-content-main">
+                    @*<div class="buttons">
+                        <button class="btn" id="success">Success</button>
+                        <button class="btn" id="error">error</button>
+                        <button class="btn" id="warning">warning</button>
+                        <button class="btn" id="info">info</button>
+                    </div>*@
                     @RenderBody()
                 </div>
             </div>
@@ -94,10 +177,20 @@
                         <div class="notification">
                             <i class="fa-regular fa-bell"></i>
                             <span class="dot"></span>
+                            <ul class="message">
+                                <li title="Xem chi tiết" ><a href="~/ThongBao/ThongBaoHoaDon?maHoaDon=HDA1030">Hóa đơn tháng 4 năm 2023 phòng 101</a></li>
+                                <li><a href="~/ThongBao/ThongBaoHoaDon">Thông báo 1</a></li>
+                                <li><a href="#">Thông báo 1</a></li>
+                                <li><a href="#">Thông báo 1</a></li>
+                                <li><a href="#">Thông báo 1</a></li>
+                                <li><a href="#">Thông báo 1</a></li>
+                                <li><a href="#">Thông báo 1</a></li>
+                                <li><a href="#">Thông báo 1</a></li>
+                            </ul>
                         </div>
                     </div>
                     <div class="sidebar-right-info-intro-user">
-                        <h2 class="name">Xin chào<p>Huỳnh Đăng Khoa</p></h2>
+                        <h2 class="name">Xin chào<p>@SV.Ho @SV.Ten</p></h2>
                         <div class="image">
                             <img src="~/assets/img/User.png" alt="User image">
                         </div>
@@ -205,7 +298,7 @@
                     </div>
                 </div>
                 <div class="sidebar-right-info-coppy-right">
-                    <h2>&COPY; coppy right by <a href="#">hufi.edu.vn</a></h2>
+                    <h2>&COPY; coppy right by <a href="https://hufi.edu.vn">hufi.edu.vn</a></h2>
                 </div>
             </div>
         </div>
@@ -213,5 +306,10 @@
     <script src="~/assets/js/main_Das.js"></script>
     <script src="~/assets/js/main_dasboard.js"></script>
     <script type="text/javascript" src="~/assets/lib/slick-1.8.1/slick/slick.min.js"></script>
+    <script type="text/javascript" src="~/assets/js/Toastmessage.js"></script>
+    <script src="~/assets/js/HopThoai.js"></script>
+    <script src="~/assets/js/hopXacNhan.js"></script>
+
 </body>
 </html>
+

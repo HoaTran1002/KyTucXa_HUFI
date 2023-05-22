@@ -4,67 +4,10 @@
     ViewBag.Title = "XemChiTietHoaDon";
     Layout = "~/Views/Admin/LayoutAdmin.cshtml";
 }
-@section sidebarLeft{
-    <ul class="sidebar-left-navbar-nav">
-        <li class="sidebar-left-navbar-nav-item ">
-            <a href="~/Admin/TrangChu" class="sidebar-left-navbar-nav-item-link">
-                <i class="fa-light fa-grid-2"></i>
-                Trang chủ
-            </a>
-        </li>
-        <li class="sidebar-left-navbar-nav-item ">
-            <a href="~/Admin/DanhSachPhong" class="sidebar-left-navbar-nav-item-link">
-                <i class="fa-light fa-user"></i>
-                Danh sách phòng
-            </a>
-        </li>
-        <li class="sidebar-left-navbar-nav-item ">
-            <a href="~/Admin/DanhSachSinhVien" class="sidebar-left-navbar-nav-item-link">
-                <i class="fa-light fa-leaf"></i>
-                Danh sách sinh viên
-            </a>
-        </li>
-        <li class="sidebar-left-navbar-nav-item ">
-            <a href="~/Admin/QuanLyNhanVien" class="sidebar-left-navbar-nav-item-link">
-                <i class="fa-light fa-circle-minus"></i>
-                Danh sách nhân viên
-            </a>
-        </li>
-        <li class="sidebar-left-navbar-nav-item">
-            <a href="#" class="sidebar-left-navbar-nav-item-link">
-                <i class="fa-light fa-file"></i>
-                Danh sách vi phạm
-            </a>
-        </li>
-        <li class="sidebar-left-navbar-nav-item active">
-            <a href="~/Admin/DanhSachHoaDon" class="sidebar-left-navbar-nav-item-link">
-                <i class="fa-light fa-memo"></i>
-                Danh sách hóa đơn
-            </a>
-        </li>
-        <li class="sidebar-left-navbar-nav-item">
-            <a href="~/Admin/DanhSachHopDong" class="sidebar-left-navbar-nav-item-link">
-                <i class="fa-light fa-money-bill"></i>
-                Danh sách hợp đồng
-            </a>
-        </li>
-        <li class="sidebar-left-navbar-nav-item">
-            <a href="~/Admin/DanhSachXetDuyet" class="sidebar-left-navbar-nav-item-link">
-                <i class="fa-light fa-flag"></i>
-                Xét duyệt - kiểm tra
-            </a>
-        </li>
-        <li class="sidebar-left-navbar-nav-item">
-            <a href="#" class="sidebar-left-navbar-nav-item-link">
-                <i class="fa-light fa-flag"></i>
-                Thông tin quản trị
-            </a>
-        </li>
-    </ul>
-}
+<script>document.getElementById('sidebar-hoadon').classList.add("active");</script>
 <link rel="stylesheet" href="~/assets/css/Dashboard/Admin/XemChiTietHoaDon.css" />
 <div class="sidebar-right-content-heading">
-    <h2 class="sidebar-right-content-heading-name"> Chi tiết hóa đơn</h2>
+    <h2 class="sidebar-right-content-heading-name">Thông tin hóa đơn</h2>
 </div>
 <div class="container-fluid">
     <div class="bg-white-content">
@@ -90,7 +33,7 @@
             <div class="col-lg-6">
                 <div class="detail-bill-heading">
                     <h3 class="detail-bill-heading-title">Thành tiền:</h3>
-                    <span class="detail-bill-heading-name">@Html.DisplayFor(model => model.ThanhTien) VND</span>
+                    <span class="detail-bill-heading-name">@String.Format("{0:0,0 VND}",Model.ThanhTien) </span>
                 </div>
             </div>
             <div class="col-lg-6">
@@ -106,20 +49,22 @@
         <div class="row">
             <table class="table main-info-users-table">
                 <thead>
-                <td>Mã dịch vụ</td>
-                <td>Tên dịch vụ</td>
-                <td>Giá</td>
-                <td>Số lượng</td>
-                <td>Tổng tiền</td>
+                    <tr>
+                        <td>Mã dịch vụ</td>
+                        <td>Tên dịch vụ</td>
+                        <td>Giá</td>
+                        <td>Số lượng</td>
+                        <td>Tổng tiền</td>
+                    </tr>
                 </thead>
                 @foreach (var item in Model.ChiTietHoaDons)
                 {
                     <tr>
                         <td>@item.MaDichVu</td>
                         <td>@item.DichVu.TenDichVu</td>
-                        <td>@item.DonGia VND</td>
+                        <td>@String.Format("{0:0,0}", item.DonGia)</td>
                         <td>@item.SoLuong</td>
-                        <td>@(item.DonGia * item.SoLuong) VND</td>
+                        <td>@String.Format("{0:0,0 VND}", item.DonGia * item.SoLuong)</td>
                     </tr>
                 }
             </table>
@@ -152,9 +97,6 @@
                         </div>
                     }
                 </div>
-                <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js" integrity="sha512-894YE6QWD5I59HgZOGReFYm4dnWc1Qt5NtvYSaNcOP+u1T9qYdvdihz0PPSiiqn/+/3e7Jo4EaG7TubfWGUrMQ==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
-                <script src="https://cdnjs.cloudflare.com/ajax/libs/axios/0.26.1/axios.min.js" integrity="sha512-bPh3uwgU5qEMipS/VOmRqynnMXGGSRv+72H/N260MQeXZIK4PG48401Bsby9Nq5P5fz7hy5UGNmC/W1Z51h2GQ==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
-                <script src="~/assets/js/HopThoai.js"></script>
             }
             else
             {
@@ -168,4 +110,7 @@
         </div>
     </div>
 </div>
+@*<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js" integrity="sha512-894YE6QWD5I59HgZOGReFYm4dnWc1Qt5NtvYSaNcOP+u1T9qYdvdihz0PPSiiqn/+/3e7Jo4EaG7TubfWGUrMQ==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/axios/0.26.1/axios.min.js" integrity="sha512-bPh3uwgU5qEMipS/VOmRqynnMXGGSRv+72H/N260MQeXZIK4PG48401Bsby9Nq5P5fz7hy5UGNmC/W1Z51h2GQ==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>*@
+<script src="~/assets/js/HopThoai.js"></script>
 

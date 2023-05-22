@@ -78,11 +78,34 @@
         </MappingFragment>
       </EntityTypeMapping>
     </EntitySetMapping>
+    <EntitySetMapping Name="KhaiBaoHuHongs">
+      <EntityTypeMapping TypeName="KyTucXaModel.KhaiBaoHuHong">
+        <MappingFragment StoreEntitySet="KhaiBaoHuHong">
+          <ScalarProperty Name="MaKhaiBao" ColumnName="MaKhaiBao" />
+          <ScalarProperty Name="NgayYeuCau" ColumnName="NgayYeuCau" />
+          <ScalarProperty Name="MaPhong" ColumnName="MaPhong" />
+          <ScalarProperty Name="MaThietBi" ColumnName="MaThietBi" />
+          <ScalarProperty Name="TongSoLuong" ColumnName="TongSoLuong" />
+          <ScalarProperty Name="DaXuLy" ColumnName="DaXuLy" />
+          <ScalarProperty Name="NguoiXuLy" ColumnName="NguoiXuLy" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
     <EntitySetMapping Name="Khus">
       <EntityTypeMapping TypeName="KyTucXaModel.Khu">
         <MappingFragment StoreEntitySet="Khu">
           <ScalarProperty Name="Ma" ColumnName="Ma" />
           <ScalarProperty Name="Ten" ColumnName="Ten" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="LoaiThongBaos">
+      <EntityTypeMapping TypeName="KyTucXaModel.LoaiThongBao">
+        <MappingFragment StoreEntitySet="LoaiThongBao">
+          <ScalarProperty Name="MaLoaiThongBao" ColumnName="MaLoaiThongBao" />
+          <ScalarProperty Name="TieuDe" ColumnName="TieuDe" />
+          <ScalarProperty Name="DuongDan" ColumnName="DuongDan" />
+          <ScalarProperty Name="Loai" ColumnName="Loai" />
         </MappingFragment>
       </EntityTypeMapping>
     </EntitySetMapping>
@@ -136,6 +159,8 @@
           <ScalarProperty Name="MaSV" ColumnName="MaSV" />
           <ScalarProperty Name="MaViPham" ColumnName="MaViPham" />
           <ScalarProperty Name="ThoiGianViPham" ColumnName="ThoiGianViPham" />
+          <ScalarProperty Name="MaHinhPhat" ColumnName="MaHinhPhat" />
+          <ScalarProperty Name="NguoiTao" ColumnName="NguoiTao" />
           <ScalarProperty Name="GhiChu" ColumnName="GhiChu" />
           <ScalarProperty Name="DaGiaiQuyet" ColumnName="DaGiaiQuyet" />
         </MappingFragment>
@@ -169,23 +194,55 @@
         </MappingFragment>
       </EntityTypeMapping>
     </EntitySetMapping>
+    <EntitySetMapping Name="ThongBaos">
+      <EntityTypeMapping TypeName="KyTucXaModel.ThongBao">
+        <MappingFragment StoreEntitySet="ThongBao">
+          <ScalarProperty Name="MaThongBao" ColumnName="MaThongBao" />
+          <ScalarProperty Name="NguoiNhan" ColumnName="NguoiNhan" />
+          <ScalarProperty Name="NgayTao" ColumnName="NgayTao" />
+          <ScalarProperty Name="MaLoaiThongBao" ColumnName="MaLoaiThongBao" />
+          <ScalarProperty Name="NoiDung" ColumnName="NoiDung" />
+          <ScalarProperty Name="ChuoiBien" ColumnName="ChuoiBien" />
+          <ScalarProperty Name="DaXem" ColumnName="DaXem" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
     <EntitySetMapping Name="ViPhams">
       <EntityTypeMapping TypeName="KyTucXaModel.ViPham">
         <MappingFragment StoreEntitySet="ViPham">
           <ScalarProperty Name="MaViPham" ColumnName="MaViPham" />
           <ScalarProperty Name="NoiDung" ColumnName="NoiDung" />
-          <ScalarProperty Name="HinhPhat" ColumnName="HinhPhat" />
+          <ScalarProperty Name="MucDoNghiemTrong" ColumnName="MucDoNghiemTrong" />
         </MappingFragment>
       </EntityTypeMapping>
     </EntitySetMapping>
-    <EntitySetMapping Name="YeuCauSuaChuas">
-      <EntityTypeMapping TypeName="KyTucXaModel.YeuCauSuaChua">
-        <MappingFragment StoreEntitySet="YeuCauSuaChua">
-          <ScalarProperty Name="MaThietBi" ColumnName="MaThietBi" />
-          <ScalarProperty Name="MaSV" ColumnName="MaSV" />
-          <ScalarProperty Name="NgayYeuCau" ColumnName="NgayYeuCau" />
+    <EntitySetMapping Name="XuLyKhaiBaoHuHongs">
+      <EntityTypeMapping TypeName="KyTucXaModel.XuLyKhaiBaoHuHong">
+        <MappingFragment StoreEntitySet="XuLyKhaiBaoHuHong">
+          <ScalarProperty Name="MaXuLy" ColumnName="MaXuLy" />
+          <ScalarProperty Name="MaKhaiBao" ColumnName="MaKhaiBao" />
           <ScalarProperty Name="SoLuong" ColumnName="SoLuong" />
-          <ScalarProperty Name="TrangThai" ColumnName="TrangThai" />
+          <ScalarProperty Name="NguyenNhan" ColumnName="NguyenNhan" />
+          <ScalarProperty Name="ThayMoi" ColumnName="ThayMoi" />
+          <ScalarProperty Name="ChiPhiPhatSinh" ColumnName="ChiPhiPhatSinh" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="HinhPhats">
+      <EntityTypeMapping TypeName="KyTucXaModel.HinhPhat">
+        <MappingFragment StoreEntitySet="HinhPhat">
+          <ScalarProperty Name="MaHinhPhat" ColumnName="MaHinhPhat" />
+          <ScalarProperty Name="NoiDung" ColumnName="NoiDung" />
+          <ScalarProperty Name="MucDiemApDung" ColumnName="MucDiemApDung" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="HinhPhatQuaCacLanTaiPhams">
+      <EntityTypeMapping TypeName="KyTucXaModel.HinhPhatQuaCacLanTaiPham">
+        <MappingFragment StoreEntitySet="HinhPhatQuaCacLanTaiPham">
+          <ScalarProperty Name="MaViPham" ColumnName="MaViPham" />
+          <ScalarProperty Name="LanTaiPham" ColumnName="LanTaiPham" />
+          <ScalarProperty Name="HinhPhat" ColumnName="HinhPhat" />
         </MappingFragment>
       </EntityTypeMapping>
     </EntitySetMapping>
@@ -208,6 +265,7 @@
         </MappingFragment>
       </EntityTypeMapping>
     </EntitySetMapping>
+    <FunctionImportMapping FunctionImportName="CapNhatSoLuongKhaiBaoHuHong" FunctionName="KyTucXaModel.Store.CapNhatSoLuongKhaiBaoHuHong" />
     <FunctionImportMapping FunctionImportName="TaoDangKyNoiTru" FunctionName="KyTucXaModel.Store.TaoDangKyNoiTru" />
     <FunctionImportMapping FunctionImportName="TaoHopDong" FunctionName="KyTucXaModel.Store.TaoHopDong" />
   </EntityContainerMapping>

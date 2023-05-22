@@ -17,7 +17,7 @@ namespace QLKTX.Models
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
         public ThietBi()
         {
-            this.YeuCauSuaChuas = new HashSet<YeuCauSuaChua>();
+            this.KhaiBaoHuHongs = new HashSet<KhaiBaoHuHong>();
         }
     
         public string MaThietBi { get; set; }
@@ -26,6 +26,6 @@ namespace QLKTX.Models
         public int SoLuongMoiPhong { get; set; }
     
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<YeuCauSuaChua> YeuCauSuaChuas { get; set; }
+        public virtual ICollection<KhaiBaoHuHong> KhaiBaoHuHongs { get; set; }
     }
 }

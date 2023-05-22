@@ -1,0 +1,26 @@
+﻿@model IEnumerable<QLKTX.Models.ThietBi>
+@{
+    ViewBag.Title = "KhaiBaoHuHongThietBi";
+    Layout = "~/Views/Shared/LayoutUser.cshtml";
+}
+<style>
+    div{
+        font-size:20px;
+    }
+    select{
+        padding:5px;
+    }
+</style>
+<div>
+    <h1>KHAI BÁO HƯ HỎNG THIẾT BỊ</h1>
+    <select name="maThietBi" id="thietbis"></select><br />
+    <label for="soluonghuhong">Báo số lượng hư hỏng <span id="soluongdayeucau"></span></label><br />
+    <input type="text" class="number" required disabled name="sLuongHu" min="1" id="soluonghuhong" /><br /><br />
+    <button type="submit" value="" disabled class="open_btn btn_xacnhan" id="open_btn">Báo hư hỏng</button>
+</div>
+<script>
+        WriteHopThoai("Khai báo hư hỏng thiết bị ", "Xác nhận báo hư hỏng thiết bị")
+</script>
+<script src="~/assets/js/KiemTraChuoiSo.js"></script>
+<script>document.getElementById('sidebar-khaibaohuhong').classList.add("active");</script>
+<script src="~/assets/js/Dashboard/User/khaiBaoHuHongThietBi.js"></script>
